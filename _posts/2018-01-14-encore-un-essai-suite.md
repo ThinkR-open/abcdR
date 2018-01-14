@@ -10,6 +10,7 @@ published: true
 post_date: 2018-01-14 14:29:41
 tags: [ ]
 categories:
+  - manipulation de données
   - tidyverse
 ---
 Le contenu de votre article vient ici.
