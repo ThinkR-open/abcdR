@@ -13,4 +13,7 @@ categories:
   - Transformation de données
 ---
 test
+
 modif depuis R
+
+un autre, mais le md ne semble pas marcher ?
