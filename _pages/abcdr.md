@@ -7,6 +7,8 @@ layout: page
 permalink: https://abcdr.guyader.pro/
 published: true
 post_date: 2011-11-02 20:22:51
+tags: [ ]
+categories: [ ]
 ---
 L'Abcd'R est un <strong>site collaboratif de partage de scripts</strong>, de codes et d'astuces sur le <strong>logiciel R</strong> (GNU-R).
 Combien d'entre nous ont été bloqués par des soucis de base: "Comment importer des données excel ?", "Comment fait-on déjà pour utiliser apply ?"...

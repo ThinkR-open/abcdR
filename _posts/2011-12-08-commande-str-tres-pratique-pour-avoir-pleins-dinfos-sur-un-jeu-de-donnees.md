@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.guyader.pro/commande-str-tres-pratique-pour-avoir-pleins-dinfos-sur-un-jeu-de-donnees/
 published: true
 post_date: 2011-12-08 16:27:18
+tags: [ ]
+categories:
+  - base indispensable
+  - fonctions utiles
 ---
 Lorsque l'on est face à un jeux de données, il peut être pratique d'en avoir une vue d'ensemble : de savoir si les variables sont quali ou quanti, de connaître les niveaux des facteurs etc...<br /><br />
 

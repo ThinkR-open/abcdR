@@ -8,6 +8,9 @@ permalink: >
   https://abcdr.guyader.pro/importer-un-classeur-a-plusieurs-feuilles/
 published: true
 post_date: 2014-06-03 08:16:29
+tags: [ ]
+categories:
+  - importation de données
 ---
 L'import de fichier Excel dans R a toujours été un peu laborieuse, plusieurs façons de faire plus ou moins compliquées. Une fonction sort du lot readWorksheetFromFile du package XLconnect
 <br /><br /><br /> <pre lang='rsplus'><br />

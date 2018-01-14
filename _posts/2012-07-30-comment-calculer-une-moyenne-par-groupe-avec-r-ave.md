@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-calculer-une-moyenne-par-groupe-avec-r-ave/
 published: true
 post_date: 2012-07-30 08:29:13
+tags: [ ]
+categories:
+  - fonctions utiles
+  - manipulation de données
 ---
 Je viens de découvrir la fonction<strong> ave</strong>.. il s'agit d'une fonction<strong> extremement rapide</strong> qui permet de calculer une moyenne (ou autre chose..) par groupe. elle est trés efficace par rapport à des combinaisons de <strong>by</strong> et autres <strong>do.call</strong><br /><br />
 

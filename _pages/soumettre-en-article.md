@@ -8,5 +8,7 @@ permalink: >
   https://abcdr.guyader.pro/soumettre-en-article/
 published: true
 post_date: 2013-10-21 07:22:09
+tags: [ ]
+categories: [ ]
 ---
 [tdomf_form1]

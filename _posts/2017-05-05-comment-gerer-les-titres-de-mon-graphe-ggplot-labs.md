@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-gerer-les-titres-de-mon-graphe-ggplot-labs/
 published: true
 post_date: 2017-05-05 09:26:59
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 La fonction labs(), à utiliser pendant la construction de votre ggplot, vous permet d'intégrer titre, sous-titres, et légendes. 
 

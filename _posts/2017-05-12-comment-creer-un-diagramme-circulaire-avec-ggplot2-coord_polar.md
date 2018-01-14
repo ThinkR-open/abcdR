@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-creer-un-diagramme-circulaire-avec-ggplot2-coord_polar/
 published: true
 post_date: 2017-05-12 10:19:28
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 <p>Vous en avez assez des digrammes en barres et des lignes ? Alors laissez-vous tenter par les diagrammes circulaires ! 
 

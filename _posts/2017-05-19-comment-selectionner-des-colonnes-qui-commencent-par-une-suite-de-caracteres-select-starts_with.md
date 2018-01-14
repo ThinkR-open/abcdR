@@ -11,6 +11,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-selectionner-des-colonnes-qui-commencent-par-une-suite-de-caracteres-select-starts_with/
 published: true
 post_date: 2017-05-19 07:59:02
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Vous avez besoin de <strong>sélectionner des colonnes en fonction de leur nom</strong> ? Faites appel à <em>select</em>, fonction du package <em>dplyr</em>. Vous trouvez laborieux de taper à la main l'ensemble des noms des colonnes que vous souhaitez ? Il y a un paramètre pour ça !  
 

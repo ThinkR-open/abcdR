@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-concatener-des-chaines-de-caracteres-str_c/
 published: true
 post_date: 2017-07-20 10:35:08
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Amoureux du <code>paste</code> de R base ? <code>str_c</code> du package {stringr} va vous plaire !</p>
 

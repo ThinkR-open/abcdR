@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-changer-la-couleur-de-fond-de-mon-ggplot-themeplot-background/
 published: true
 post_date: 2017-05-05 09:24:02
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 Pour modifier la couleur de fond de votre graphique avec ggplot, utilisez l'argument suivant dans votre theme() : 
 <pre lang="rsplus">

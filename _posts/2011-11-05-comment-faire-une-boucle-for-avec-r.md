@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-faire-une-boucle-for-avec-r/
 published: true
 post_date: 2011-11-05 20:36:34
+tags: [ ]
+categories:
+  - algorithmique
+  - base indispensable
 ---
 <pre lang="rsplus">for ( i in 1:10) { <br />
 print(i) <br />

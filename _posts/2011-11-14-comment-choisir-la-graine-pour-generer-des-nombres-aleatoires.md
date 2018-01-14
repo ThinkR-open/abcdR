@@ -8,5 +8,8 @@ permalink: >
   https://abcdr.guyader.pro/comment-choisir-la-graine-pour-generer-des-nombres-aleatoires/
 published: true
 post_date: 2011-11-14 20:09:03
+tags: [ ]
+categories:
+  - base indispensable
 ---
 Lorsqu'on génère des nombres aléatoires il est souvent utile de pouvoir choisir la graine (pour resimuler exactement un modèle stochastique par exemple).<br /><br />Sous R ceci se fait via la fonction<strong> set.seed("nombre entier")</strong>.<br /><br /> <pre lang='rsplus'><br /><br />set.seed(3)<br />runif(3)<br /><br />set.seed(4567)<br />runif(3)<br /><br />set.seed(3)<br />runif(3)<br /><br /></pre>

@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-separer-une-colonne-separate/
 published: true
 post_date: 2017-05-05 09:40:15
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Votre colonne contient deux variables (ou plus), et vous avez besoin de la séparer ? Pour <strong>transformer xx_yy en deux colonnes qui contiendront xx et yy</strong>, faites appel à la fonction separate() du package tidyr !
 

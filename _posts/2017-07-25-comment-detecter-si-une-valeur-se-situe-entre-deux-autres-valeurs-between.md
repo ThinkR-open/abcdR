@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-detecter-si-une-valeur-se-situe-entre-deux-autres-valeurs-between/
 published: true
 post_date: 2017-07-25 19:25:03
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Est-ce que la valeur associée à votre variable est comprise entre deux autres valeurs ? Vous le saurez en faisant appel à <code>between</code>, du package {dplyr} ! </p>
 

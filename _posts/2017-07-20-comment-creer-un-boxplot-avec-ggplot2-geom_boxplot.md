@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-creer-un-boxplot-avec-ggplot2-geom_boxplot/
 published: true
 post_date: 2017-07-20 12:56:28
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 <p>Les boîtes à moustaches vous plaisent, mais R base vous lasse ? Tournez-vous vers {ggplot2} ! </code></p>
 

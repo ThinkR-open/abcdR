@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-faire-une-boucle-while-avec-r/
 published: true
 post_date: 2011-11-05 20:50:01
+tags: [ ]
+categories:
+  - algorithmique
+  - base indispensable
 ---
 <pre lang="rsplus">i&lt;-0<br /> 
 while (i&lt;10){ <br />

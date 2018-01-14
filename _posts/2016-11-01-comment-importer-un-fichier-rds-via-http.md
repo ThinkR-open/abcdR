@@ -8,6 +8,9 @@ permalink: >
   https://abcdr.guyader.pro/comment-importer-un-fichier-rds-via-http/
 published: true
 post_date: 2016-11-01 15:48:01
+tags: [ ]
+categories:
+  - fonctions utiles
 ---
 Pour importer un fichier RDS via une url sur un serveur distant, voici une procédure qui focntionne bien :
 <pre lang="rsplus">

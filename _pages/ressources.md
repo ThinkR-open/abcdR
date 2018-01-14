@@ -7,6 +7,8 @@ layout: page
 permalink: https://abcdr.guyader.pro/ressources/
 published: true
 post_date: 2011-11-02 20:24:24
+tags: [ ]
+categories: [ ]
 ---
 <div id="sansa">
 

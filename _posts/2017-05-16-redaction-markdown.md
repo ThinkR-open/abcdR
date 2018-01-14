@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/redaction-markdown/
 published: true
 post_date: 2017-05-16 07:53:59
+tags: [ ]
+categories:
+  - programmer avec R
+  - tidyverse
 ---
 <p>Vous souhaitez <strong>rédiger des documents qui contiennent du code, des résultats de console ou des graphiques</strong> ? Alors Mardown est fait pour vous ! 
 

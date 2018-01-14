@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-tracer-la-courbe-dune-fonction-connue-dans-un-intervalle-donne-curve/
 published: true
 post_date: 2016-02-07 09:39:24
+tags: [ ]
+categories:
+  - fonctions utiles
+  - graphique
 ---
 R peut tracer la courbe d'une fonction f(x) pour peu qu'on connaisse sa formule et qu'on lui fixe des bornes.
 <pre lang="rsplus"> curve(expr=1/(sqrt(2*pi)*0.3)*exp(-((x-0)^2/(2*0.3^2))), from=-1.5, to= 1.5)</pre>

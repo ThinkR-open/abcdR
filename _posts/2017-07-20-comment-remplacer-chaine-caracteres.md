@@ -11,6 +11,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-remplacer-chaine-caracteres/
 published: true
 post_date: 2017-07-20 10:07:00
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Vous avez besoin de <strong>manipuler des chaîne de caractères</strong> en toute simplicité ? Alors vous allez aimer le package <em>stringr</em> !</p>
 

@@ -8,6 +8,8 @@ permalink: >
   https://abcdr.guyader.pro/liste-des-interfaces-graphiques-pour-le-logiciel-r/
 published: true
 post_date: 2011-11-02 20:23:42
+tags: [ ]
+categories: [ ]
 ---
 <h1>Liste des interfaces graphiques pour R</h1>
 R est fourni avec un éditeur de texte (RScript) plus ou moins complet en fonction du system d’exploitation que vous utilisez:

@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.guyader.pro/resoudre-le-message-derreur-caracteres-multioctets-incorrects/
 published: true
 post_date: 2011-11-04 15:50:01
+tags: [ ]
+categories:
+  - configuration de R
+  - "message d'erreur"
 ---
 Ce message apparaît lorsque l'on essaye de lancer un script initialement écrit sous windows sur une station linux (et inversement).
 Il s'agit d'un souci d'encodage.

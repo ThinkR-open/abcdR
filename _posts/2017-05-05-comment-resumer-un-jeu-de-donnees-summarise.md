@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/comment-resumer-un-jeu-de-donnees-summarise/
 published: true
 post_date: 2017-05-05 09:04:05
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 Vous avez besoin d'un résumé rapide sur une ou plusieurs variables de votre tableau ? Direction la fonction summarise (ou summarize, selon vos affinités).
 <pre lang="rsplus">data("who")

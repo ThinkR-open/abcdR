@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.guyader.pro/rbind-et-cbind-dans-le-tidyverse/
 published: true
 post_date: 2017-07-20 14:42:15
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Plus de robustesse, plus de sécurité, nous avons nommé <code>bind_rows</code> et <code>bind_cols</code> !</p>
 
