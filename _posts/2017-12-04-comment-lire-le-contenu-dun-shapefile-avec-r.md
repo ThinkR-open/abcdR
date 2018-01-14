@@ -20,8 +20,7 @@ Un shapefile est un fichier d'information géographique avec un format vectoriel
  	<li>data.dbf : table des attributs</li>
  	<li>data.shx : indice de position des géométries</li>
 </ul
-  
-MODIF DEPUIS GITHUB  
+
   
 Dans R, deux packages majeurs sont utilisés pour manipuler les données géographiques de type vectoriel:
 <ul>
