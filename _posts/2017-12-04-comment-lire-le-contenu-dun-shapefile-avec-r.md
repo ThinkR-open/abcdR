@@ -43,10 +43,10 @@ Vous pourrez ensuite récupérer les informations suivantes:
 <ul>
  	<li>Les données de la table attributaire sans l'information géographique</li>
 </ul>
-<pre>shp@data
+<pre><code>shp@data
 # ou
 data.frame(shp)
-</pre>
+</code></pre>
 <h2>Lire le contenu d'un shapefile avec la librairie {sf}</h2>
 Comme pour {rgdal}, la lecture du shapefile se fait en spécifiant le dossier (<code>dsn</code>) et le nom de la couche (<code>layer</code>) sans extension.
 <pre>library(sf)
