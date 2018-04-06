@@ -7,8 +7,6 @@ layout: page
 permalink: https://abcdr.thinkr.fr/ressources/
 published: true
 post_date: 2011-11-02 20:24:24
-tags: [ ]
-categories: [ ]
 ---
 <div id="sansa">
 <h1>Livres sur R:</h1>
