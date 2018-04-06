@@ -7,6 +7,8 @@ layout: page
 permalink: https://abcdr.thinkr.fr/ressources/
 published: true
 post_date: 2011-11-02 20:24:24
+tags: [ ]
+categories: [ ]
 ---
 <div id="sansa">
 <h1>Livres sur R:</h1>
@@ -83,16 +85,24 @@ Livre très complet sur les géostatistiques avec R. Parfois difficile à lire c
 <img style="display: none !important;" src="http://wms.assoc-amazon.fr/20070822/FR/img/noscript.gif?tag=abcdr-21" alt="" />
 
 </div>
+
 <h1>Ressources francophones</h1>
+
 &nbsp;
+
 <blockquote>Les ressources en français sont plutôt rares. R est le produit d'un travail collaboratif, intimement lié à la recherche, et un langage de programmation. L'anglais, langue de prédilection pour la communication scientifique et technique, est donc la langue de choix pour tout ce qui touche à R.
 Cependant, c'est parfois un obstacle supplémentaire lors de la découverte de R et de son langage de programmation. Comme ce site, ces ressources permettent une plus large diffusion de R auprès d'un public francophone.</blockquote>
+
 &nbsp;
+
 <h2>Spécial débutant</h2>
+
 Le tutoriel R du site du zéro, idéal pour s’initier à la programmation R : <a href="http://www.siteduzero.com/tutoriel-3-374508-effectuez-vos-etudes-statistiques-avec-r.html" target="_blank" rel="noopener">Site du zéro</a>
 R pour les statophobes de Denis Poinsot (Université de Rennes I) : <a title="R pour les statophobes" href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf" target="_blank" rel="noopener">R pour les statophobes</a>
 R pour les débutants d'Emmanuel Paradis : <a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf" target="_blank" rel="noopener">R pour les débutants</a>
+
 <h2>Cours avancés et aides mémoires</h2>
+
 Un site qui date un peu mais qui propose de débuter tout doucement: <a href="http://www.pallier.org/ressources/tpr/tpR.html" target="_blank" rel="noopener">www.pallier.org/ressources/tpr/tpR.html</a>
 Un site sur l’enseignement en biostatistique de l’Université de Lyon1 avec beaucoup de
 documents disponibles :<a href="http://pbil.univ-lyon1.fr/R/enseignement.html" target="_blank" rel="noopener">http://pbil.univ-lyon1.fr/R/enseignement.html</a>
@@ -105,11 +115,15 @@ Aide mémoire homonyme : <a href="http://jerome-mathieu.com/pdf/tutoriels/abcdR.
 Aide mémoire hyper complet : <a href="http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf" target="_blank" rel="noopener">http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf</a>
 Des supports de formation aux statistiques appliquées : <a href="http://rstat.ouvaton.org" target="_blank" rel="noopener">rstat.ouvaton.org</a>
 Le forum du Cirad où l'on peut poser ses questions et... répondre à celles des autres: <a href="http://forums.cirad.fr/logiciel-R" target="_blank" rel="noopener">forums.cirad.fr/logiciel-R</a>
+
 <h1>Ressources anglophones</h1>
+
 &nbsp;
+
 <blockquote>Il est certains sites dont il serait vraiment dommage de se passer. Inutile d'être bilingue pour copier et coller des morceaux de code, que diable!</blockquote>
+
 Le site officiel : <a href="http://www.r-project.org/" target="_blank" rel="noopener">http://www.r-project.org/</a>
-Cliquez sur un graphique qui ressemble à ce que vous voulez faire pour voir le code... <a href="http://gallery.r-enthusiasts.com" target="_blank" rel="noopener">R Graph Gallery</a>
+Cliquez sur un graphique qui ressemble à ce que vous voulez faire pour voir le code... <a href="http://r-graph-gallery.com/" target="_blank" rel="noopener">R Graph Gallery</a>
 Un blog d'actualités sur R, par l'équipe de Revolution Analytics : <a href="http://blog.revolutionanalytics.com/r" target="_blank" rel="noopener">blog.revolutionanalytics.com/r</a>
 En anglais, il y a PLEIN de ressources : <a href="http://www.r-bloggers.com" target="_blank" rel="noopener">www.r-bloggers.com</a>
 Un site avec des morceaux de code dedans, très appliqué et très pointu : <a href="http://rtricks.wordpress.com" target="_blank" rel="noopener">rtricks.wordpress.com</a>
