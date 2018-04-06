@@ -23,6 +23,8 @@ post_title: Titre de votre article
 author: votre_nom_d_auteur
 layout: post
 published: true
+permalink: &gt;
+  https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/
 categories:
   - graphique
   - tidyverse
@@ -31,3 +33,12 @@ Le contenu de votre article vient ici.
 le code R doit etre mis en forme comme cela :
 (...)
 ```
+
+le code R doit être mis en forme comme cela :
+<pre><code>```r
+mon_code &lt;- "R"
+```
+</code></pre>
+
+Il n'est pas possible de joindre des images, sauf avec des liens vers des images extérieures:
+<img src="https://i2.wp.com/abcdr.thinkr.fr/wp-content/uploads/2018/03/logo_abcdR.png?fit=250%2C59&amp;ssl=1" class="custom-logo" alt="AbcdR" itemprop="logo">
