@@ -8,8 +8,6 @@ permalink: >
   https://abcdr.thinkr.fr/soumettre-un-article/
 published: true
 post_date: 2013-10-21 07:22:09
-tags: [ ]
-categories: [ ]
 ---
 Pour proposer un article sur ce site Internet, nous passons par notre compte [Github ThinkR-open/abcdR](https://github.com/ThinkR-open/abcdR/).  
 Vous devrez faire un fork de notre dépôt github, ajouter un article au format markdown dans le dossier **_post** et proposer une pull request.  
@@ -25,7 +23,7 @@ post_title: Titre de votre article
 author: votre_nom_d_auteur
 layout: post
 published: true
-permalink: >
+permalink: &gt;
   https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/
 categories:
   - graphique
