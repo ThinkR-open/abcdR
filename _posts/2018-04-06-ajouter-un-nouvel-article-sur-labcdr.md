@@ -1,7 +1,7 @@
 ---
 ID: 3861
 post_title: 'Ajouter un nouvel article sur l&rsquo;abcd&rsquo;R'
-author: vincent
+author: seb
 post_excerpt: ""
 layout: post
 permalink: >
