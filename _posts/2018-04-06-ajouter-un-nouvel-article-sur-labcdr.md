@@ -43,4 +43,4 @@ mon_code &lt;- "R"
 </code></pre>
 
 Il n'est pas possible de joindre des images, sauf avec des liens vers des images extérieures:
-<img src="https://i2.wp.com/abcdr.thinkr.fr/wp-content/uploads/2018/03/logo_abcdR.png?fit=250%2C59&amp;ssl=1" class="custom-logo" alt="AbcdR" itemprop="logo"
+<img src="https://i2.wp.com/abcdr.thinkr.fr/wp-content/uploads/2018/03/logo_abcdR.png?fit=250%2C59&amp;ssl=1" class="custom-logo" alt="AbcdR" itemprop="logo">
