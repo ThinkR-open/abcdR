@@ -5,11 +5,8 @@ author: Melen
 post_excerpt: ""
 layout: post
 permalink: >
-  https://abcdr.guyader.pro/assignement-de-variables-dans-r/
+  https://abcdr.thinkr.fr/assignement-de-variables-dans-r/
 published: true
 post_date: 2011-11-09 15:35:31
-tags: [ ]
-categories:
-  - base indispensable
 ---
- <pre lang='rsplus'>var &lt;- expr</pre> <br />Assigne l'expression à la variable<br /><br />  <pre lang='rsplus'>var = expr</pre>  <br />Assigne l'expression à la variable <br /><br />  <pre lang='rsplus'>expr -&gt; var</pre>  <br />Assigne l'expression à la variable<br /><br /><br />
+ <pre>var &lt;- expr</pre> <br />Assigne l'expression à la variable<br /><br />  <pre>var = expr</pre>  <br />Assigne l'expression à la variable <br /><br />  <pre>expr -&gt; var</pre>  <br />Assigne l'expression à la variable<br /><br /><br />

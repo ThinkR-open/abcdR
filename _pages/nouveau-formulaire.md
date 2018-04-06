@@ -1,14 +1,12 @@
 ---
 ID: 68
 post_title: Nouveau formulaire
-author: Vincent
+author: vincent
 post_excerpt: ""
 layout: page
 permalink: >
-  https://abcdr.guyader.pro/nouveau-formulaire/
+  https://abcdr.thinkr.fr/nouveau-formulaire/
 published: true
 post_date: 2011-11-03 11:20:01
-tags: [ ]
-categories: [ ]
 ---
 [tdomf_form3]

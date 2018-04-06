@@ -1,11 +1,11 @@
 ---
 ID: 3492
-post_title: 'Comment lire le contenu d&rsquo;un shapefile avec R ?'
-author: Sébastien
+post_title: 'Comment lire le contenu d&#039;un shapefile avec R ?'
+author: seb
 post_excerpt: ""
 layout: post
 permalink: >
-  http://banana.thinkpy.fr/2017/12/04/comment-lire-le-contenu-dun-shapefile-avec-r/
+  https://abcdr.thinkr.fr/comment-lire-le-contenu-dun-shapefile-avec-r/
 published: true
 post_date: 2017-12-04 15:03:17
 ---
@@ -26,7 +26,7 @@ Le shapefile sera lu directement avec la librairie {rgdal}. Il pourra ensuite ê
 Un shapefile contient toujours plusieurs fichiers ayant tous le même nom mais une extension différente. Pour le lire avec la fonction <code>rgdal</code> de la librarie {sp} , il faut donner le dossier (<code>dsn</code>) dans lequel il est sauvé et le nom de la couche (<code>layer</code>) sans extension.
 <pre>library(rgdal)
 library(sp)
-shp &lt;- readOGR(dsn = 'chemin/vers/dossier', 
+shp &lt;- readOGR(dsn = 'chemin/vers/dossier',
         layer = 'NomDeCoucheSansExtension')
 </pre>
 Vous pourrez ensuite récupérer les informations suivantes:
@@ -50,7 +50,7 @@ data.frame(shp)
 <h2>Lire le contenu d'un shapefile avec la librairie {sf}</h2>
 Comme pour {rgdal}, la lecture du shapefile se fait en spécifiant le dossier (<code>dsn</code>) et le nom de la couche (<code>layer</code>) sans extension.
 <pre>library(sf)
-shp &lt;- st_read(dsn = 'chemin/vers/dossier', 
+shp &lt;- st_read(dsn = 'chemin/vers/dossier',
         layer = 'NomDeCoucheSansExtension')
 </pre>
 Vous pourrez ensuite récupérer les informations suivantes:

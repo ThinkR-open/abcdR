@@ -1,11 +1,11 @@
 ---
 ID: 49
 post_title: Liste des interfaces graphiques
-author: Vincent
+author: vincent
 post_excerpt: ""
 layout: page
 permalink: >
-  http://banana.thinkpy.fr/liste-des-interfaces-graphiques-pour-le-logiciel-r/
+  https://abcdr.thinkr.fr/liste-des-interfaces-graphiques-pour-le-logiciel-r/
 published: true
 post_date: 2011-11-02 20:23:42
 ---
@@ -20,7 +20,6 @@ Mais des utilisateurs de R bien intentionnés ont pensé à vous ! En effet, des
 <h1>Les stars multiplateforme</h1>
 <h2>Rstudio</h2>
 On ne va pas se le cacher, pour faire du développement avec R, <a href="http://www.rstudio.com/products/rstudio/download/" target="_blank" rel="noopener">Rstudio </a>est le projet le plus abouti, il propose un véritable espace de développement dédié à R. C'est <strong><span style="text-decoration: underline;">LE</span></strong> logiciel à installer.
-
 Il propose:
 <ul>
  	<li>coloration syntaxique</li>
@@ -33,7 +32,6 @@ Il propose:
 vous pouvez le télécharger ici : <a href="http://www.rstudio.com/products/rstudio/download/" target="_blank" rel="noopener">http://www.rstudio.com/products/rstudio/download/</a>
 <h2>Bio7</h2>
 C'est l'interface développée, notamment pour faire de la modélisation en écologie.
-
 <a href="http://bio7.org">http://bio7.org</a>
 <h1>Les interfaces dont vous avez peut-être entendu parler</h1>
 <h2>Rmcdr (multiplateforme)</h2>
@@ -53,5 +51,4 @@ dans la console vous pouvez avoir R directement en tapant "R"
 Si vous voulez le minimum vital rajoutez ces paramètres "R -g Tk &amp;"
 <h2>Rkward (linux - KDE)</h2>
 S’intègre bien dans un environnement KDE. (<a href="http://fr.wikipedia.org/wiki/RKWard">http://fr.wikipedia.org/wiki/RKWard</a>)
-
 Des projets alternatifs on aussi vu le jour comme Red R (<a href="http://www.red-r.org/" target="_blank" rel="noopener">http://www.red-r.org/</a>).Pour l’instant les fonctionnalités ne sont pas très nombreuses mais l’idée est bonne et mérite d’être suivie.
