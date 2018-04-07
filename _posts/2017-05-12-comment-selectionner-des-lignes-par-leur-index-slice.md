@@ -15,4 +15,4 @@ post_date: 2017-05-12 08:58:25
 <p>Comme tous ses cousins du tidyverse, <em>slice()</em> prend en premier argument le nom du tableau à transformer. Ensuite, vous pouvez sélectionner vos lignes par leur index, avec un vecteur numérique.
 <p><pre><code>library(dplyr)
 data("presidential")
-slice(presidential, 1:25)</pre>
+slice(presidential, 1:25)</code></pre>

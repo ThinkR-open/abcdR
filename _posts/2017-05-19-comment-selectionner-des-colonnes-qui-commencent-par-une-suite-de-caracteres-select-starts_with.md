@@ -16,5 +16,5 @@ post_date: 2017-05-19 07:59:02
 <p>Si vos noms de colonnes suivent un pattern défini, vous pouvez les sélectionner avec <em>starts_with()</em>.
 <p><pre><code>library(dplyr)
 data("who")
-select(who, starts_with("newrel"))</pre>
+select(who, starts_with("newrel"))</code></pre>
 <p>À noter que vous pouvez également utiliser ends_with(), matches() ou encore contains().

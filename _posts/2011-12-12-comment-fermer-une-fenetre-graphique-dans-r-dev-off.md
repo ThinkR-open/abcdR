@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2011-12-12 11:06:21
 ---
-Pour fermer la dernière fenêtre vous pouvez utiliser <strong>dev.off()</strong> <pre><code><br /><p>data(iris)<br />plot(iris)<br />plot(1:10)<br />dev.off() # ferme le dernier graphique</p></pre>
+Pour fermer la dernière fenêtre vous pouvez utiliser <strong>dev.off()</strong> <pre><code><br /><p>data(iris)<br />plot(iris)<br />plot(1:10)<br />dev.off() # ferme le dernier graphique</p></code></pre>

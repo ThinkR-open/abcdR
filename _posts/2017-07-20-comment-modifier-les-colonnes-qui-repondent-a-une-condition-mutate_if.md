@@ -36,8 +36,8 @@ post_date: 2017-07-20 10:52:04
  $ Petal.Length: Factor w/ 43 levels ...
  $ Petal.Width : Factor w/ 22 levels ...
  $ Species     : Factor w/ 3 levels  ...
-</pre></p>
+</code></pre></p>
 <p>À noter : il est possible d'intégrer ses propres fonctions de transformation. Par exemple, si l'on veut les mesures d'iris en millimètres, plutôt qu'en centimètres.</p>
 <p><pre><code>
   mutate_if(iris, is.numeric, function(x){x * 100})
-</pre></p>
+</code></pre></p>

@@ -21,4 +21,4 @@ Pour créer un tibble, deux solutions : la conversion depuis un data.frame, ou l
 data("swiss")
 as_tibble(swiss)
 tibble(x = 1:4,
-       y = 5:8)</pre>
+       y = 5:8)</code></pre>

@@ -17,4 +17,4 @@ post_date: 2017-05-12 10:19:28
 data(diamonds)
 ggplot(diamonds, aes(cut)) +
   geom_bar() +
-  coord_polar()</pre>
+  coord_polar()</code></pre>

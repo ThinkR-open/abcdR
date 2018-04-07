@@ -16,4 +16,4 @@ Pour modifier la couleur de fond de votre graphique avec ggplot, utilisez l'argu
 library(ggplot2)
 ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
   geom_point() +
-  theme(plot.background = element_rect(fill = "pink"))</pre>
+  theme(plot.background = element_rect(fill = "pink"))</code></pre>

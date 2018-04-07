@@ -16,9 +16,9 @@ post_date: 2017-07-20 10:07:00
   library(stringr)
   str_replace_all("Une chaîne de caractères", pattern = "Une", replacement = "1")
   [1] "1 chaîne de caractères"
-</pre></p>
+</code></pre></p>
 <p>À noter : l'équivalent <code>str_replace</code>, qui ne remplacera que le premier élément qu'il rencontrera.</p>
 <p><pre><code>
   str_replace("Une chaîne de caractères et une autre", pattern = "Une", replacement = "1")
   [1] "1 chaîne de caractères et une autre"
-</pre></p>
+</code></pre></p>

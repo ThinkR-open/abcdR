@@ -12,4 +12,4 @@ tags: [ ]
 categories:
   - importation de données
 ---
-les fichiers .dta sont des fichiers proprietaires du logiciel stat, pou les importer dans un R il faut utiliser la fonction <strong>read.dta</strong><br /><br /><br /> <pre lang='rsplus'><br /><br /> library(foreign) <br />dat &lt;- read.dta("http://www.ats.ucla.edu/stat/data/ologit.dta") head(dat)<br /><br /></pre>
+les fichiers .dta sont des fichiers proprietaires du logiciel stat, pou les importer dans un R il faut utiliser la fonction <strong>read.dta</strong><br /><br /><br /> <pre lang='rsplus'><br /><br /> library(foreign) <br />dat &lt;- read.dta("http://www.ats.ucla.edu/stat/data/ologit.dta") head(dat)<br /><br /></code></pre>

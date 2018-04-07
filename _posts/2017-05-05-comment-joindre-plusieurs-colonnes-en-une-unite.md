@@ -15,4 +15,4 @@ post_date: 2017-05-05 09:53:01
 <p>Cette fonction prends en premier argument le nom de l'objet contenant le tableau, la colonne cible, les colonnes à lier, puis un éventuel séparateur. Notez que le séparateur de base est "_".
 <pre><code>data("msleep")
 library(tidyr)
-unite(msleep, genusvore, genus, vore, sep = "-")</pre>
+unite(msleep, genusvore, genus, vore, sep = "-")</code></pre>

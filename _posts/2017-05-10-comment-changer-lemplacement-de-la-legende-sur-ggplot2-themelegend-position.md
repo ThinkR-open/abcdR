@@ -14,10 +14,10 @@ Vous n'avez plus envie de voir vos légendes sur la droite ? Vous mourrez d'envi
 data("iris")
 ggplot(iris, aes(x= Sepal.Length, y = Sepal.Width, col = Species)) +
   geom_point() +
-  theme(legend.position = "bottom")</pre>
+  theme(legend.position = "bottom")</code></pre>
 Les cinq arguments possibles sont les quatre bords, ainsi que la position <em>none</em>, pour faire disparaitre la légende.
 <pre><code>theme(legend.position = "left")
 theme(legend.position = "right")
 theme(legend.position = "bottom")
 theme(legend.position = "top")
-theme(legend.position = "none")</pre>
+theme(legend.position = "none")</code></pre>

@@ -18,4 +18,4 @@ La fonction labs(), à utiliser pendant la construction de votre ggplot, vous pe
        subtitle = "Mon sous titre \n sur deux lignes",
        caption = "Ma légende",
        x = "Mon axe x",
-       y = "Mon axe y")</pre>
+       y = "Mon axe y")</code></pre>

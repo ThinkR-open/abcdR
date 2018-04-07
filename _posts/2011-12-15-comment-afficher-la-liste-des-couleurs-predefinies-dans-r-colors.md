@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2011-12-15 19:11:16
 ---
-Vous en avez assez d'utiliser toujours les mêmes couleurs pour vos graphiques?<br />R a 657 couleurs prédéfinies...<br /><br /> <pre><code><br /><br />colors()<br /></pre> <br /><br /><br />
+Vous en avez assez d'utiliser toujours les mêmes couleurs pour vos graphiques?<br />R a 657 couleurs prédéfinies...<br /><br /> <pre><code><br /><br />colors()<br /></code></pre> <br /><br /><br />

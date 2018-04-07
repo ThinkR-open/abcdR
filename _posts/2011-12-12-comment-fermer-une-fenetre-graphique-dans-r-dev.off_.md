@@ -14,4 +14,4 @@ tags: [ ]
 categories:
   - graphique
 ---
-Pour fermer la dernière fenêtre vous pouvez utiliser <strong>dev.off()</strong> <pre lang='rsplus'><br /><p>data(iris)<br />plot(iris)<br />plot(1:10)<br />dev.off() # ferme le dernier graphique</p></pre>
+Pour fermer la dernière fenêtre vous pouvez utiliser <strong>dev.off()</strong> <pre lang='rsplus'><br /><p>data(iris)<br />plot(iris)<br />plot(1:10)<br />dev.off() # ferme le dernier graphique</p></code></pre>

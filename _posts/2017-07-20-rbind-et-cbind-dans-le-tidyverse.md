@@ -24,7 +24,7 @@ post_date: 2017-07-20 14:42:15
     Error in match.names(clabs, names(xi)) :
       les noms ne correspondent pas aux noms précédents
   bind_rows(df1, df2)
-</pre></p>
+</code></pre></p>
 </p>
 <p>Au tour de <code>bind_cols</code>. Pas de soucis dans nos deux exemples du dessus, en base ou avec la fonction de {dplyr}. Testons avec deux nouveaux tableaux.</p>
 <p><pre><code>
@@ -40,5 +40,5 @@ post_date: 2017-07-20 14:42:15
     a b a1 b1
   1 A A  A  A
   2 B B  B  B
-</pre></p>
+</code></pre></p>
 <p>Le réel plus de <code>bind_cols</code> ici ? La gestion des noms de colonne : alors que la fonction de {base} duplique les noms, la fonction de {dplyr} ajoute un chiffre, afin d'éviter le souci des colonnes dupliquées, qui pourront plus tard mettre en péril une analyse.</p>

@@ -25,5 +25,5 @@ data %
   summarise(count = n())
 ggplot(data, aes(date, count)) +
   geom_line() +
-  scale_x_date(date_breaks = "2 months", date_labels = "%b")</pre>
+  scale_x_date(date_breaks = "2 months", date_labels = "%b")</code></pre>
 <p>À noter que <strong>cette fonction s'adapte aux différents formats de date de votre jeu de données,</strong> ainsi qu'à l'axe que vous souhaitez modifier — <em>scale_y_date</em>, <em>scale_x_datetime</em>, <em>scale_y_datetime</em>, <em>scale_x_time</em>, <em>scale_y_time</em>.

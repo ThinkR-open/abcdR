@@ -14,4 +14,4 @@ post_date: 2017-05-05 09:15:57
 Pour ajouter une colonne, direction la fonction <em>mutate</em>. Avec celle-ci, vous pouvez insérer un objet externe au tableau (par exemple une liste), ou le résultat de l'opération sur une ou plusieurs colonnes.
 <pre><code>data("faithfuld")
 library(dplyr)
-mutate(faithful, index= 1:nrow(faithful), er.wa = eruptions / waiting)</pre>
+mutate(faithful, index= 1:nrow(faithful), er.wa = eruptions / waiting)</code></pre>

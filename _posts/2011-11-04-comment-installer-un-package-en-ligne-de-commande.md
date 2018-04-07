@@ -11,6 +11,6 @@ permalink: >
 published: true
 post_date: 2011-11-04 11:26:40
 ---
-<pre><code> install.packages("NomDuPackage")</pre>  <br />
+<pre><code> install.packages("NomDuPackage")</code></pre>  <br />
 Cette commande va télécharger et installer automatiquement le package NomDuPackage sur votre système.
 &nbsp;

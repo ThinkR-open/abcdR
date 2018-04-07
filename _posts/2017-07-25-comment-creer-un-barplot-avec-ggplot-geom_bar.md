@@ -22,7 +22,7 @@ Pour compter les occurences d'une variable, vous avez besoin de seulement spéci
   data("diamonds")
   ggplot(diamonds, aes(x = cut)) +
     geom_bar()
-</pre>
+</code></pre>
 Ici, {ggplot2} effectue, pour vous, le comptage du nombre d'occurences de chaque modalité de la variable.
 
 Si le comptage de vos modalités est déjà dans le tableau, il vous faudra spécifier la variable de comptage en y, et ajouter <code>stat = "identity"</code> dans votre <code>geom_bar</code>.
@@ -30,5 +30,5 @@ Si le comptage de vos modalités est déjà dans le tableau, il vous faudra spé
                    b = 1:26)
   ggplot(df, aes(a, b)) +
     geom_bar(stat = "identity")
-</pre>
+</code></pre>
 En savoir plus : <a href="https://abcdr.thinkr.fr/comment-se-construit-un-graphique-avec-ggplot2/">Comment construire un graphique avec ggplot2</a>.

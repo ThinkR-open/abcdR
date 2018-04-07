@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2011-11-30 09:31:01
 ---
-Il peut être pratique parfois de créer un facteur  correspondant à l'interaction de 2 facteurs. Pour cela vous pouvez utiliser tout simplement la fonction interaction() <pre><code><br /><p>x=letters[rep(seq(from=1,to=5,by=1),rep(5,5))]<br />y=rep(seq(from=1,to=5,by=1),5)<br />interaction(x,y,sep="_")#où sep est le séparateur entre les deux charactères</p></pre>
+Il peut être pratique parfois de créer un facteur  correspondant à l'interaction de 2 facteurs. Pour cela vous pouvez utiliser tout simplement la fonction interaction() <pre><code><br /><p>x=letters[rep(seq(from=1,to=5,by=1),rep(5,5))]<br />y=rep(seq(from=1,to=5,by=1),5)<br />interaction(x,y,sep="_")#où sep est le séparateur entre les deux charactères</p></code></pre>

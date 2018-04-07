@@ -14,13 +14,13 @@ while (i&lt;10){ <br />
 print(i)<br />
 i&lt;-i+1  <br />
 } <br />
-print("on sort de la boucle")</pre> <br />
+print("on sort de la boucle")</code></pre> <br />
 <strong>While</strong> va réaliser ce qui est écrit entre les accolades <strong>{}</strong> tant que ce qui est dans les parenthèses <strong>()</strong> est vrai.
 Ce code peut donc se traduire de la façon suivante : <br /><br />
 <pre><code>i vaut 0 <br />
 tant que (i est inférieur à 0){ <br />
 afficher i <br />
 augmenter i de 1<br />
-}</pre>
+}</code></pre>
 <br />
 Dans cet exemple au moment où i vaudra 10, on sortira de la boucle.

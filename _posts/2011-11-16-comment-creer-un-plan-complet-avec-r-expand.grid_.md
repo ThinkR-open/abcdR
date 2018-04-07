@@ -14,4 +14,4 @@ categories:
   - manipulation de données
   - Transformation de données
 ---
-On a parfois besoin d'un jeux de données qui reprend toutes les combinaisons possibles de plusieurs facteurs.<br />Bien sûr on peut le faire à la main, mais il y a beaucoup plus intelligent : la fonction expand.grid fait ça très bien.<br /><br /> <pre lang='rsplus'> expand.grid(c("voiture","velo"),c("bleue","rouge","vert"),c("mercedes","peugeot")) </pre> <br />Cette commande permet de générer toutes les combinaisons possibles : voiture bleue mercedes, voiture bleue peugeot...<br /><br /><br />
+On a parfois besoin d'un jeux de données qui reprend toutes les combinaisons possibles de plusieurs facteurs.<br />Bien sûr on peut le faire à la main, mais il y a beaucoup plus intelligent : la fonction expand.grid fait ça très bien.<br /><br /> <pre lang='rsplus'> expand.grid(c("voiture","velo"),c("bleue","rouge","vert"),c("mercedes","peugeot")) </code></pre> <br />Cette commande permet de générer toutes les combinaisons possibles : voiture bleue mercedes, voiture bleue peugeot...<br /><br /><br />

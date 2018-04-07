@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2014-06-13 22:27:35
 ---
-Voici une fonction qui ne devrait pas être utile à beaucoup de personne, mais qui fera très plaisirs à ceux qui veulent generer automatiquement des objets R <br /><br /><br /> <pre><code><br />data(iris)<br /> dflist &lt;- split(iris, iris[,5])<br />list2env(dflist, envir = .GlobalEnv)<br />ls() <br /></pre> <br /><br />Chacun des element de dflist deviennent des objets dans l'environnement courant de R.
+Voici une fonction qui ne devrait pas être utile à beaucoup de personne, mais qui fera très plaisirs à ceux qui veulent generer automatiquement des objets R <br /><br /><br /> <pre><code><br />data(iris)<br /> dflist &lt;- split(iris, iris[,5])<br />list2env(dflist, envir = .GlobalEnv)<br />ls() <br /></code></pre> <br /><br />Chacun des element de dflist deviennent des objets dans l'environnement courant de R.

@@ -28,18 +28,18 @@ Un shapefile contient toujours plusieurs fichiers ayant tous le même nom mais u
 library(sp)
 shp &lt;- readOGR(dsn = 'chemin/vers/dossier',
         layer = 'NomDeCoucheSansExtension')
-</pre>
+</code></pre>
 Vous pourrez ensuite récupérer les informations suivantes:
 <ul>
  	<li>projection</li>
 </ul>
 <pre><code>proj4string(shp)
-</pre>
+</code></pre>
 <ul>
  	<li>coordonnées des objets (pertinent pour les fichiers de points)</li>
 </ul>
 <pre><code>coordinates(shp)
-</pre>
+</code></pre>
 <ul>
  	<li>Les données de la table attributaire sans l'information géographique</li>
 </ul>
@@ -52,20 +52,20 @@ Comme pour {rgdal}, la lecture du shapefile se fait en spécifiant le dossier (<
 <pre><code>library(sf)
 shp &lt;- st_read(dsn = 'chemin/vers/dossier',
         layer = 'NomDeCoucheSansExtension')
-</pre>
+</code></pre>
 Vous pourrez ensuite récupérer les informations suivantes:
 <ul>
  	<li>projection</li>
 </ul>
 <pre><code>st_crs(shp)
-</pre>
+</code></pre>
 <ul>
  	<li>coordonnées des objets. Les coordonnées des lignes et des polygones sont fournies avec les identifiants des lignes / sous-lignes ou polygones / sous-polygones auxquels ils appartiennent.</li>
 </ul>
 <pre><code>st_coordinates(shp)
-</pre>
+</code></pre>
 <ul>
  	<li>Les données de la table attributaire sans l'information géographique. <em>Les opérations classiques sur les tables de données peuvent être réalisées directement l'objet <code>shp</code>.</em></li>
 </ul>
 <pre><code>data.frame(shp)
-</pre>
+</code></pre>

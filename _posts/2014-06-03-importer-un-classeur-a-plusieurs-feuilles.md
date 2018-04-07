@@ -14,4 +14,4 @@ L'import de fichier Excel dans R a toujours été un peu laborieuse, plusieurs f
 library(XLConnect)<br />
 dataset&lt;-readWorksheetFromFile(file=&quot;http://www.euklems.net/data/nace2/fra_output_12i.xlsx &quot;, sheet=3)<br />
 head(dataset)
-<br /><br /></pre>
+<br /><br /></code></pre>

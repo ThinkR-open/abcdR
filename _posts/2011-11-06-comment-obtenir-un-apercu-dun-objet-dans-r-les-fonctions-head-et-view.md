@@ -11,16 +11,16 @@ post_date: 2011-11-06 18:16:30
 ---
 Quand on travaille sur un grand jeu de données, on peut voir à quoi il ressemble en rentrant son nom directement dans la console : <br /><br />
 <pre><code>data(iris)<br />
-iris</pre> <br />
+iris</code></pre> <br />
 Mais pour de gros objets ce n'est pas du tout pratique... et souvent votre ordinateur peut avoir du  mal à tout vous afficher. <br />
 Utilisez plutôt :<br /><br />
 <pre><code>data(iris)<br />
-View(iris) # pensez bien au V majuscule</pre> <br />
+View(iris) # pensez bien au V majuscule</code></pre> <br />
 Cela ouvre une nouvelle fenêtre avec l'intégralité du jeu de données. Et vous pouvez facilement vous balader dedans.
 <br />
 Par contre si seul l'aspect général du tableau vous intéresse, vous pouvez utiliser la fonction <strong>head</strong> : <br /><br />
 <pre><code>data(iris)<br />
-head(iris)</pre> <br />
+head(iris)</code></pre> <br />
 Elle vous affiche les 5 premières lignes de votre jeu de données. <br />
 Et cela fonctionne sur d'autres objets... les matrices, les listes etc. <br />
 la fonction <strong>tail</strong> fait la même chose (ou plutôt je ne vois pas la différence).

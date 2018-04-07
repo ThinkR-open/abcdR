@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2011-11-09 15:35:31
 ---
- <pre><code>var &lt;- expr</pre> <br />Assigne l'expression à la variable<br /><br />  <pre><code>var = expr</pre>  <br />Assigne l'expression à la variable <br /><br />  <pre><code>expr -&gt; var</pre>  <br />Assigne l'expression à la variable<br /><br /><br />
+ <pre><code>var &lt;- expr</code></pre> <br />Assigne l'expression à la variable<br /><br />  <pre><code>var = expr</code></pre>  <br />Assigne l'expression à la variable <br /><br />  <pre><code>expr -&gt; var</code></pre>  <br />Assigne l'expression à la variable<br /><br /><br />

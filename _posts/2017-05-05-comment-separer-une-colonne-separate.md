@@ -15,4 +15,4 @@ post_date: 2017-05-05 09:40:15
 <p><em>separate</em> prend quatre arguments principaux : le tableau, le nom de la colonne à séparer, les noms des colonnes cibles, et le séparateur.
 <pre><code>library(tidyr)
 data("presidential")
-separate(presidential, start, c("y","m", "d"), sep = "-")</pre>
+separate(presidential, start, c("y","m", "d"), sep = "-")</code></pre>

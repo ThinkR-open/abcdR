@@ -20,7 +20,7 @@ Ensuite, c'est tout simple, il suffit d'utiliser le geom <code>geom_boxplot</cod
   data("DNase")
   ggplot(DNase, aes(Run, density)) +
   geom_boxplot()
-</pre>
+</code></pre>
 Comment lire une boîte à moustache ?
 <ul>
  	<li>Le gros trait central indique la médiane.</li>

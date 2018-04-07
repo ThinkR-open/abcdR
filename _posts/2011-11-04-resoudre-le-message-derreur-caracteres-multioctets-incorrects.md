@@ -13,6 +13,6 @@ Ce message apparaît lorsque l'on essaye de lancer un script initialement écrit
 Il s'agit d'un souci d'encodage.
  <br />
 il est possible de corriger cela grâce au script suivant (remplacer latin1 par l'encodage d'origine du fichier)
-<br /><pre><code>options(encoding="latin1")</pre>
+<br /><pre><code>options(encoding="latin1")</code></pre>
 <br />Ou alors <br />
-<pre><code>options(encoding="utf-8")</pre>
+<pre><code>options(encoding="utf-8")</code></pre>

@@ -20,7 +20,7 @@ post_date: 2017-07-20 10:35:08
   [1] "une chaine de caractères"
   str_c("une", "chaine", "de", "caractères", sep = "_")
   [1] "une_chaine_de_caractères"
-</pre></p>
+</code></pre></p>
 <p>À noter : vous pouvez utiliser la fonction <code>str_replace_na</code>, pour remplacer les valeurs manquantes de la chaînes de caractères par un "NA".</p>
 <p>À noter (bis) : pour concaténer un vecteur de chaîne de caractères, il faudra faire appel à l'argument <code>collapse = ""</code>.</p>
 <p><pre><code>
@@ -30,4 +30,4 @@ post_date: 2017-07-20 10:35:08
   [5] &quot;avec&quot;       NA
   str_c(str_replace_na(chaine), collapse = &quot; &quot;)
   [1] &quot;une chaine de caractères avec NA&quot;
-</pre></p>
+</code></pre></p>

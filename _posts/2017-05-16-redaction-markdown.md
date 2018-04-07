@@ -29,5 +29,5 @@ __Un texte en gras__
 ```{r}
 Une portion de code R
 ```
-</pre>
+</code></pre>
 <p>Et pour en savoir plus sur les commandes, rendez-vous sur la <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf" target="_blank">Cheatsheet officielle</a> !

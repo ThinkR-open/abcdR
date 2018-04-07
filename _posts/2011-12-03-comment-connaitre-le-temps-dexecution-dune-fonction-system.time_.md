@@ -14,4 +14,4 @@ categories:
   - optimisation
   - programmer avec R
 ---
-Lorsque l'on réalise des scripts qui vont tourner un certain temps avant d'aboutir au résultat final, il est essentiel d'en optimiser le fonctionnement pour gagner du temps. Il nous faut pour cela un bon indicateur : comment savoir le temps que dure une fonction ou un script ? <br />Vous pouvez utiliser la fonction <strong>system.time</strong><br /><br /><br /><br /> <pre lang='rsplus'><br />system.time(for ( i in 1:10000){print(i)})<br />system.time(for ( i in 1:10000){cat(i)}) <br /></pre>
+Lorsque l'on réalise des scripts qui vont tourner un certain temps avant d'aboutir au résultat final, il est essentiel d'en optimiser le fonctionnement pour gagner du temps. Il nous faut pour cela un bon indicateur : comment savoir le temps que dure une fonction ou un script ? <br />Vous pouvez utiliser la fonction <strong>system.time</strong><br /><br /><br /><br /> <pre lang='rsplus'><br />system.time(for ( i in 1:10000){print(i)})<br />system.time(for ( i in 1:10000){cat(i)}) <br /></code></pre>
