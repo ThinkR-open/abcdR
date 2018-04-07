@@ -11,12 +11,11 @@ permalink: >
 published: true
 post_date: 2011-11-09 11:28:03
 ---
-2228
+2239
 Il est souvent utile de pouvoir comparer deux séries de données en algorithmique. Il existe quelques fonctions qui permettent ceci :
 
 
-<pre><code> 
-	#Prenons 2 séries de valeurs
+<pre><code>#Prenons 2 séries de valeurs
 	x=c(1,5,8,6,4,9,3,8)
 	y=c(5,5,4,3,8,7,7)
 </code></pre>
