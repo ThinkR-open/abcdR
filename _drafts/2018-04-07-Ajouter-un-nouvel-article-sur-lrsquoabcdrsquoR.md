@@ -1,14 +1,11 @@
 ---
-ID: 3778
+ID: 3888
 post_title: 'Ajouter un nouvel article sur l&rsquo;abcd&rsquo;R'
-author: Vincent
+author: vincent
 post_excerpt: ""
 layout: post
-permalink: https://abcdr.guyader.pro/?p=3778
+permalink: https://abcdr.thinkr.fr/?p=3888
 published: false
-tags: [ ]
-categories:
-  - Non classé
 ---
 Pour proposer un article sur ce site Internet, nous passons par notre compte [Github ThinkR-open/abcdR](https://github.com/ThinkR-open/abcdR/).  
 Vous devrez faire un fork de notre dépôt github, ajouter un article au format markdown dans le dossier **_post** et proposer une pull request.  
@@ -24,7 +21,7 @@ post_title: Titre de votre article
 author: votre_nom_d_auteur
 layout: post
 published: true
-permalink: >
+permalink: &gt;
   https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/
 categories:
   - graphique
