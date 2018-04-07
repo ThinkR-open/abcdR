@@ -11,8 +11,7 @@ permalink: >
 published: true
 post_date: 2011-11-09 11:28:03
 ---
-TEST modif
-
+2228
 Il est souvent utile de pouvoir comparer deux séries de données en algorithmique. Il existe quelques fonctions qui permettent ceci :
 
 
