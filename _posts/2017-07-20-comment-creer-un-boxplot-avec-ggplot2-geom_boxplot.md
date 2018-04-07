@@ -16,7 +16,7 @@ Les boîtes à moustaches vous plaisent, mais R base vous lasse ? Tournez-vous v
 Si vous ne savez pas encore comment <strong>créer un graphique avec {ggplot2}</strong>, nous vous invitons à visiter notre <a href="https://abcdr.thinkr.fr/comment-se-construit-un-graphique-avec-ggplot2/">page dédiée</a>.
 
 Ensuite, c'est tout simple, il suffit d'utiliser le geom <code>geom_boxplot</code> ! À l'intérieur de votre <code>aes</code>, x sera votre variable de groupe, et y la variable numérique à visualiser.
-<pre>  library(ggplot2)
+<pre><code>  library(ggplot2)
   data("DNase")
   ggplot(DNase, aes(Run, density)) +
   geom_boxplot()

@@ -18,7 +18,7 @@ post_date: 2017-07-20 10:52:04
 <li> - La condition à remplir (le test effectué qui devra renvoyé TRUE) </li>
 <li> - La transformation à effectuer.</li></p>
 <p>Et pour comprendre par l'exemple :</p>
-<p><pre>
+<p><pre><code>
   library(dplyr)
   data("iris")
   str(iris)
@@ -38,6 +38,6 @@ post_date: 2017-07-20 10:52:04
  $ Species     : Factor w/ 3 levels  ...
 </pre></p>
 <p>À noter : il est possible d'intégrer ses propres fonctions de transformation. Par exemple, si l'on veut les mesures d'iris en millimètres, plutôt qu'en centimètres.</p>
-<p><pre>
+<p><pre><code>
   mutate_if(iris, is.numeric, function(x){x * 100})
 </pre></p>

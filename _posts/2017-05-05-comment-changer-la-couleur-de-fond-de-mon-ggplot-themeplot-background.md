@@ -12,7 +12,7 @@ published: true
 post_date: 2017-05-05 09:24:02
 ---
 Pour modifier la couleur de fond de votre graphique avec ggplot, utilisez l'argument suivant dans votre theme() :
-<pre>
+<pre><code>
 library(ggplot2)
 ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
   geom_point() +

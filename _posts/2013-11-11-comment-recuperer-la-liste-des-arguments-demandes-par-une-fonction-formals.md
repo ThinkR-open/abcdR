@@ -12,4 +12,4 @@ permalink: >
 published: true
 post_date: 2013-11-11 17:12:20
 ---
-Pour se remémorer les parametres attendu d'une fonction (ou les réutiliser) on peut utiliser la fonction formals<br /><br /><br /> <pre><br />formals(plot)<br />formals(ls)<br /><br /></pre>
+Pour se remémorer les parametres attendu d'une fonction (ou les réutiliser) on peut utiliser la fonction formals<br /><br /><br /> <pre><code><br />formals(plot)<br />formals(ls)<br /><br /></pre>

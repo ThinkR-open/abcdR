@@ -14,7 +14,7 @@ post_date: 2017-07-20 10:35:08
 <p>Amoureux du <code>paste</code> de R base ? <code>str_c</code> du package {stringr} va vous plaire !</p>
 <p>Pourquoi utiliser <code>str_c</code> ? Pour sa simplicité, mais aussi sa puissance. La première raison de choisir cette fonction : développée dans {stringr}, elle suit la convention d'écriture de toutes les fonctions de ce package. Ainsi, pour concaténer des caractères (strings en anglais), il vous suffira d'appeler <code>str_c</code>.</p>
 <p>Comme avec la fonction de base, vous pouvez choisir le séparateur : </p>
-<p><pre>
+<p><pre><code>
   library(stringr)
   str_c("une", "chaine", "de", "caractères", sep = " ")
   [1] "une chaine de caractères"
@@ -23,7 +23,7 @@ post_date: 2017-07-20 10:35:08
 </pre></p>
 <p>À noter : vous pouvez utiliser la fonction <code>str_replace_na</code>, pour remplacer les valeurs manquantes de la chaînes de caractères par un "NA".</p>
 <p>À noter (bis) : pour concaténer un vecteur de chaîne de caractères, il faudra faire appel à l'argument <code>collapse = ""</code>.</p>
-<p><pre>
+<p><pre><code>
   chaine &lt;- c(&quot;une&quot;, &quot;chaine&quot;, &quot;de&quot;, &quot;caractères&quot;, &quot;avec&quot;, NA)
   chaine
   [1] &quot;une&quot;        &quot;chaine&quot;     &quot;de&quot;         &quot;caractères&quot;

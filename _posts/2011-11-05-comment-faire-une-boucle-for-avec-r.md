@@ -9,11 +9,11 @@ permalink: >
 published: true
 post_date: 2011-11-05 20:36:34
 ---
-<pre>for ( i in 1:10) { <br />
+<pre><code>for ( i in 1:10) { <br />
 print(i) <br />
 }</pre>  <br />
 Cette commande peut se traduire par :
-<pre>Pour (i allant de 1 à 10) <br />
+<pre><code>Pour (i allant de 1 à 10) <br />
 { affiche i}</pre>  <br />
 Il faut noter que les parenthèses <strong>()</strong> servent à définir la variable et les valeurs qu'elle va prendre successivement à chaque tour de boucle. Les accolades <strong>{}</strong> servent à délimiter les actions à effectuer pour chacune des valeurs prises par la variable.
  <br /><br />

@@ -15,7 +15,7 @@ post_date: 2017-05-11 07:12:19
 	<li>date_breaks, pour la durée entre chaque point principal de l'axe</li>
 	<li>date_label, pour définir le formatage de l'affichage de la légende</li>
 </ul>
-<pre>library(tidyverse)
+<pre><code>library(tidyverse)
 library(ggplot2)
 library(nycflights13)
 data %

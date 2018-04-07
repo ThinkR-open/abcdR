@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2016-04-19 08:33:18
 ---
-la fonction <strong>as.formula </strong>permet de fabriquer une formule à partir d 'une chaine de caractères<br /> <pre><p>data(iris)</p><p>chaine&lt;-paste0(names(iris)[1],</p><p>" ~ ",paste(names(iris)[-1],collapse=" + "))</p><p>as.formula(chaine)</p><p>lm(as.formula(chaine),data=iris)</p></pre>
+la fonction <strong>as.formula </strong>permet de fabriquer une formule à partir d 'une chaine de caractères<br /> <pre><code><p>data(iris)</p><p>chaine&lt;-paste0(names(iris)[1],</p><p>" ~ ",paste(names(iris)[-1],collapse=" + "))</p><p>as.formula(chaine)</p><p>lm(as.formula(chaine),data=iris)</p></pre>

@@ -12,7 +12,7 @@ published: true
 post_date: 2017-05-05 09:26:59
 ---
 La fonction labs(), à utiliser pendant la construction de votre ggplot, vous permet d'intégrer titre, sous-titres, et légendes.
-<pre>ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
+<pre><code>ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
   geom_point() +
   labs(title = "Mon titre",
        subtitle = "Mon sous titre \n sur deux lignes",

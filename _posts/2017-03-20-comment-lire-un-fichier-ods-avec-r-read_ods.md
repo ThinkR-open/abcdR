@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2017-03-20 23:07:54
 ---
-apres avoir installé et chargé le package readODS vous pouvez utiliser la fontion read_ods<br /><br /> <pre><br />library(readODS)<br />dataset &lt;- read_ods("fichier.ods")<br /><br /></pre>
+apres avoir installé et chargé le package readODS vous pouvez utiliser la fontion read_ods<br /><br /> <pre><code><br />library(readODS)<br />dataset &lt;- read_ods("fichier.ods")<br /><br /></code></pre>

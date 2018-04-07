@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2013-10-23 12:14:57
 ---
-la fonction <strong>transform</strong> permet de contruire une nouvelle colonne et de la rajouter a un jeu de donnée.<br /><br /> <pre><br /> transform(iris,Sepal.surface=Sepal.Length * Sepal.Width) <br /></pre>
+la fonction <strong>transform</strong> permet de contruire une nouvelle colonne et de la rajouter a un jeu de donnée.<br /><br /> <pre><code><br /> transform(iris,Sepal.surface=Sepal.Length * Sepal.Width) <br /></pre>

@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2015-07-08 08:40:14
 ---
-<p> <pre><br />iris</p><p>iris_bis &lt;- iris[,-2] # On supprime la 2eme colonne</p><p>iris_ter &lt;- iris[-20,] # On supprime la 20eme ligne</p><p></pre> </p>
+<p> <pre><code><br />iris</p><p>iris_bis &lt;- iris[,-2] # On supprime la 2eme colonne</p><p>iris_ter &lt;- iris[-20,] # On supprime la 20eme ligne</p><p></pre> </p>

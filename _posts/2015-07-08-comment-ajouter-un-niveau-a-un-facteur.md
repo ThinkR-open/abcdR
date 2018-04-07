@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2015-07-08 07:37:59
 ---
-<p>Il est parfois utile d’ajouter un niveau, absent à l’intérieur du facteur mais qui est susceptible de devoir être ajouter par la suite.</p><p> <pre><br />x &lt;- factor(c("A","A","B","A","C","A","B","A","B","B","C","A","C"))</p><p>levels(x) &lt;- c(levels(x),"D") # On ajoute le niveau “D” au facteur x</p><p></pre>   </p><p>On obtient :</p><p> <pre><br /> x</p><p>[1] A A B A C A B A B B C A C</p><p>Levels: A B C D<br /></pre> </p>
+<p>Il est parfois utile d’ajouter un niveau, absent à l’intérieur du facteur mais qui est susceptible de devoir être ajouter par la suite.</p><p> <pre><code><br />x &lt;- factor(c("A","A","B","A","C","A","B","A","B","B","C","A","C"))</p><p>levels(x) &lt;- c(levels(x),"D") # On ajoute le niveau “D” au facteur x</p><p></pre>   </p><p>On obtient :</p><p> <pre><code><br /> x</p><p>[1] A A B A C A B A B B C A C</p><p>Levels: A B C D<br /></pre> </p>

@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2015-05-20 21:51:38
 ---
-la fonction hist permet de tracer rapidement et facilement un histogramme. Cette fonction prend un vecteur en parametre. <pre><br />data(iris)<br /> hist(iris$Sepal.Length) <br /> hist(iris$Sepal.Length,nclass=3) <br /></pre>
+la fonction hist permet de tracer rapidement et facilement un histogramme. Cette fonction prend un vecteur en parametre. <pre><code><br />data(iris)<br /> hist(iris$Sepal.Length) <br /> hist(iris$Sepal.Length,nclass=3) <br /></pre>

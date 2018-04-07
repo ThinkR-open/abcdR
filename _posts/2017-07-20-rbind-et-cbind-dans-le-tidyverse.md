@@ -14,7 +14,7 @@ post_date: 2017-07-20 14:42:15
 <p>Plus de robustesse, plus de sécurité, nous avons nommé <code>bind_rows</code> et <code>bind_cols</code> !</p>
 <p>Package du tidyverse, <strong>{dplyr} regorge d'outils ultra efficaces pour la manipulation de données</strong>. Parmi eux, deux petites fonctions qui, à première vue, ne payent pas de mine... et pourtant. <code>bind_rows</code> et <code>bind_cols</code> vous permettent d'effectuer l'équivalent de <code>rbind</code> et <code>cbind</code> mais sont plus fonctionnelles, et affichent des résultats plus propres et exploitables.</p>
 <p>Commençons par créer deux tableaux. Si nous tentons de les juxtaposer avec la fonction de base <code>rbind</code>, nous aurons une erreur. À l'inverse, <code>bind_rows</code> fera le job, en peuplant les "colonnes manquantes" par des NA.</p>
-<p><pre>
+<p><pre><code>
   library(dplyr)
   df1 &lt;- data.frame(a = LETTERS,
                     b = LETTERS)
@@ -27,7 +27,7 @@ post_date: 2017-07-20 14:42:15
 </pre></p>
 </p>
 <p>Au tour de <code>bind_cols</code>. Pas de soucis dans nos deux exemples du dessus, en base ou avec la fonction de {dplyr}. Testons avec deux nouveaux tableaux.</p>
-<p><pre>
+<p><pre><code>
   df3 &lt;- data.frame(a = LETTERS[1:2],
                     b = LETTERS[1:2])
   df4 &lt;- data.frame(a = LETTERS[1:2],

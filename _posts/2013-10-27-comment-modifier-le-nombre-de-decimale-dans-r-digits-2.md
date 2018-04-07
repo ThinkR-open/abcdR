@@ -11,4 +11,4 @@ permalink: >
 published: true
 post_date: 2013-10-27 17:52:45
 ---
-Par defaut R affiche 7 chiffres apres la virgule<br /><br /> <pre><br />pi<br /> options()$digits <br /> </pre> <br /><br />Vouc pouvez modifier cela soit de maniere ponctuelle soit en adaptant les options de R<br /><br /> <pre><br /> print(pi,digits=11) <br /> options(digits=8) <br />pi<br /> options()$digits <br /></pre>
+Par defaut R affiche 7 chiffres apres la virgule<br /><br /> <pre><code><br />pi<br /> options()$digits <br /> </pre> <br /><br />Vouc pouvez modifier cela soit de maniere ponctuelle soit en adaptant les options de R<br /><br /> <pre><code><br /> print(pi,digits=11) <br /> options(digits=8) <br />pi<br /> options()$digits <br /></pre>

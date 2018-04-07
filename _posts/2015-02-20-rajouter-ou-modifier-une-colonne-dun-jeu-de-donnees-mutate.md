@@ -9,4 +9,4 @@ permalink: >
 published: true
 post_date: 2015-02-20 19:57:54
 ---
-La fonction <strong>mutate</strong> est plus rapide et plus pratique que la fonction <strong>transform</strong>. Elle permet en une seule instruction de créer plusieurs colonnes.<br /><br /> <pre><br />require(plyr)<br />data(iris)<br />  mutate(iris,colA=Sepal.Length * Sepal.Width ,colB=colA*3) <br /> <br /><br /></pre>
+La fonction <strong>mutate</strong> est plus rapide et plus pratique que la fonction <strong>transform</strong>. Elle permet en une seule instruction de créer plusieurs colonnes.<br /><br /> <pre><code><br />require(plyr)<br />data(iris)<br />  mutate(iris,colA=Sepal.Length * Sepal.Width ,colB=colA*3) <br /> <br /><br /></pre>

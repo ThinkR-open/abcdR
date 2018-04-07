@@ -17,7 +17,7 @@ post_date: 2017-05-05 09:34:17
 	<li>la sélection : elle est plus stricte dans un tibble — elle ne se fait jamais en partial match, et un message d'erreur s'affiche lorsque vous sélectionner un élément qui n'existe pas.</li>
 </ul>
 Pour créer un tibble, deux solutions : la conversion depuis un data.frame, ou la création à la main.
-<pre>library(tibble)
+<pre><code>library(tibble)
 data("swiss")
 as_tibble(swiss)
 tibble(x = 1:4,
