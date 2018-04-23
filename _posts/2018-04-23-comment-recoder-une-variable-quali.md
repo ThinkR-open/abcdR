@@ -78,7 +78,7 @@ Levels: Fraise Framboise Pomme NR
 À noter que toutes ces opérations sont sensibles à la casse (majuscules/minuscules), aux accents, aux espaces, etc. 
 Il faut donc recopier exactement à l'identique les noms des anciennes valeurs.
 
-À noter que l'extension `questionr` propose un petit *addin* (interface graphique ponctuelle) pour faciliter la génération 
-du code du recodage d'une variable qualitative. 
+À noter également que l'extension `questionr` propose un petit *addin* (interface graphique ponctuelle) pour 
+faciliter la génération du code du recodage d'une variable qualitative. 
 
 `forcats` propose par ailleurs de nombreuses autres fonctions utiles pour travailler avec les variables qualitatives.
