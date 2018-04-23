@@ -4,8 +4,7 @@ post_title: 'Ajouter un nouvel article sur l&rsquo;abcd&rsquo;R'
 author: seb
 post_excerpt: ""
 layout: post
-permalink: >
-  https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/
+permalink: "https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/"
 published: true
 post_date: 2018-04-06 21:54:50
 ---
