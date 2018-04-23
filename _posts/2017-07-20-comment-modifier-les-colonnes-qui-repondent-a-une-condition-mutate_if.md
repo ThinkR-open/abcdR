@@ -14,9 +14,9 @@ post_date: 2017-07-20 10:52:04
 ---
 <p>Parfois, on souhaite<strong> appliquer une fonction à plusieurs colonnes de notre tableau, en fonction d'une condition</strong>. Pour cela, direction <code>mutate_if()</code>, du package {dplyr}.</p>
 <p>Comme son nom l'indique, <code>mutate_if</code> effectue une modification si la condition est remplie. Les arguments sont :
-<li> - Un tableau de données </li>
-<li> - La condition à remplir (le test effectué qui devra renvoyé TRUE) </li>
-<li> - La transformation à effectuer.</li></p>
+<li> Un tableau de données </li>
+<li> La condition à remplir (le test effectué qui devra renvoyé TRUE) </li>
+<li> La transformation à effectuer.</li></p>
 <p>Et pour comprendre par l'exemple :</p>
 <p><pre><code>
   library(dplyr)
