@@ -23,6 +23,7 @@ Celle-ci prend en premier argument un vecteur, puis une série de recodages sous
 Exemple :
 
 ```r
+library(forcats)
 f &lt;- c(&quot;Fraise&quot;, &quot;Framboise&quot;, &quot;Pomme&quot;, &quot;Fraise&quot;)
 f &lt;- fct_recode(f,
                 &quot;Ananas&quot; = &quot;Fraise&quot;,
