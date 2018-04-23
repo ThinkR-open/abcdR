@@ -31,4 +31,13 @@ Si le comptage de vos modalités est déjà dans le tableau, il vous faudra spé
   ggplot(df, aes(a, b)) +
     geom_bar(stat = "identity")
 </code></pre>
+
+Ou bien utiliser le geom spécifique <code>geom_col</code> :
+
+<pre><code>
+ggplot(df, aes(a, b)) +
+    geom_col()
+</code></pre>
+
+
 En savoir plus : <a href="https://abcdr.thinkr.fr/comment-se-construit-un-graphique-avec-ggplot2/">Comment construire un graphique avec ggplot2</a>.
