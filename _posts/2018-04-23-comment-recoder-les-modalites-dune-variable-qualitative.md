@@ -13,12 +13,9 @@ categories:
   - factor
   - tidyverse
 ---
-Une opération courante quand on travaille avec des variables qualitatives (de type `factor` ou `character`) est de 
-modifier les valeurs des modalités de cette variable. Ceci permet de les rendre plus courtes, plus explicites, ou
-même de les regrouper si on leur attribue le même nom.
+Une opération courante quand on travaille avec des variables qualitatives (de type `factor` ou `character`) est de modifier les valeurs des modalités de cette variable. Ceci permet de les rendre plus courtes, plus explicites, ou même de les regrouper si on leur attribue le même nom.
 
-La fonction `fct_recode`, de l'extension `forcats` (qui fait partie du *tidyverse*) facilite ce type d'opérations.
-Celle-ci prend en premier argument un vecteur, puis une série de recodages sous la forme `Nouvelle valeur = Ancienne valeur`.
+La fonction `fct_recode`, de l'extension `forcats` (qui fait partie du *tidyverse*) facilite ce type d'opérations. Celle-ci prend en premier argument un vecteur, puis une série de recodages sous la forme `Nouvelle valeur = Ancienne valeur`.
 
 Exemple :
 
@@ -80,10 +77,8 @@ f
 Levels: Fraise Framboise Pomme NR
 ```
 
-À noter que toutes ces opérations sont sensibles à la casse (majuscules/minuscules), aux accents, aux espaces, etc. 
-Il faut donc recopier exactement à l'identique les noms des anciennes valeurs.
+À noter que toutes ces opérations sont sensibles à la casse (majuscules/minuscules), aux accents, aux espaces, etc. Il faut donc recopier exactement à l'identique les noms des anciennes valeurs.
 
-À noter également que l'extension `questionr` propose un petit *addin* (interface graphique ponctuelle) pour 
-faciliter la génération du code du recodage d'une variable qualitative. 
+À noter également que l'extension `questionr` propose un petit *addin* (interface graphique ponctuelle) pour faciliter la génération du code du recodage d'une variable qualitative. 
 
 `forcats` propose par ailleurs de nombreuses autres fonctions utiles pour travailler avec les variables qualitatives.
