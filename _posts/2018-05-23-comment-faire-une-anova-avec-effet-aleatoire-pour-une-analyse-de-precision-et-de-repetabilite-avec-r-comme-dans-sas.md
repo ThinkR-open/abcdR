@@ -46,6 +46,7 @@ data</code></pre>
 Avec un effet aléatoire sur le jour, l’anova peut se faire avec la fonction <code>anovaVCA</code> du package {VCA}. Cette fonction, avec les paramètres par défaut, réalise exactement la même Avona Type-I que la fonction <code>PROC VARCOMP</code> dans SAS.
 <pre class="r"><code>library(VCA)
 # Result Variance Component Analysis
+res <- anovaVCA(mesure ~ (technicien)/jour, 
                 Data = as.data.frame(data))
 res</code></pre>
 <pre><code>Result Variance Component Analysis:
