@@ -26,7 +26,7 @@ data &lt;- tibble(
   concentration = rep(c(10, 30, 50, 80), 3*2),
   technicien = rep(c("A", "B"), each = 3*2*2),
   jour = rep(rep(1:3, each = 2*2), 2),
-  replicat = rep(1:2, times = 2*3*2)
+  replicat = rep(1:2, times = 2*3*2)) %>%
   mutate(mesure = ifelse(
     technicien == "A",
     0.2 * concentration + rnorm(12, sd = 3),
