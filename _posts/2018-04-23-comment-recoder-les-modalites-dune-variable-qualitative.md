@@ -1,7 +1,7 @@
 ---
 ID: 4479
 post_title: 'Comment recoder les modalités d&rsquo;une variable qualitative ?'
-author: juba
+author: vincent
 post_excerpt: ""
 layout: post
 permalink: >

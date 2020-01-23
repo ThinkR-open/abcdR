@@ -7,6 +7,8 @@ layout: page
 permalink: https://abcdr.thinkr.fr/
 published: true
 post_date: 2011-11-02 20:22:51
+tags: [ ]
+categories: [ ]
 ---
 L'Abcd'R est un <strong>site collaboratif de <a href="https://abcdr.thinkr.fr/tous-les-scripts/">partage de scripts</a></strong>, de codes et d'astuces sur le <strong>logiciel R</strong> (GNU-R).
 Combien d'entre nous ont été bloqués par des soucis de base: "Comment importer des données excel ?", "Comment fait-on déjà pour utiliser apply ?"...

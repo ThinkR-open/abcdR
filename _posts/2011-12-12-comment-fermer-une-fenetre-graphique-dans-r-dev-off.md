@@ -10,5 +10,8 @@ permalink: >
   https://abcdr.thinkr.fr/comment-fermer-une-fenetre-graphique-dans-r-dev-off/
 published: true
 post_date: 2011-12-12 11:06:21
+tags: [ ]
+categories:
+  - graphique
 ---
 Pour fermer la dernière fenêtre vous pouvez utiliser <strong>dev.off()</strong> <pre><code><br /><p>data(iris)<br />plot(iris)<br />plot(1:10)<br />dev.off() # ferme le dernier graphique</p></code></pre>

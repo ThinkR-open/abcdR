@@ -7,6 +7,8 @@ layout: page
 permalink: https://abcdr.thinkr.fr/ressources/
 published: true
 post_date: 2011-11-02 20:24:24
+tags: [ ]
+categories: [ ]
 ---
 <div id="sansa">
 <h1>Livres sur R:</h1>
@@ -52,7 +54,7 @@ Un livre très volumineux avec beaucoup de choses. Crawley passe rapidement en r
 <tr>
 <td><img style="display: none !important;" src="http://ws.assoc-amazon.fr/widgets/q?_encoding=UTF8&amp;Format=_SL110_&amp;ASIN=0691125228&amp;MarketPlace=FR&amp;ID=AsinImage&amp;WS=1&amp;tag=abcdr-21&amp;ServiceVersion=20070822" border="0" /></td>
 <td style="text-decoration: none;"><strong>Benjamin M. Bolker ; Ecological Models and Data in R, Princeton University Press:</strong>
-C’est LE LIVRE qu’il faut avoir quand on fait de la modélisation en écologie et qu’on utilise R. Idéal pour ceux qui veulent s’initier à la modélisation et à l’inférence statistique avec R et Winbugs. N’hésitez pas à consulter <a href="http://www.math.mcmaster.ca/~bolker/emdbook/" target="_blank" rel="noopener">le site internet de Benjamin Bolker</a> qui met beaucoup de choses à disposition de qui veut bien (même une version presque complète de son livre en pdf...)
+C’est LE LIVRE qu’il faut avoir quand on fait de la modélisation en écologie et qu’on utilise R. Idéal pour ceux qui veulent s’initier à la modélisation et à l’inférence statistique avec R et Winbugs. N’hésitez pas à consulter <a href="http://www.math.mcmaster.ca/~bolker/emdbook/" target="_blank" rel="noopener noreferrer">le site internet de Benjamin Bolker</a> qui met beaucoup de choses à disposition de qui veut bien (même une version presque complète de son livre en pdf...)
 <span style="text-decoration: underline; color: #ff0000; float: right;">cliquez ici</span></td>
 </tr>
 </tbody>
@@ -95,24 +97,24 @@ Cependant, c'est parfois un obstacle supplémentaire lors de la découverte de R
 
 <h2>Spécial débutant</h2>
 
-Le tutoriel R du site du zéro, idéal pour s’initier à la programmation R : <a href="http://www.siteduzero.com/tutoriel-3-374508-effectuez-vos-etudes-statistiques-avec-r.html" target="_blank" rel="noopener">Site du zéro</a>
-R pour les statophobes de Denis Poinsot (Université de Rennes I) : <a title="R pour les statophobes" href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf" target="_blank" rel="noopener">R pour les statophobes</a>
-R pour les débutants d'Emmanuel Paradis : <a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf" target="_blank" rel="noopener">R pour les débutants</a>
+Le tutoriel R du site du zéro, idéal pour s’initier à la programmation R : <a href="http://www.siteduzero.com/tutoriel-3-374508-effectuez-vos-etudes-statistiques-avec-r.html" target="_blank" rel="noopener noreferrer">Site du zéro</a>
+R pour les statophobes de Denis Poinsot (Université de Rennes I) : <a title="R pour les statophobes" href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf" target="_blank" rel="noopener noreferrer">R pour les statophobes</a>
+R pour les débutants d'Emmanuel Paradis : <a href="http://cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf" target="_blank" rel="noopener noreferrer">R pour les débutants</a>
 
 <h2>Cours avancés et aides mémoires</h2>
 
 - Un blog de tutoriels débutants et avancés : <a href="https://thinkr.fr/le-blog/">https://thinkr.fr/le-blog/</a>
 - Un blog d'astuces avancées : <a href="https://rtask.thinkr.fr/blog/">https://rtask.thinkr.fr/blog/</a>
 - Un site sur l’enseignement en biostatistique de l’Université de Lyon1 avec beaucoup de
-documents disponibles :<a href="http://pbil.univ-lyon1.fr/R/enseignement.html" target="_blank" rel="noopener">http://pbil.univ-lyon1.fr/R/enseignement.html</a>
-- Un pdf/aide mémoire quasi exhaustif <a href="http://cran.r-project.org/doc/contrib/Herve-Aide-memoire-statistique.pdf" target="_blank" rel="noopener">
+documents disponibles :<a href="http://pbil.univ-lyon1.fr/R/enseignement.html" target="_blank" rel="noopener noreferrer">http://pbil.univ-lyon1.fr/R/enseignement.html</a>
+- Un pdf/aide mémoire quasi exhaustif <a href="http://cran.r-project.org/doc/contrib/Herve-Aide-memoire-statistique.pdf" target="_blank" rel="noopener noreferrer">
 http://cran.r-project.org/doc/contrib/Herve-Aide-memoire-statistique.pdf</a>
-- Site de Daniel Herlemont : Économétrie des Marchés financiers avec R : <a href="http://www.yats.com/doc/r-trading-projet-index.html" target="_blank" rel="noopener">http://www.yats.com/doc/r-trading-projet-index.html</a>
-- Un aide-mémoire très bien fait : <a href="http://www.duclert.org" target="_blank" rel="noopener">www.duclert.org</a>
-- Autre aide mémoire, très complet : <a href="http://zoonek2.free.fr/UNIX/48_R_2004/all.html" target="_blank" rel="noopener">http://zoonek2.free.fr/UNIX/48_R_2004/all.html</a>
-- Aide mémoire hyper complet : <a href="http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf" target="_blank" rel="noopener">http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf</a>
-- Des supports de formation aux statistiques appliquées : <a href="http://rstat.ouvaton.org" target="_blank" rel="noopener">rstat.ouvaton.org</a>
-- Le forum du Cirad où l'on peut poser ses questions et... répondre à celles des autres: <a href="http://forums.cirad.fr/logiciel-R" target="_blank" rel="noopener">forums.cirad.fr/logiciel-R</a>
+- Site de Daniel Herlemont : Économétrie des Marchés financiers avec R : <a href="http://www.yats.com/doc/r-trading-projet-index.html" target="_blank" rel="noopener noreferrer">http://www.yats.com/doc/r-trading-projet-index.html</a>
+- Un aide-mémoire très bien fait : <a href="http://www.duclert.org" target="_blank" rel="noopener noreferrer">www.duclert.org</a>
+- Autre aide mémoire, très complet : <a href="http://zoonek2.free.fr/UNIX/48_R_2004/all.html" target="_blank" rel="noopener noreferrer">http://zoonek2.free.fr/UNIX/48_R_2004/all.html</a>
+- Aide mémoire hyper complet : <a href="http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf" target="_blank" rel="noopener noreferrer">http://cran.r-project.org/doc/contrib/Kauffmann_aide_memoire_R.pdf</a>
+- Des supports de formation aux statistiques appliquées : <a href="http://rstat.ouvaton.org" target="_blank" rel="noopener noreferrer">rstat.ouvaton.org</a>
+- Le forum du Cirad où l'on peut poser ses questions et... répondre à celles des autres: <a href="http://forums.cirad.fr/logiciel-R" target="_blank" rel="noopener noreferrer">forums.cirad.fr/logiciel-R</a>
 
 <h1>Ressources anglophones</h1>
 
@@ -120,9 +122,9 @@ http://cran.r-project.org/doc/contrib/Herve-Aide-memoire-statistique.pdf</a>
 
 <blockquote>Il est certains sites dont il serait vraiment dommage de se passer. Inutile d'être bilingue pour copier et coller des morceaux de code, que diable!</blockquote>
 
-- Le site officiel : <a href="http://www.r-project.org/" target="_blank" rel="noopener">http://www.r-project.org/</a>
-- Cliquez sur un graphique qui ressemble à ce que vous voulez faire pour voir le code... <a href="http://r-graph-gallery.com/" target="_blank" rel="noopener">R Graph Gallery</a>
+- Le site officiel : <a href="http://www.r-project.org/" target="_blank" rel="noopener noreferrer">http://www.r-project.org/</a>
+- Cliquez sur un graphique qui ressemble à ce que vous voulez faire pour voir le code... <a href="http://r-graph-gallery.com/" target="_blank" rel="noopener noreferrer">R Graph Gallery</a>
 - L'indispensable récapitulatif des nouveautés et articles de blog de la semaine: <a href="https://rweekly.org/">https://rweekly.org/</a>  
-- En anglais, il y a PLEIN de ressources : <a href="http://www.r-bloggers.com" target="_blank" rel="noopener">www.r-bloggers.com</a>
-- Un site avec des morceaux de code dedans, très appliqué et très pointu : <a href="http://rtricks.wordpress.com" target="_blank" rel="noopener">rtricks.wordpress.com</a>
-- L'aide mémoire ultime : <a href="http://cran.r-project.org/doc/contrib/Short-refcard.pdf" target="_blank" rel="noopener">http://cran.r-project.org/doc/contrib/Short-refcard.pdf</a>
+- En anglais, il y a PLEIN de ressources : <a href="http://www.r-bloggers.com" target="_blank" rel="noopener noreferrer">www.r-bloggers.com</a>
+- Un site avec des morceaux de code dedans, très appliqué et très pointu : <a href="http://rtricks.wordpress.com" target="_blank" rel="noopener noreferrer">rtricks.wordpress.com</a>
+- L'aide mémoire ultime : <a href="http://cran.r-project.org/doc/contrib/Short-refcard.pdf" target="_blank" rel="noopener noreferrer">http://cran.r-project.org/doc/contrib/Short-refcard.pdf</a>

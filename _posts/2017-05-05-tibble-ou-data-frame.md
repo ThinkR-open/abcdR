@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.thinkr.fr/tibble-ou-data-frame/
 published: true
 post_date: 2017-05-05 09:34:17
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Commençons par un point important : un tibble est un data.frame... mais un data.frame amélioré !
 <p>Élément central du tidyverse, cette forme diffère des data.frame natifs dans deux comportements :

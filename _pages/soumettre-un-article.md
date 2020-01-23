@@ -1,13 +1,15 @@
 ---
 ID: 2720
 post_title: Proposer un Article
-author: seb
+author: Sébastien
 post_excerpt: ""
 layout: page
 permalink: >
   https://abcdr.thinkr.fr/soumettre-un-article/
 published: true
 post_date: 2013-10-21 07:22:09
+tags: [ ]
+categories: [ ]
 ---
 Pour proposer un article sur ce site Internet, nous passons par notre compte [Github ThinkR-open/abcdR](https://github.com/ThinkR-open/abcdR/).  
 Vous devrez faire un fork de notre dépôt github, ajouter un article au format markdown dans le dossier **_post** et proposer une pull request.  

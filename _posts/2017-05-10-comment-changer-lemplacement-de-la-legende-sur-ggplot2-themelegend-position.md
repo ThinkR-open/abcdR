@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-changer-lemplacement-de-la-legende-sur-ggplot2-themelegend-position/
 published: true
 post_date: 2017-05-10 13:58:59
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 Vous n'avez plus envie de voir vos légendes sur la droite ? Vous mourrez d'envie de pouvoir <strong>personnaliser encore plus votre graphique</strong> ? Faites appel à la fonction <em>theme()</em>, et à son argument<em> legend.position</em> — ce dernier vous permet de placer la légende sur le bord que vous désirez.
 <pre><code>library(ggplot2)

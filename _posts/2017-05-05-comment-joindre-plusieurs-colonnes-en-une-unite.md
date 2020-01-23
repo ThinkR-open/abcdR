@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-joindre-plusieurs-colonnes-en-une-unite/
 published: true
 post_date: 2017-05-05 09:53:01
+tags: [ ]
+categories:
+  - tidyverse
+  - Transformation de données
 ---
 <p>Si vous souhaitez unifier plusieurs colonnes en une seule, faites appel à la fonction unite(), issue du package <em>tidyr</em>.
 <p>Cette fonction prends en premier argument le nom de l'objet contenant le tableau, la colonne cible, les colonnes à lier, puis un éventuel séparateur. Notez que le séparateur de base est "_".

@@ -8,5 +8,9 @@ permalink: >
   https://abcdr.thinkr.fr/comment-ecrire-les-sortie-de-r-dans-un-fichier-texte-sink/
 published: true
 post_date: 2013-10-23 11:45:33
+tags: [ ]
+categories:
+  - exportation de données
+  - fonctions utiles
 ---
 la fonction <strong>sink</strong> permet de dérouter la sortie de R vers un fichier de sortie. elle peut etre pratique pour stocker des resultats sans s'embeter avec la mise en forme tout en gardant quelque chose de lisible.<br /><br /> <pre><code><br /><br /> print("coucou")<br />sink("monfichier.txt")<br />print("coucou") # le résultat de la commande est ecrit dans monfichier.txt<br />print(head(iris))<br />sink() <br /></code></pre>

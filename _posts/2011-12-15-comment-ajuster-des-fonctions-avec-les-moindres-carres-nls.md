@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-ajuster-des-fonctions-avec-les-moindres-carres-nls/
 published: true
 post_date: 2011-12-15 18:58:51
+tags: [ ]
+categories:
+  - inférence
+  - modélisation
 ---
 La manière la plus simple d'ajuster une fonction à des données est la méthode "géométrique" des moindres carrés (minimiser la somme des carrés des écarts correspond à maximiser la vraisemblance avec une loi normale).
 <br />
@@ -78,6 +82,3 @@ La fonction nls présente, comme beaucoup de fonctions R, de nombreux arguments 
 Enfin vous pouvez récupérer de nombreuses informations à partir de l'objet créé lors de l'ajustement : résidus, valeur des paramètres estimés etc...
 <br />
 <br />
-
-
-

@@ -1,12 +1,17 @@
 ---
 ID: 3861
 post_title: 'Ajouter un nouvel article sur l&rsquo;abcd&rsquo;R'
-author: seb
+author: Sébastien
 post_excerpt: ""
 layout: post
-permalink: "https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/"
+permalink: >
+  https://abcdr.thinkr.fr/ajouter-un-nouvel-article-sur-labcdr/
 published: true
 post_date: 2018-04-06 21:54:50
+tags: [ ]
+categories:
+  - programmer avec R
+  - rmarkdown
 ---
 Pour proposer un article sur ce site Internet, nous passons par notre compte [Github ThinkR-open/abcdR](https://github.com/ThinkR-open/abcdR/).  
 Vous devrez faire un fork de notre dépôt github, ajouter un article au format markdown dans le dossier **_post** et proposer une pull request.  

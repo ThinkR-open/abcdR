@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.thinkr.fr/le-pipe-quest-ce-que-cest/
 published: true
 post_date: 2017-05-05 08:43:40
+tags: [ ]
+categories:
+  - fonctions utiles
+  - tidyverse
 ---
 Issu du package magrittr et disponible dans le tidyverse, le pipe vous permet de passer de :
 <pre><code>library(tidyverse)

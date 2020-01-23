@@ -11,6 +11,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-modifier-les-colonnes-qui-repondent-a-une-condition-mutate_if/
 published: true
 post_date: 2017-07-20 10:52:04
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Parfois, on souhaite<strong> appliquer une fonction à plusieurs colonnes de notre tableau, en fonction d'une condition</strong>. Pour cela, direction <code>mutate_if()</code>, du package {dplyr}.</p>
 <p>Comme son nom l'indique, <code>mutate_if</code> effectue une modification si la condition est remplie. Les arguments sont :

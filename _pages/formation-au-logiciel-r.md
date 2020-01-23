@@ -8,6 +8,8 @@ permalink: >
   https://abcdr.thinkr.fr/formation-au-logiciel-r/
 published: true
 post_date: 2015-10-01 22:00:08
+tags: [ ]
+categories: [ ]
 ---
 &nbsp;
 <h1>Formation au logiciel R</h1>

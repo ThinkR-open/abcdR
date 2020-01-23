@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-creer-un-barplot-avec-ggplot-geom_bar/
 published: true
 post_date: 2017-07-25 19:01:42
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 Il s'agit d'un des formats de graphiques les plus populaires : le barplot est simple à réaliser, encore plus avec <code>ggplot2</code>. Du moins, si l'on connait ses spécificités.
 

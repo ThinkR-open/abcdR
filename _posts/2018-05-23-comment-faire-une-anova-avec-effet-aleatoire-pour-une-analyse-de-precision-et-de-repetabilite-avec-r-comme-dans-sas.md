@@ -5,7 +5,7 @@ post_title: >
   aléatoire pour une analyse de
   précision et de répétabilité avec R
   comme dans SAS ?
-author: seb
+author: Sébastien
 post_excerpt: ""
 layout: post
 permalink: >

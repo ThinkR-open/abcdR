@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-concatener-des-chaines-de-caracteres-str_c/
 published: true
 post_date: 2017-07-20 10:35:08
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Amoureux du <code>paste</code> de R base ? <code>str_c</code> du package {stringr} va vous plaire !</p>
 <p>Pourquoi utiliser <code>str_c</code> ? Pour sa simplicité, mais aussi sa puissance. La première raison de choisir cette fonction : développée dans {stringr}, elle suit la convention d'écriture de toutes les fonctions de ce package. Ainsi, pour concaténer des caractères (strings en anglais), il vous suffira d'appeler <code>str_c</code>.</p>

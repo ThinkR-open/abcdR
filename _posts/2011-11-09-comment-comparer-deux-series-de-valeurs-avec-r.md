@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-comparer-deux-series-de-valeurs-avec-r/
 published: true
 post_date: 2011-11-09 11:28:03
+tags: [ ]
+categories:
+  - algorithmique
+  - base indispensable
 ---
 2348
 Il est souvent utile de pouvoir comparer deux séries de données en algorithmique. Il existe quelques fonctions qui permettent ceci :
@@ -86,7 +90,3 @@ Cette liste n'est pas exhaustive. Il existe d'autres fonctions qui peuvent servi
 	all(x&gt;=y)   #renvoie FALSE car les éléments 1 et 2 de x (=4 et 5 respectivement) sont inférieurs ou égaux aux éléments 1 et 2 de y (=4 et 6 respectivement) 
 	any(x&gt;=y) #renvoie TRUE car  l'élément 3 de x (=6) est supérieur à l'élément 3 de y (=5) 
 </code></pre>
-
-
-
-

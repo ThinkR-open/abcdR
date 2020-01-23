@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-ordonner-un-jeu-de-donnees-arrange/
 published: true
 post_date: 2017-05-05 08:54:19
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 Pour<strong> ordonner un tableau en fonction d'une colonne,</strong> faites appel à arrange(), issu de <em>dplyr.</em> Cette fonction prend en premier argument l'objet contenant le tableau, puis la colonne qui servira de base pour votre tri.
 <pre><code>data("midwest")

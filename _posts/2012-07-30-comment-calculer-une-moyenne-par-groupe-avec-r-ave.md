@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-calculer-une-moyenne-par-groupe-avec-r-ave/
 published: true
 post_date: 2012-07-30 08:29:13
+tags: [ ]
+categories:
+  - fonctions utiles
+  - manipulation de données
 ---
 Je viens de découvrir la fonction<strong> ave</strong>.. il s'agit d'une fonction<strong> extremement rapide</strong> qui permet de calculer une moyenne (ou autre chose..) par groupe. elle est trés efficace par rapport à des combinaisons de <strong>by</strong> et autres <strong>do.call</strong><br /><br />
  <pre><code><br /><br /># mettons nous dans un cas ou nous voulons calculer le score moyenne des hommes d'une part , et des femme d'autre part<br /> data&lt;-data.frame(cbind(c(rep("homme",4),rep("femme",5)),c(1:4,3:7)))<br />names(data)&lt;-c("genre","score")<br />data$score&lt;-as.numeric(data$score)<br />data<br />attach(data)<br />cbind(data,ave(score,genre)) <br /><br /></code></pre>

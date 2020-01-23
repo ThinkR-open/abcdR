@@ -8,5 +8,8 @@ permalink: >
   https://abcdr.thinkr.fr/comment-obtenir-les-niveaux-dune-variable-qualitative-levels/
 published: true
 post_date: 2011-12-08 18:03:56
+tags: [ ]
+categories:
+  - base indispensable
 ---
- <pre><code><br />data(iris)<br />levels(iris$Species) # nous donnes les 3 niveaux pris par cette variable<br /></code></pre>
+<pre><code><br />data(iris)<br />levels(iris$Species) # nous donnes les 3 niveaux pris par cette variable<br /></code></pre>

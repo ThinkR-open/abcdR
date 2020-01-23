@@ -8,6 +8,9 @@ permalink: >
   https://abcdr.thinkr.fr/comment-obtenir-un-apercu-dun-objet-dans-r-les-fonctions-head-et-view/
 published: true
 post_date: 2011-11-06 18:16:30
+tags: [ ]
+categories:
+  - base indispensable
 ---
 Quand on travaille sur un grand jeu de données, on peut voir à quoi il ressemble en rentrant son nom directement dans la console : <br /><br />
 <pre><code>data(iris)<br />

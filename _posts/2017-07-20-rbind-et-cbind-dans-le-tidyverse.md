@@ -10,6 +10,10 @@ permalink: >
   https://abcdr.thinkr.fr/rbind-et-cbind-dans-le-tidyverse/
 published: true
 post_date: 2017-07-20 14:42:15
+tags: [ ]
+categories:
+  - manipulation de données
+  - tidyverse
 ---
 <p>Plus de robustesse, plus de sécurité, nous avons nommé <code>bind_rows</code> et <code>bind_cols</code> !</p>
 <p>Package du tidyverse, <strong>{dplyr} regorge d'outils ultra efficaces pour la manipulation de données</strong>. Parmi eux, deux petites fonctions qui, à première vue, ne payent pas de mine... et pourtant. <code>bind_rows</code> et <code>bind_cols</code> vous permettent d'effectuer l'équivalent de <code>rbind</code> et <code>cbind</code> mais sont plus fonctionnelles, et affichent des résultats plus propres et exploitables.</p>

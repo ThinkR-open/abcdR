@@ -1,13 +1,17 @@
 ---
 ID: 3492
 post_title: 'Comment lire le contenu d&#039;un shapefile avec R ?'
-author: seb
+author: Sébastien
 post_excerpt: ""
 layout: post
 permalink: >
   https://abcdr.thinkr.fr/comment-lire-le-contenu-dun-shapefile-avec-r/
 published: true
 post_date: 2017-12-04 15:03:17
+tags: [ ]
+categories:
+  - 'sig - cartographie'
+  - Transformation de données
 ---
 Un shapefile est un fichier d'information géographique avec un format vectoriel. Il permet de représenter des points (e.g. villes), des lignes (e.g. routes) et des polygones (e.g. départements) avec un système d'information géographique. Le format shapefile est composé de plusieurs fichiers séparés (4 minimum):
 <ul>

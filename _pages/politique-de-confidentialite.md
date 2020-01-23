@@ -1,7 +1,7 @@
 ---
 ID: 4532
 post_title: Politique de confidentialité
-author: seb
+author: Sébastien
 post_excerpt: ""
 layout: page
 permalink: >

@@ -8,6 +8,10 @@ permalink: >
   https://abcdr.thinkr.fr/comment-changer-lechelle-dun-axe-contenant-une-date-dans-ggplot2-scale_x_datebreak/
 published: true
 post_date: 2017-05-11 07:12:19
+tags: [ ]
+categories:
+  - graphique
+  - tidyverse
 ---
 <p>Vous souhaitez ne garder que les mois, ou uniquement les années sur votre ggplot ? Vous avez envie de changer le format des étiquettes de l'axe ? Pour cela, direction la fonction scale_x_date(), qui vous permettra de personnaliser votre axe comme vous le souhaitez !
 <p>Dans la majorité des cas, vous serez amené à utiliser <strong>deux arguments principaux</strong> sur <em>scale_x_date</em> (mais il faut savoir qu'il en existe au total 9) :
