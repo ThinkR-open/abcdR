@@ -1,10 +1,13 @@
 ---
-ID: 4627
-post_title: "Comment calculer le nombre de données manquantes par lignes"
+ID: 4716
+post_title: >
+  Comment calculer le nombre de données
+  manquantes par lignes
 author: vincent
 post_excerpt: ""
 layout: post
-permalink: https://abcdr.thinkr.fr/4627-2/
+permalink: >
+  https://abcdr.thinkr.fr/comment-calculer-le-nombre-de-donnees-manquantes-par-lignes/
 published: true
 post_date: 2019-01-30 01:32:34
 tags: [ ]
