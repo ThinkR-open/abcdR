@@ -10,7 +10,9 @@ permalink: >
   https://abcdr.thinkr.fr/comment-calculer-le-nombre-de-donnees-manquantes-par-lignes/
 published: true
 post_date: 2019-01-30 01:32:34
-tags: [ ]
+tags:
+  - na
+  - nettoyage
 categories:
   - manipulation de données
   - tidyverse
