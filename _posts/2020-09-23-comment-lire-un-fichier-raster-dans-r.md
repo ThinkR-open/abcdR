@@ -30,6 +30,6 @@ categories:
 <h2>Lecture d'un fichier raster avec plusieurs couches</h2>
 <p><code># récupération du chemin d'un Geotiff<br>multiband &lt;- system.file("ex/logo.tif", package="terra")<br></code></p>
 <p><code># lecture avec {raster}<br>r_raster &lt;- stack(multiband)<br># lecture avec {terra}<br>r_terra &lt;- rast(multiband)<br># lecture avec {stars}<br>r_stars &lt;- read_stars(multiband)</code></p>
-<p>Pour le choix du package à utiliser, tout dépend de votre utilisation du raster. Explorez les fonctions existantes et la doc pour choisir.<br>Si vous cherchiez <a href="https://abcdr.thinkr.fr/comment-lire-un-fichier-shp-shapefile-avec-sf-dans-r/">comment lire un fichier shapefile plutôt, c'est ici</a>.</p>
+<p>Pour le choix du package à utiliser, tout dépend de votre utilisation du raster. Explorez les fonctions existantes et la doc pour choisir.<br>Si vous cherchiez <a href="https://abcdr.thinkr.fr/comment-lire-un-fichier-shp-shapefile-avec-sf-dans-r/">comment lire un fichier shapefile plutôt, c'est par là</a>.</p>
 <p>&nbsp;</p>
 <!-- /wp:tadv/classic-paragraph -->
