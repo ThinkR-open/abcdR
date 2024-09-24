@@ -2,11 +2,11 @@ name: Move Draft Articles
 
 on:
   schedule:
-    # Chaque mardi et vendredi à 12h
-    - cron: '35 9 * * 2,5'
-    
+    # Chaque mardi et vendredi à 11h30 UTC+2 (ajusté en UTC)
+    - cron: '0 10 * * 2,5'
+
 permissions:
-  contents: write # Permet d'écrire dans le dépôt
+  contents: write
 
 jobs:
   move_article:
@@ -30,6 +30,5 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add new_posts/
-        git rm -f _drafts/*
         git commit -m "Moved an article to new_posts"
         git push
