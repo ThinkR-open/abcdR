@@ -29,6 +29,6 @@ jobs:
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
-        git add new_posts/
+        git add .
         git commit -m "Moved an article to new_posts"
         git push
