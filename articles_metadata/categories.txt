@@ -1,0 +1,102 @@
+boucle
+liste
+regroupement
+résumé
+filtrage
+colonnes
+colonnes
+tri
+colonnes
+fusion
+combinaison
+groupement
+jointure
+statistiques
+dates
+conversion
+gestion des NA
+filtrage
+échantillonnage
+sous-ensemble
+réorganisation
+transformation
+chaînes
+statistiques
+visualisation
+visualisation
+visualisation
+visualisation
+visualisation
+visualisation
+visualisation
+visualisation
+visualisation
+exportation
+visualisation
+superposition
+axes
+personnalisation
+interactivité
+fonction
+arguments
+fonction
+boucle
+conditions
+conditions
+conditions
+vectorisation
+listes
+parallélisation
+fonctions avancées
+gestion d'erreurs
+optimisation
+lecture de données
+lecture de données
+écriture de données
+lecture de données
+lecture de données
+écriture de données
+lecture de données
+compression
+gestion de fichiers
+gestion de fichiers
+gestion de fichiers
+gestion de fichiers
+modélisation
+modélisation
+statistiques
+prédiction
+modélisation
+modélisation
+évaluation
+validation
+modélisation
+classification
+corrélation
+évaluation
+modélisation
+statistiques
+modélisation
+modélisation
+documentation
+documentation
+templates
+style
+interactivité
+chaînes de caractères
+chaînes de caractères
+chaînes de caractères
+calculs vectorisés
+matrices
+génération de données
+performance
+profilage
+bases de données
+bases de données
+bases de données
+packages
+packages
+documentation
+tests
+environnement
+dépendances

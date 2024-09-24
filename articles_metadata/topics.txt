@@ -1,0 +1,102 @@
+Utilisation de la fonction lapply en R
+Comment utiliser sapply pour appliquer une fonction à une liste
+La fonction tapply pour des regroupements simples
+Utiliser aggregate pour résumer des données
+Utiliser dplyr pour filtrer les données
+Renommer des colonnes avec dplyr::rename
+Sélectionner des colonnes avec select de dplyr
+Trier des données avec dplyr::arrange
+Créer des nouvelles colonnes avec mutate de dplyr
+Fusionner des data frames avec merge
+Combiner plusieurs data frames avec rbind et cbind
+Grouper des données avec dplyr::group_by et summarise
+Joindre des tables avec dplyr::left_join
+Calculer des statistiques basiques avec summarise
+Manipuler des dates avec lubridate
+Transformer les types de données avec as.numeric, as.character, etc.
+Supprimer des valeurs manquantes avec na.omit
+Filtrer des valeurs uniques avec unique
+Échantillonner des données avec sample
+Créer des sous-ensembles avec subset
+Utiliser tidyr::pivot_longer pour réorganiser des tableaux
+Utiliser tidyr::pivot_wider pour transformer des données
+Combiner des chaînes de caractères avec paste et paste0
+Calculer des fréquences avec table
+Créer des graphiques avec ggplot2 : introduction
+Customiser les couleurs des graphiques dans ggplot2
+Ajouter des labels et des titres dans ggplot2
+Créer des graphiques en barres avec ggplot2
+Visualiser des distributions avec des histogrammes dans ggplot2
+Créer des boîtes à moustaches (boxplots) avec ggplot2
+Faire des graphiques en nuage de points avec ggplot2
+Ajouter une régression linéaire à un graphique avec ggplot2
+Utiliser faceting pour diviser un graphique avec ggplot2
+Exporter des graphiques avec ggsave
+Créer des courbes de densité avec ggplot2
+Superposer plusieurs graphiques avec ggplot2
+Personnaliser les axes avec scale_x_continuous et scale_y_continuous
+Utiliser themes dans ggplot2 pour personnaliser les graphiques
+Utiliser ggplotly pour rendre les graphiques interactifs
+Écrire des fonctions en R : introduction
+Passer des arguments par défaut dans une fonction
+Utiliser return pour renvoyer des valeurs dans une fonction
+Créer des boucles avec for
+Utiliser ifelse pour des conditions simples
+Apprendre à utiliser switch pour des conditions multiples
+Comment écrire des conditions avec if et else
+Vectoriser des opérations pour améliorer la performance
+Utiliser purrr::map pour appliquer des fonctions à des listes
+Appliquer des fonctions de manière parallèle avec furrr
+Utiliser les closures dans les fonctions
+Gérer les erreurs dans une fonction avec tryCatch
+Optimiser le code avec microbenchmark
+Lire des fichiers CSV avec read.csv
+Lire des fichiers Excel avec readxl
+Écrire des fichiers CSV avec write.csv
+Lire des fichiers JSON avec jsonlite
+Utiliser readr pour lire des fichiers rapidement
+Créer et écrire des fichiers Excel avec writexl
+Lire des fichiers texte avec readLines
+Gérer les fichiers compressés avec gzfile et bzfile
+Utiliser file.path pour manipuler les chemins de fichiers
+Lister des fichiers dans un répertoire avec list.files
+Déplacer des fichiers avec file.rename
+Supprimer des fichiers avec unlink
+Ajuster une régression linéaire avec lm
+Interpréter les résultats d'un modèle linéaire avec summary
+Créer une matrice de confusion avec table
+Faire des prédictions avec predict
+Ajuster un modèle de régression logistique avec glm
+Calculer les résidus d'un modèle avec resid
+Utiliser caret pour évaluer la performance d'un modèle
+Validation croisée d'un modèle avec caret
+Utiliser randomForest pour des modèles d'arbres
+Ajuster des modèles de classification avec glmnet
+Travailler avec des matrices de corrélation avec cor
+Tracer une courbe ROC avec pROC
+Utiliser des modèles mixtes avec lme4
+Calculer des intervalles de confiance avec confint
+Sélection de variables avec stepAIC
+Ajuster des modèles non linéaires avec nls
+Comment utiliser R Markdown pour documenter du code
+Automatiser des rapports avec R Markdown
+Utiliser des templates dans R Markdown
+Personnaliser le style de R Markdown avec CSS
+Créer des notebooks interactifs avec RStudio
+Travailler avec des expressions régulières en R
+Apprendre à utiliser stringr pour manipuler des chaînes de caractères
+Utiliser glue pour formater des chaînes de caractères
+Faire des calculs vectorisés avec la fonction Vectorize
+Utiliser la fonction apply pour des calculs sur des matrices
+Générer des nombres aléatoires avec runif et rnorm
+Tester l'efficacité d'un code avec system.time
+Profiling de code avec Rprof
+Travailler avec des bases de données SQL avec RSQLite
+Utiliser DBI pour se connecter à des bases de données
+Envoyer des requêtes SQL depuis R avec dplyr
+Installer et gérer des packages avec install.packages
+Créer des packages R avec devtools
+Utiliser roxygen2 pour documenter un package
+Utiliser testthat pour tester un package R
+Créer un environnement virtuel avec renv
+Apprendre à utiliser pak pour gérer les dépendances
