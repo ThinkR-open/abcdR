@@ -1,0 +1,35 @@
+name: Move Draft Articles
+
+on:
+  schedule:
+    # Chaque mardi et vendredi à 12h
+    - cron: '30 11 * * 2,5'
+    
+permissions:
+  contents: write # Permet d'écrire dans le dépôt
+
+jobs:
+  move_article:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Move one article from _drafts to new_posts
+      run: |
+        FILE=$(ls _drafts | head -n 1)
+        if [ -n "$FILE" ]; then
+          mv "_drafts/$FILE" "new_posts/$FILE"
+        else
+          echo "No articles left to move."
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add new_posts/
+        git rm -f _drafts/*
+        git commit -m "Moved an article to new_posts"
+        git push
