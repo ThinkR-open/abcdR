@@ -3,7 +3,7 @@ name: Move Draft Articles
 on:
   schedule:
     # Chaque mardi et vendredi à 12h
-    - cron: '30 11 * * 2,5'
+    - cron: '35 9 * * 2,5'
     
 permissions:
   contents: write # Permet d'écrire dans le dépôt
