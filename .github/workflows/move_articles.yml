@@ -2,8 +2,8 @@ name: Move Draft Articles
 
 on:
   schedule:
-    # Chaque mardi et vendredi à 11h30 UTC+2 (ajusté en UTC)
-    - cron: '0 10 * * 2,5'
+    # Chaque jour à 12h (10h UTC)
+    - cron: '0 10 * * 1-5'
 
 permissions:
   contents: write
