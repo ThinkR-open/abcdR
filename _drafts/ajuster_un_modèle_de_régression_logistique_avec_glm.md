@@ -69,5 +69,5 @@ Les coefficients du modèle nous indiquent l'impact des variables indépendantes
 
 ## Conclusion
 
-Nous avons vu comment ajuster un modèle de régression logistique en utilisant la fonction `glm` en R. Ce modèle est très utile pour prédire des résultats binaires à partir de variables explicatives. Avec ce simple exemple, vous êtes maintenant prêt
+Nous avons vu comment ajuster un modèle de régression logistique en utilisant la fonction `glm` en R. Ce modèle est très utile pour prédire des résultats binaires à partir de variables explicatives.
 

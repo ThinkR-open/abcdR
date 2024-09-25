@@ -86,5 +86,5 @@ legend("topleft", legend = "Ajustement du modèle", col = "red", lwd = 2)
 
 ## Conclusion
 
-L'ajustement de modèles non linéaires avec `nls` en R est un outil puissant qui permet de modéliser des relations complexes entre les variables. Dans cet article, nous avons vu
+L'ajustement de modèles non linéaires avec `nls` en R est un outil puissant qui permet de modéliser des relations complexes entre les variables.
 

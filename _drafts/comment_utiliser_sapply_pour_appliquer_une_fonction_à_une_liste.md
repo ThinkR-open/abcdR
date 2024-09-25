@@ -77,7 +77,7 @@ Lorsque vous exécutez le code, vous devriez obtenir :
 
 Dans cet exemple, `sapply` a pris chaque élément de la liste `nombres`, a appliqué la fonction `carre` et a retourné un vecteur contenant les carrés des nombres. La simplification du résultat en un vecteur rend l'analyse des données plus facile et plus rapide.
 
-`Sapply` est donc un outil puissant pour transformer et manipuler des données de manière efficace dans R. Que ce soit pour des calculs simples ou des transformations plus complexes, `sapply` vous fait gagner du temps et rend votre code plus lisible.
+`sapply` est donc un outil puissant pour transformer et manipuler des données de manière efficace dans R. Que ce soit pour des calculs simples ou des transformations plus complexes, `sapply` vous fait gagner du temps et rend votre code plus lisible.
 
 ## Conclusion
 
