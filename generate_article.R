@@ -81,6 +81,6 @@ generate_article <- function(topic, category, tag1, tag2, api_key = Sys.getenv("
 
 index <- 1:length(topics)
 gpt_res <- pmap(list(topics[index], categories[index],  tags1[index], tags2[index]), function(.topic, .category, .tag1, .tag2) {
-  generate_article(topic = .topic, category = .category, tag1 = .tag1, tag2 = .tag2)
+  generate_article(topic = .topic, category = .category, tag1 = .tag1, tag2 = .tag2, temperature = .3)
 }, .progress = TRUE)
 names(gpt_res) <- topics
