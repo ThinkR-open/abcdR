@@ -34,7 +34,7 @@ Supposons que nous avons un ensemble de données sur les ventes d'une entreprise
 data <- data.frame(
   ventes = c(200, 300, 400, 500, 600),
   publicite = c(50, 60, 70, 80, 90),
-  prix = c(20, 25, 30, 35, 40)
+  prix = c(20, 50, 30, 72, 40)
 )
 ```
 

@@ -63,7 +63,7 @@ Nous pouvons maintenant vérifier que nos résultats sont corrects en comparant 
 
 ```R
 # Vérification
-identique(resultats, sapply(nombres, function(x) x^2))  # Devrait retourner TRUE
+identical(resultats, lapply(nombres, function(x) x^2))  # Devrait retourner TRUE
 ```
 
 ## Conclusion

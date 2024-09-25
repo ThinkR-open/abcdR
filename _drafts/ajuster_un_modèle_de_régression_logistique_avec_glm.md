@@ -32,7 +32,7 @@ set.seed(123)  # Pour la reproductibilité
 data <- data.frame(
   age = c(22, 25, 47, 52, 46, 23, 34, 45, 31, 29),
   income = c(30000, 40000, 60000, 80000, 70000, 32000, 50000, 90000, 45000, 38000),
-  purchase = c(0, 0, 1, 1, 1, 0, 1, 1, 0, 0)  # 0 = non, 1 = oui
+  purchase = c(1, 1, 0, 0, 1, 0, 1, 1, 0, 0)  # 0 = non, 1 = oui
 )
 ```
 
@@ -41,14 +41,14 @@ data <- data.frame(
 Nous allons maintenant utiliser la fonction `glm()` pour ajuster notre modèle. La syntaxe de `glm()` est la suivante :
 
 ```r
-modèle <- glm(formule, famille, données)
+mod <- glm(formule, famille, données)
 ```
 
 Dans notre cas, la formule sera `purchase ~ age + income`, la famille sera `binomial` pour indiquer que nous faisons une régression logistique, et nous utiliserons notre jeu de données `data`.
 
 ```r
 # Ajustement du modèle de régression logistique
-modèle <- glm(purchase ~ age + income, family = binomial, data = data)
+mod <- glm(purchase ~ age + income, family = binomial, data = data)
 ```
 
 ### Étape 3 : Résumé du modèle
@@ -57,7 +57,7 @@ Pour voir les résultats de notre ajustement, nous pouvons utiliser la fonction 
 
 ```r
 # Résumé du modèle
-summary(modèle)
+summary(mod)
 ```
 
 Cette commande affichera les coefficients du modèle, les erreurs standards, les valeurs z et les p-values pour chaque variable. Les coefficients nous indiquent l'effet de chaque variable indépendante sur la probabilité d'achat.
@@ -69,7 +69,7 @@ Une fois le modèle ajusté, nous pouvons l'utiliser pour faire des prédictions
 ```r
 # Prédiction pour un nouveau client
 nouveau_client <- data.frame(age = 30, income = 50000)
-probabilité_achat <- predict(modèle, nouveau_client, type = "response")
+probabilité_achat <- predict(mod, nouveau_client, type = "response")
 print(probabilité_achat)
 ```
 
@@ -77,5 +77,4 @@ Cette commande nous donnera la probabilité que ce client achète le produit.
 
 ## Conclusion
 
-La régression logistique est un outil puissant pour modéliser des résultats binaires. Avec la fonction `glm()` de R, il est facile d'ajuster un modèle et d'interpréter les résultats. En utilisant cet exemple concret, vous pouvez commencer à appliquer la ré
-
+La régression logistique est un outil puissant pour modéliser des résultats binaires. Avec la fonction `glm()` de R, il est facile d'ajuster un modèle et d'interpréter les résultats. 
