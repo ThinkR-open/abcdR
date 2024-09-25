@@ -12,52 +12,70 @@ taxonomy:
 
 # Vectoriser des opérations pour améliorer la performance en R
 
-La vectorisation est une technique essentielle en R qui permet d'optimiser les performances des opérations sur des vecteurs et des matrices. Contrairement aux boucles `for` qui effectuent des opérations élément par élément, la vectorisation permet d'appliquer des opérations sur des ensembles de données en une seule instruction. Cela peut conduire à un code plus concis et beaucoup plus efficace.
+La vectorisation est une technique essentielle en R qui permet d'améliorer la performance des opérations sur des données. Contrairement aux boucles, qui traitent les éléments un par un, la vectorisation permet d'appliquer des opérations sur des vecteurs entiers, ce qui est généralement beaucoup plus rapide et efficace.
 
 ## Pourquoi vectoriser ?
 
-L'une des raisons principales de vectoriser est la vitesse. Les opérations vectorisées sont généralement beaucoup plus rapides que les boucles explicites. R est conçu pour travailler avec des vecteurs, ce qui signifie que les fonctions vectorisées exploitent des optimisations en arrière-plan que les boucles ne peuvent pas utiliser.
+1. **Performance** : Les opérations vectorisées sont souvent optimisées en C, ce qui les rend plus rapides que les boucles en R.
+2. **Lisibilité** : Le code vectorisé est généralement plus concis et plus facile à lire.
+3. **Simplicité** : La vectorisation réduit le risque d'erreurs en éliminant la nécessité de gérer manuellement les indices.
 
-## Exemple de code
+## Exemple concret
 
-Prenons un exemple simple où nous voulons ajouter deux vecteurs de même longueur. Voici comment nous pourrions le faire avec une boucle `for`, puis avec une approche vectorisée.
+Imaginons que nous souhaitons calculer le carré de chaque élément d'un vecteur. Voici comment nous pourrions le faire en utilisant une boucle et ensuite en utilisant une approche vectorisée.
 
-### Avec une boucle `for`
+### Avec une boucle
 
 ```r
-# Définir les vecteurs
-v1 <- c(1, 2, 3, 4, 5)
-v2 <- c(10, 20, 30, 40, 50)
+# Création d'un vecteur
+vec <- 1:10
+# Initialisation d'un vecteur pour stocker les résultats
+result <- numeric(length(vec))
 
-# Initialiser un vecteur pour stocker le résultat
-result <- numeric(length(v1))
-
-# Boucle pour ajouter les éléments
-for (i in 1:length(v1)) {
-  result[i] <- v1[i] + v2[i]
+# Boucle pour calculer le carré
+for (i in 1:length(vec)) {
+  result[i] <- vec[i]^2
 }
 
 print(result)
 ```
 
-### Avec une approche vectorisée
+### Avec une opération vectorisée
 
 ```r
-# Définir les vecteurs
-v1 <- c(1, 2, 3, 4, 5)
-v2 <- c(10, 20, 30, 40, 50)
+# Création d'un vecteur
+vec <- 1:10
 
-# Additionner les vecteurs de manière vectorisée
-result_vectorized <- v1 + v2
+# Calcul du carré de manière vectorisée
+result_vectorized <- vec^2
 
 print(result_vectorized)
 ```
 
-## Analyse de la performance
+## Comparaison des deux approches
 
-Dans l'exemple ci-dessus, les deux méthodes produisent le même résultat, mais la version vectorisée est non seulement plus concise, mais également plus rapide, surtout pour des vecteurs de grande taille. Pour des opérations sur de grands ensembles de données, cette différence de performance devient significative.
+Dans l'exemple ci-dessus, la première méthode utilise une boucle `for` pour itérer sur chaque élément du vecteur, ce qui peut être lent pour de grands vecteurs. La seconde méthode applique l'opération `^2` directement sur le vecteur entier, ce qui est beaucoup plus rapide.
+
+### Mesurer la performance
+
+Nous pouvons également mesurer le temps d'exécution des deux méthodes pour voir la différence de performance.
+
+```r
+# Mesurer le temps de la boucle
+system.time({
+  result <- numeric(length(vec))
+  for (i in 1:length(vec)) {
+    result[i] <- vec[i]^2
+  }
+})
+
+# Mesurer le temps de la vectorisation
+system.time({
+  result_vectorized <- vec^2
+})
+```
 
 ## Conclusion
 
-La vectorisation est une compétence clé à maîtriser pour quiconque souhaite écrire du code R performant. En évitant les boucles et en tirant parti des opérations vectorisées, vous pouvez améliorer la vitesse de vos calculs tout en rendant votre code plus propre et plus facile à lire. N'hésitez pas à explorer d'autres fonctions vectorisées disponibles dans R, comme `apply()`, `sapply()`, et bien d'autres, pour tirer le meilleur parti de vos données.
+La vectorisation est une technique puissante en R qui peut considérablement améliorer la performance de votre code. En évitant les boucles et en utilisant des opérations sur des vecteurs, vous pouvez non seulement rendre votre code plus rapide, mais aussi plus lisible et plus simple. N'hésitez pas à appliquer cette technique dans vos projets pour tirer parti de la puissance de R !
 

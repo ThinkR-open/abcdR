@@ -10,64 +10,72 @@ taxonomy:
         - logistique
 ---
 
-# Ajuster un Modèle de Régression Logistique avec `glm` en R
+# Ajuster un modèle de régression logistique avec glm en R
 
-La régression logistique est un outil puissant pour modéliser des relations entre une variable dépendante binaire (0 ou 1) et une ou plusieurs variables indépendantes. Dans cet article, nous allons voir comment ajuster un modèle de régression logistique en utilisant la fonction `glm` (Generalized Linear Model) de R.
+La régression logistique est une méthode statistique utilisée pour modéliser la relation entre une variable dépendante binaire et une ou plusieurs variables indépendantes. Dans cet article, nous allons voir comment ajuster un modèle de régression logistique en utilisant la fonction `glm()` de R.
 
 ## Qu'est-ce que la régression logistique ?
 
-La régression logistique est utilisée lorsque la variable à prédire est de nature binaire. Par exemple, nous pourrions être intéressés à prédire si un patient a une maladie (1) ou non (0) en fonction de divers facteurs comme l'âge, le poids, etc.
+La régression logistique est utilisée lorsque la variable cible est binaire, c'est-à-dire qu'elle prend deux valeurs, souvent codées comme 0 et 1. Par exemple, nous pourrions vouloir prédire si un client va acheter un produit (1) ou non (0) en fonction de certaines caractéristiques.
 
 ## Exemple concret
 
-Imaginons que nous disposons d'un jeu de données fictif sur des patients, et que nous voulons prédire si un patient est diabétique en fonction de son âge et de son indice de masse corporelle (IMC).
+Imaginons que nous avons un jeu de données sur des clients d'une boutique en ligne, et nous voulons prédire si un client va acheter un produit en fonction de son âge et de son revenu. Voici comment nous pourrions procéder.
 
 ### Étape 1 : Créer un jeu de données
 
 Commençons par créer un petit jeu de données :
 
-```R
-# Création d'un jeu de données fictif
+```r
+# Création d'un jeu de données
 set.seed(123)  # Pour la reproductibilité
-n <- 100
-age <- rnorm(n, mean = 50, sd = 10)  # Âge moyen de 50 ans
-imc <- rnorm(n, mean = 25, sd = 5)   # IMC moyen de 25
-diabete <- ifelse(runif(n) < plogis(0.05 * age - 0.1 * imc), 1, 0)  # Variable binaire
-
-data <- data.frame(age, imc, diabete)
+data <- data.frame(
+  age = c(22, 25, 47, 52, 46, 23, 34, 45, 31, 29),
+  income = c(30000, 40000, 60000, 80000, 70000, 32000, 50000, 90000, 45000, 38000),
+  purchase = c(0, 0, 1, 1, 1, 0, 1, 1, 0, 0)  # 0 = non, 1 = oui
+)
 ```
 
 ### Étape 2 : Ajuster le modèle de régression logistique
 
-Utilisons maintenant la fonction `glm` pour ajuster notre modèle :
+Nous allons maintenant utiliser la fonction `glm()` pour ajuster notre modèle. La syntaxe de `glm()` est la suivante :
 
-```R
-# Ajustement du modèle de régression logistique
-modele <- glm(diabete ~ age + imc, data = data, family = binomial)
-
-# Résumé du modèle
-summary(modele)
+```r
+modèle <- glm(formule, famille, données)
 ```
 
-### Explication du code
+Dans notre cas, la formule sera `purchase ~ age + income`, la famille sera `binomial` pour indiquer que nous faisons une régression logistique, et nous utiliserons notre jeu de données `data`.
 
-1. **Création des données** :
-   - Nous avons généré 100 observations pour l'âge et l'IMC, et nous avons créé une variable binaire `diabete` en utilisant une fonction logistique pour introduire une dépendance entre les variables.
+```r
+# Ajustement du modèle de régression logistique
+modèle <- glm(purchase ~ age + income, family = binomial, data = data)
+```
 
-2. **Ajustement du modèle** :
-   - La fonction `glm` prend trois arguments principaux :
-     - La formule de notre modèle `diabete ~ age + imc`, qui indique que `diabete` dépend de `age` et `imc`.
-     - Le paramètre `data` qui spécifie le jeu de données à utiliser.
-     - Le paramètre `family = binomial`, qui indique que nous réalisons une régression logistique.
+### Étape 3 : Résumé du modèle
 
-3. **Résultat du modèle** :
-   - La fonction `summary(modele)` nous donne des informations sur les coefficients du modèle, les erreurs standard, les statistiques z, et les valeurs p. Ces informations sont cruciales pour interpréter les résultats.
+Pour voir les résultats de notre ajustement, nous pouvons utiliser la fonction `summary()` :
 
-### Étape 3 : Interpréter les résultats
+```r
+# Résumé du modèle
+summary(modèle)
+```
 
-Les coefficients du modèle nous indiquent l'impact des variables indépendantes sur la probabilité que la variable dépendante soit égale à 1 (dans notre cas, que le patient soit diabétique). Par exemple, un coefficient positif pour `age` signifie qu'une augmentation de l'âge est associée à une augmentation de la probabilité d'être diabétique.
+Cette commande affichera les coefficients du modèle, les erreurs standards, les valeurs z et les p-values pour chaque variable. Les coefficients nous indiquent l'effet de chaque variable indépendante sur la probabilité d'achat.
+
+### Étape 4 : Prédictions
+
+Une fois le modèle ajusté, nous pouvons l'utiliser pour faire des prédictions. Par exemple, pour prédire la probabilité qu'un client de 30 ans avec un revenu de 50000 achète un produit, nous pouvons utiliser la fonction `predict()` :
+
+```r
+# Prédiction pour un nouveau client
+nouveau_client <- data.frame(age = 30, income = 50000)
+probabilité_achat <- predict(modèle, nouveau_client, type = "response")
+print(probabilité_achat)
+```
+
+Cette commande nous donnera la probabilité que ce client achète le produit.
 
 ## Conclusion
 
-Nous avons vu comment ajuster un modèle de régression logistique en utilisant la fonction `glm` en R. Ce modèle est très utile pour prédire des résultats binaires à partir de variables explicatives.
+La régression logistique est un outil puissant pour modéliser des résultats binaires. Avec la fonction `glm()` de R, il est facile d'ajuster un modèle et d'interpréter les résultats. En utilisant cet exemple concret, vous pouvez commencer à appliquer la ré
 

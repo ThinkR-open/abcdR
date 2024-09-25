@@ -12,11 +12,11 @@ taxonomy:
 
 # Trier des données avec dplyr::arrange
 
-Le tri des données est une étape fondamentale dans l'analyse de données. Avec le package `dplyr` de R, trier vos données devient une tâche simple et intuitive grâce à la fonction `arrange()`. Cet article vous montrera comment utiliser cette fonction avec un exemple concret.
+Le tri des données est une opération courante en analyse de données. Avec le package `dplyr` en R, il est très facile de trier des données à l'aide de la fonction `arrange()`. Cet article vous montrera comment utiliser cette fonction avec un exemple concret.
 
-## Qu'est-ce que `dplyr::arrange` ?
+## Qu'est-ce que dplyr::arrange ?
 
-La fonction `arrange()` permet de trier un data frame ou un tibble en fonction d'une ou plusieurs colonnes. Vous pouvez trier vos données par ordre croissant ou décroissant.
+La fonction `arrange()` de `dplyr` permet de trier un tableau de données (data frame) en fonction d'une ou plusieurs colonnes. Vous pouvez trier les données par ordre croissant ou décroissant.
 
 ## Installation et chargement de dplyr
 
@@ -26,7 +26,7 @@ Si vous n'avez pas encore installé le package `dplyr`, vous pouvez le faire ave
 install.packages("dplyr")
 ```
 
-Ensuite, chargez le package :
+Ensuite, vous devez charger le package dans votre session R :
 
 ```R
 library(dplyr)
@@ -34,54 +34,76 @@ library(dplyr)
 
 ## Exemple concret
 
-Imaginons que nous avons un data frame contenant des informations sur des étudiants, avec leurs noms, âges et notes. Voici comment nous pourrions créer ce data frame :
+Imaginons que nous avons un tableau de données contenant des informations sur des étudiants, y compris leur nom et leur note. Voici comment nous pouvons créer ce tableau :
 
 ```R
-# Création du data frame
+# Création d'un data frame d'exemple
 etudiants <- data.frame(
   nom = c("Alice", "Bob", "Charlie", "David"),
-  age = c(23, 21, 22, 24),
-  note = c(85, 90, 78, 88)
+  note = c(85, 92, 78, 88)
 )
+
+# Affichage du data frame
+print(etudiants)
 ```
 
-### Tri par ordre croissant
+Ce qui donnera :
 
-Pour trier les étudiants par âge dans l'ordre croissant, nous utiliserons `arrange()` comme suit :
-
-```R
-# Tri par âge croissant
-etudiants_trie <- etudiants %>%
-  arrange(age)
-
-print(etudiants_trie)
+```
+      nom note
+1   Alice   85
+2     Bob   92
+3 Charlie   78
+4   David   88
 ```
 
-### Tri par ordre décroissant
+### Trier par ordre croissant
 
-Si vous souhaitez trier par note dans l'ordre décroissant, vous pouvez utiliser la fonction `desc()` :
+Pour trier les étudiants par leur note en ordre croissant, nous utilisons `arrange()` comme suit :
 
 ```R
-# Tri par note décroissant
-etudiants_trie_desc <- etudiants %>%
+# Tri des étudiants par note en ordre croissant
+etudiants_trie_croissant <- etudiants %>%
+  arrange(note)
+
+# Affichage du résultat
+print(etudiants_trie_croissant)
+```
+
+Le résultat sera :
+
+```
+      nom note
+1 Charlie   78
+2   Alice   85
+3   David   88
+4     Bob   92
+```
+
+### Trier par ordre décroissant
+
+Si nous voulons trier les étudiants par note en ordre décroissant, nous pouvons utiliser la fonction `desc()` à l'intérieur de `arrange()` :
+
+```R
+# Tri des étudiants par note en ordre décroissant
+etudiants_trie_decroissant <- etudiants %>%
   arrange(desc(note))
 
-print(etudiants_trie_desc)
+# Affichage du résultat
+print(etudiants_trie_decroissant)
 ```
 
-### Tri par plusieurs colonnes
+Le résultat sera :
 
-Vous pouvez également trier par plusieurs colonnes. Par exemple, si vous voulez trier par âge et ensuite par note (dans l'ordre décroissant), voici comment procéder :
-
-```R
-# Tri par âge croissant et note décroissante
-etudiants_trie_multi <- etudiants %>%
-  arrange(age, desc(note))
-
-print(etudiants_trie_multi)
+```
+      nom note
+1     Bob   92
+2   David   88
+3   Alice   85
+4 Charlie   78
 ```
 
 ## Conclusion
 
-La fonction `arrange()` de `dplyr` est un outil puissant pour trier vos données de manière simple et efficace. Que vous souhaitiez trier par une ou plusieurs colonnes, en ordre croissant ou décroissant, `arrange()` vous permet de le faire avec une syntaxe claire et concise. N'hésitez pas à l'essayer avec vos propres jeux de données pour voir à quel point il est facile de manipuler et d'analyser vos informations.
+La fonction `arrange()` de `dplyr` est un outil puissant et simple pour trier vos données. Que vous souhaitiez trier par ordre croissant ou décroissant, `arrange()` vous permet de le faire facilement. N'hésitez pas à l'utiliser dans vos propres analyses de données pour mieux organiser vos résultats !
 

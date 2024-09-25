@@ -12,60 +12,78 @@ taxonomy:
 
 # Envoyer des requêtes SQL depuis R avec dplyr
 
-Le package `dplyr` est un outil puissant pour manipuler des données en R. Une de ses fonctionnalités intéressantes est la possibilité d'interagir avec des bases de données SQL. Dans cet article, nous allons explorer comment envoyer des requêtes SQL directement depuis R en utilisant `dplyr`.
+`dplyr` est un package très populaire dans l'écosystème R, qui facilite la manipulation de données. Une de ses fonctionnalités intéressantes est la possibilité d'envoyer des requêtes SQL directement à une base de données. Cela peut être particulièrement utile lorsque vous travaillez avec de grandes quantités de données qui sont stockées dans une base de données relationnelle.
 
 ## Installation des packages nécessaires
 
-Avant de commencer, assurez-vous d'avoir installé les packages `dplyr` et `DBI` qui sont essentiels pour se connecter à une base de données. Si vous ne les avez pas encore installés, vous pouvez le faire avec les commandes suivantes :
+Avant de commencer, assurez-vous d'avoir installé les packages `dplyr` et `DBI`. Vous pouvez les installer avec les commandes suivantes :
 
 ```R
 install.packages("dplyr")
 install.packages("DBI")
 ```
 
-## Se connecter à une base de données
+## Connexion à une base de données
 
-Pour cet exemple, nous allons utiliser SQLite, une base de données légère et facile à utiliser. Vous pouvez également adapter cet exemple à d'autres types de bases de données (comme MySQL ou PostgreSQL) en utilisant les drivers appropriés.
-
-Voici comment établir une connexion à une base de données SQLite :
+Pour illustrer l'envoi de requêtes SQL, nous allons d'abord établir une connexion à une base de données. Dans cet exemple, nous utiliserons SQLite, une base de données légère qui ne nécessite pas de serveur. Voici comment créer une connexion :
 
 ```R
 library(DBI)
-library(dplyr)
 
-# Créer une connexion à la base de données SQLite
+# Créer une connexion à une base de données SQLite
 con <- dbConnect(RSQLite::SQLite(), dbname = "ma_base_de_donnees.sqlite")
 ```
 
-## Exécution de requêtes SQL
+## Exécution de requêtes SQL avec dplyr
 
-Une fois que vous êtes connecté à votre base de données, vous pouvez utiliser `dplyr` pour manipuler vos données. Voici un exemple concret où nous allons récupérer des données à partir d'une table nommée `employes`.
+Une fois que vous êtes connecté à la base de données, vous pouvez utiliser `dplyr` pour envoyer des requêtes SQL. Voici un exemple concret où nous allons créer une table, insérer des données, puis effectuer une requête.
 
-### Exemple : Récupérer des données
-
-Supposons que nous avons une table `employes` avec des colonnes `id`, `nom`, `poste` et `salaire`. Nous souhaitons sélectionner tous les employés dont le salaire est supérieur à 50000.
+### Création d'une table et insertion de données
 
 ```R
-# Lire les données de la table employes
-employes <- tbl(con, "employes")
+library(dplyr)
 
-# Filtrer les employés avec un salaire supérieur à 50000
-employes_salaire_eleve <- employes %>%
-  filter(salaire > 50000)
+# Créer une table
+dbExecute(con, "CREATE TABLE utilisateurs (id INTEGER PRIMARY KEY, nom TEXT, age INTEGER)")
 
-# Afficher les résultats
-employes_salaire_eleve %>% collect()
+# Insérer des données
+dbExecute(con, "INSERT INTO utilisateurs (nom, age) VALUES ('Alice', 30)")
+dbExecute(con, "INSERT INTO utilisateurs (nom, age) VALUES ('Bob', 25)")
 ```
 
-### Explication du code
+### Lecture des données avec dplyr
 
-- `tbl(con, "employes")` : Cette fonction crée un objet qui représente la table `employes` dans la base de données.
-- `filter(salaire > 50000)` : Ici, nous filtrons les données pour ne garder que les employés avec un salaire supérieur à 50000.
-- `collect()` : Cette fonction exécute la requête et ramène les résultats dans un dataframe R.
+Maintenant que nous avons des données dans notre table, nous pouvons les lire en utilisant `dplyr`. Voici comment faire :
+
+```R
+# Lire les données de la table utilisateurs
+utilisateurs <- tbl(con, "utilisateurs")
+
+# Afficher les données
+utilisateurs %>% collect()
+```
+
+### Exécution d'une requête SQL
+
+Vous pouvez également exécuter des requêtes SQL directement. Par exemple, si vous souhaitez sélectionner uniquement les utilisateurs de plus de 28 ans, vous pouvez le faire comme suit :
+
+```R
+# Exécuter une requête SQL
+resultat <- dbGetQuery(con, "SELECT * FROM utilisateurs WHERE age > 28")
+
+# Afficher le résultat
+print(resultat)
+```
+
+## Fermeture de la connexion
+
+N'oubliez pas de fermer la connexion à la base de données une fois que vous avez terminé vos opérations :
+
+```R
+dbDisconnect(con)
+```
 
 ## Conclusion
 
-Utiliser `dplyr` pour envoyer des requêtes SQL depuis R est un moyen efficace de manipuler des données stockées dans des bases de données. Cela permet de bénéficier de la puissance de SQL tout en profitant de la syntaxe intuitive de `dplyr`. Que vous travailliez avec SQLite, MySQL ou PostgreSQL, `dplyr` vous offre une flexibilité incroyable pour gérer vos données. 
-
-N'hésitez pas à explorer d'autres fonctions de `dplyr` pour enrichir vos analyses de données !
+L'utilisation de `dplyr` pour envoyer des requêtes SQL depuis R est un moyen puissant et flexible de travailler avec des bases de données. Grâce à sa syntaxe intuitive, vous pouvez facilement manipuler vos données tout en profitant des performances des bases de données relationnelles. Que vous soyez en train de créer des tables, d'insérer des données ou d'exécuter des requêtes, `dplyr` vous offre les outils nécessaires pour gérer vos données efficacement.
 

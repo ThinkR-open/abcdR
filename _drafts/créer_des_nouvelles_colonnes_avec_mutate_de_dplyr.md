@@ -12,76 +12,78 @@ taxonomy:
 
 # Créer des nouvelles colonnes avec `mutate` de `dplyr`
 
-Le package `dplyr` est un outil puissant pour la manipulation de données en R. L'une des fonctions les plus utilisées de `dplyr` est `mutate()`, qui permet d'ajouter de nouvelles colonnes à un DataFrame ou de modifier des colonnes existantes. Dans cet article, nous allons explorer comment utiliser `mutate()` pour enrichir nos jeux de données.
+Le package `dplyr` est un outil puissant pour la manipulation de données en R. L'une de ses fonctions les plus utiles est `mutate()`, qui permet de créer de nouvelles colonnes dans un data frame. Dans cet article, nous allons explorer comment utiliser `mutate()` pour ajouter des colonnes dérivées de colonnes existantes.
 
 ## Installation et chargement de `dplyr`
 
-Si vous n'avez pas encore installé le package `dplyr`, vous pouvez le faire en utilisant la commande suivante :
+Avant de commencer, assurez-vous que le package `dplyr` est installé et chargé. Vous pouvez l'installer avec la commande suivante si ce n'est pas déjà fait :
 
 ```R
 install.packages("dplyr")
 ```
 
-Ensuite, vous devez charger le package dans votre session R :
+Ensuite, chargez le package :
 
 ```R
 library(dplyr)
 ```
 
-## Exemple d'utilisation de `mutate()`
+## Exemple concret
 
-Imaginons que nous avons un DataFrame contenant des informations sur des employés, avec les colonnes `nom`, `salaire` et `annees_experience`. Nous voulons créer une nouvelle colonne `salaire_annuel`, qui est simplement le salaire multiplié par 12, et une colonne `prime`, qui est 10% du salaire.
+Imaginons que nous avons un data frame contenant des informations sur des étudiants, y compris leur nom, leur note en mathématiques et leur note en sciences. Nous voulons ajouter une nouvelle colonne qui calcule la moyenne des notes de chaque étudiant.
 
-Voici comment nous pourrions procéder :
-
-### Création d'un DataFrame d'exemple
+Voici un exemple de data frame :
 
 ```R
-# Créons un DataFrame d'exemple
-employes <- data.frame(
+# Création d'un data frame d'exemple
+etudiants <- data.frame(
   nom = c("Alice", "Bob", "Charlie"),
-  salaire = c(3000, 4000, 5000),
-  annees_experience = c(5, 10, 3)
+  maths = c(85, 90, 78),
+  sciences = c(88, 92, 80)
 )
+
+# Affichage du data frame
+print(etudiants)
+```
+
+Ce qui donne :
+
+```
+      nom maths sciences
+1   Alice    85       88
+2     Bob    90       92
+3 Charlie    78       80
 ```
 
 ### Utilisation de `mutate()`
 
-Nous allons utiliser `mutate()` pour ajouter les nouvelles colonnes :
+Pour ajouter une nouvelle colonne qui représente la moyenne des notes, nous allons utiliser la fonction `mutate()`. Voici comment procéder :
 
 ```R
-# Ajouter de nouvelles colonnes avec mutate
-employes <- employes %>%
-  mutate(
-    salaire_annuel = salaire * 12,
-    prime = salaire * 0.10
-  )
+# Ajout d'une colonne 'moyenne' avec mutate
+etudiants <- etudiants %>%
+  mutate(moyenne = (maths + sciences) / 2)
+
+# Affichage du data frame mis à jour
+print(etudiants)
 ```
 
-### Résultat
-
-Après avoir exécuté le code ci-dessus, le DataFrame `employes` contiendra les nouvelles colonnes `salaire_annuel` et `prime`. Voici à quoi cela ressemble :
-
-```R
-print(employes)
-```
-
-Le résultat affichera :
+Après l'exécution de ce code, le data frame `etudiants` ressemblera à ceci :
 
 ```
-      nom salaire annees_experience salaire_annuel  prime
-1   Alice   3000                 5           36000  300.0
-2     Bob   4000                10           48000  400.0
-3 Charlie   5000                 3           60000  500.0
+      nom maths sciences moyenne
+1   Alice    85       88   86.50
+2     Bob    90       92   91.00
+3 Charlie    78       80   79.00
 ```
 
 ## Explications
 
-- **mutate()** : Cette fonction prend en entrée un DataFrame et permet d'ajouter ou de modifier des colonnes.
-- **salaire_annuel = salaire * 12** : Ici, nous créons une nouvelle colonne `salaire_annuel` qui est calculée en multipliant la colonne `salaire` par 12.
-- **prime = salaire * 0.10** : De même, nous ajoutons une colonne `prime` qui représente 10% du salaire.
+- **`mutate()`** : Cette fonction permet de créer de nouvelles colonnes ou de modifier des colonnes existantes dans un data frame.
+- **`%>%`** : C'est l'opérateur pipe qui permet de passer le résultat d'une opération à la suivante, rendant le code plus lisible.
+- **`(maths + sciences) / 2`** : C'est l'expression qui calcule la moyenne des notes en mathématiques et en sciences.
 
 ## Conclusion
 
-La fonction `mutate()` de `dplyr` est très utile pour enrichir vos jeux de données avec de nouvelles informations dérivées de colonnes existantes. Grâce à sa syntaxe claire et concise, vous pouvez facilement effectuer des transformations sur vos données en R. N'hésitez pas à explorer d'autres fonctionnalités de `dplyr` pour rendre vos analyses encore plus puissantes !
+La fonction `mutate()` de `dplyr` est un outil essentiel pour la manipulation de données en R. Elle permet d'ajouter facilement des colonnes dérivées de calculs sur d'autres colonnes. Dans cet article, nous avons vu un exemple simple d'ajout d'une colonne de moyenne, mais les possibilités sont infinies. N'hésitez pas à explorer davantage les fonctionnalités de `dplyr` pour enrichir vos analyses de données !
 

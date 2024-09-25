@@ -12,62 +12,62 @@ taxonomy:
 
 # Customiser les couleurs des graphiques dans ggplot2
 
-Le package `ggplot2` est l'un des outils les plus puissants pour créer des graphiques en R. L'une des fonctionnalités les plus appréciées de `ggplot2` est la possibilité de personnaliser les couleurs des graphiques. Dans cet article, nous allons voir comment modifier les couleurs pour améliorer la présentation de nos visuels.
+Le package `ggplot2` est l'un des outils les plus puissants pour la visualisation de données en R. L'une des fonctionnalités les plus appréciées de `ggplot2` est la possibilité de personnaliser les couleurs des graphiques. Dans cet article, nous allons explorer comment modifier les couleurs des éléments d'un graphique pour le rendre plus attrayant et informatif.
 
-## Pourquoi personnaliser les couleurs ?
+## Installation et chargement de ggplot2
 
-Personnaliser les couleurs de vos graphiques peut aider à :
-- Améliorer la lisibilité.
-- Rendre vos graphiques plus attrayants visuellement.
-- Mettre en avant certaines informations ou catégories.
-
-## Exemple de personnalisation des couleurs
-
-Pour illustrer cela, nous allons utiliser le jeu de données intégré `mtcars`, qui contient des informations sur différentes voitures. Nous allons créer un graphique de dispersion (scatter plot) pour visualiser la relation entre le poids des voitures (variable `wt`) et leur consommation de carburant (variable `mpg`), tout en personnalisant les couleurs selon le nombre de cylindres (`cyl`).
-
-### Étape 1 : Charger les bibliothèques nécessaires
+Si vous n'avez pas encore installé `ggplot2`, vous pouvez le faire avec la commande suivante :
 
 ```R
-# Charger la bibliothèque ggplot2
+install.packages("ggplot2")
+```
+
+Ensuite, chargez le package :
+
+```R
 library(ggplot2)
 ```
 
-### Étape 2 : Créer un graphique de base
+## Exemple de personnalisation des couleurs
 
-Commençons par créer un graphique de dispersion de base :
+Pour illustrer la personnalisation des couleurs, nous allons utiliser un jeu de données intégré dans R, `mtcars`, qui contient des informations sur différents modèles de voitures. Nous allons créer un graphique à barres montrant la moyenne des miles par gallon (mpg) par nombre de cylindres (cyl).
+
+### Code de base
+
+Voici un code de base pour créer un graphique à barres :
 
 ```R
-# Graphique de base
-ggplot(mtcars, aes(x = wt, y = mpg)) +
-  geom_point()
+# Calculer la moyenne des mpg par cyl
+mpg_moyenne <- aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+
+# Créer un graphique à barres
+ggplot(mpg_moyenne, aes(x = factor(cyl), y = mpg)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  labs(title = "Moyenne des MPG par nombre de cylindres",
+       x = "Nombre de cylindres",
+       y = "Moyenne des MPG")
 ```
 
-### Étape 3 : Ajouter des couleurs
+Dans cet exemple, nous avons utilisé `fill = "blue"` pour colorer les barres en bleu. Cependant, nous pouvons aller plus loin en utilisant des palettes de couleurs personnalisées.
 
-Pour ajouter des couleurs en fonction du nombre de cylindres, nous allons modifier l'esthétique `aes()` en ajoutant `color = factor(cyl)` :
+### Utilisation de palettes de couleurs
+
+Pour personnaliser les couleurs, nous pouvons utiliser la fonction `scale_fill_manual()`. Voici comment procéder :
 
 ```R
-# Graphique avec couleurs personnalisées
-ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
-  geom_point(size = 3) +
-  labs(color = "Nombre de cylindres") +
+# Créer un graphique avec des couleurs personnalisées
+ggplot(mpg_moyenne, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("red", "green", "blue")) +
+  labs(title = "Moyenne des MPG par nombre de cylindres",
+       x = "Nombre de cylindres",
+       y = "Moyenne des MPG") +
   theme_minimal()
 ```
 
-### Étape 4 : Personnaliser les couleurs
-
-Pour aller plus loin, nous pouvons personnaliser les couleurs en utilisant la fonction `scale_color_manual()`. Supposons que nous voulons utiliser les couleurs rouge, vert et bleu pour les 4, 6 et 8 cylindres respectivement.
-
-```R
-# Graphique avec couleurs personnalisées
-ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
-  geom_point(size = 3) +
-  labs(color = "Nombre de cylindres") +
-  scale_color_manual(values = c("4" = "red", "6" = "green", "8" = "blue")) +
-  theme_minimal()
-```
+Dans cet exemple, nous avons utilisé `scale_fill_manual()` pour définir une palette de couleurs personnalisée. Les barres correspondant au nombre de cylindres 4, 6 et 8 seront respectivement colorées en rouge, vert et bleu.
 
 ## Conclusion
 
-Voilà comment vous pouvez facilement personnaliser les couleurs de vos graphiques dans `ggplot2`. En jouant avec les couleurs, vous pouvez rendre vos données plus visuelles et plus faciles à comprendre. N'hésitez pas à explorer d'autres options de personnalisation que `ggplot2` offre pour créer des graphiques qui correspondent à vos besoins et à votre style !
+La personnalisation des couleurs dans `ggplot2` est un moyen efficace d'améliorer la lisibilité et l'esthétique de vos graphiques. Que vous souhaitiez utiliser des couleurs spécifiques ou appliquer des palettes de couleurs, `ggplot2` offre une flexibilité considérable pour répondre à vos besoins. N'hésitez pas à expérimenter avec différentes couleurs et palettes pour rendre vos visualisations encore plus percutantes !
 

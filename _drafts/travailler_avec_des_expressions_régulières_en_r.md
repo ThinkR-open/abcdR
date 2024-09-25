@@ -12,61 +12,53 @@ taxonomy:
 
 # Travailler avec des expressions régulières en R
 
-Les expressions régulières (ou regex) sont des séquences de caractères qui forment un modèle de recherche. Elles sont largement utilisées dans la programmation pour la recherche de motifs, la validation de formats, la substitution de chaînes et bien plus encore. Dans cet article, nous allons explorer comment utiliser les expressions régulières en R à travers des exemples concrets.
+Les expressions régulières (ou regex) sont des séquences de caractères qui forment un modèle de recherche. Elles sont très utiles pour la manipulation de chaînes de caractères, que ce soit pour la recherche, le remplacement ou la validation de formats. R offre plusieurs fonctions pour travailler avec des expressions régulières, notamment `grep()`, `grepl()`, `sub()`, et `gsub()`.
 
-## Pourquoi utiliser des expressions régulières ?
+## Les fonctions principales
 
-Les expressions régulières permettent de manipuler des chaînes de caractères de manière efficace. Elles peuvent être utilisées pour :
-
-- Trouver des motifs spécifiques dans du texte.
-- Extraire des sous-chaînes.
-- Remplacer des parties de chaînes.
-- Valider des formats (comme des adresses e-mail).
-
-## Les fonctions principales en R
-
-R offre plusieurs fonctions pour travailler avec des expressions régulières :
-
-- `grepl()` : Vérifie si un motif est présent dans une chaîne de caractères.
-- `grep()` : Renvoie les indices des éléments qui correspondent à un motif.
-- `gsub()` : Remplace les occurrences d'un motif par une nouvelle chaîne.
-- `regexpr()` et `gregexpr()` : Renvoient la position des motifs trouvés.
+1. **`grep()`** : Cette fonction recherche des motifs dans un vecteur de chaînes et renvoie les indices des éléments correspondants.
+2. **`grepl()`** : Semblable à `grep()`, mais renvoie un vecteur logique indiquant si chaque élément correspond au motif.
+3. **`sub()`** : Remplace la première occurrence d'un motif dans une chaîne par une autre chaîne.
+4. **`gsub()`** : Remplace toutes les occurrences d'un motif dans une chaîne par une autre chaîne.
 
 ## Exemple concret
 
-Imaginons que nous avons une liste d'adresses e-mail et que nous souhaitons extraire celles qui sont valides. Voici comment nous pourrions procéder :
+Imaginons que nous avons un vecteur de chaînes représentant des adresses e-mail, et nous voulons extraire les noms d'utilisateur (la partie avant le symbole `@`).
+
+### Étape 1 : Créer un vecteur d'adresses e-mail
 
 ```r
-# Exemple de liste d'adresses e-mail
-emails <- c("test@example.com", "invalid-email", "user@domain.org", "another.invalid@", "hello@world.net")
+emails <- c("alice@example.com", "bob@gmail.com", "charlie@yahoo.com")
+```
 
-# Définir un motif pour une adresse e-mail valide
-pattern <- "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+### Étape 2 : Utiliser une expression régulière pour extraire les noms d'utilisateur
 
-# Utiliser grepl pour vérifier quels e-mails sont valides
-valid_emails <- emails[grepl(pattern, emails)]
+Nous allons utiliser `sub()` pour remplacer tout ce qui suit le `@` par une chaîne vide.
 
-# Afficher les e-mails valides
-print(valid_emails)
+```r
+# Extraire les noms d'utilisateur
+noms_utilisateur <- sub("@.*", "", emails)
+print(noms_utilisateur)
 ```
 
 ### Explication du code
 
-1. **Liste d'adresses e-mail** : Nous avons une variable `emails` qui contient plusieurs chaînes représentant des adresses e-mail.
+- `@.*` est l'expression régulière utilisée ici. 
+  - `@` correspond au symbole `@`.
+  - `.*` signifie "n'importe quel caractère (.) répété zéro ou plusieurs fois (*)". Cela signifie que nous voulons tout ce qui suit le `@`.
+- `sub()` remplace le motif trouvé par une chaîne vide, ce qui nous laisse uniquement la partie avant le `@`.
 
-2. **Motif d'e-mail valide** : Le motif regex `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$` est utilisé pour définir un format d'adresse e-mail. Voici une explication des éléments du motif :
-   - `^` : Indique le début de la chaîne.
-   - `[a-zA-Z0-9._%+-]+` : Correspond à un ou plusieurs caractères alphanumériques ou à des caractères spéciaux autorisés avant le `@`.
-   - `@` : Caractère littéral `@`.
-   - `[a-zA-Z0-9.-]+` : Correspond à un ou plusieurs caractères alphanumériques ou à des points/dash après le `@`.
-   - `\\.` : Caractère littéral `.` (nous devons échapper le point car il a une signification spéciale en regex).
-   - `[a-zA-Z]{2,}` : Correspond à deux caractères alphabétiques ou plus (pour le domaine).
+### Résultat
 
-3. **Filtrage des e-mails valides** : La fonction `grepl()` renvoie TRUE pour les e-mails valides, et nous utilisons cela pour filtrer notre vecteur initial.
+En exécutant le code ci-dessus, nous obtiendrons :
 
-4. **Affichage des résultats** : Enfin, nous affichons les adresses e-mail valides.
+```
+[1] "alice"   "bob"     "charlie"
+```
+
+Nous avons ainsi extrait avec succès les noms d'utilisateur des adresses e-mail.
 
 ## Conclusion
 
-Les expressions régulières sont un outil puissant pour le traitement de texte en R. En comprenant les bases des motifs regex et en utilisant les fonctions appropriées, vous pouvez effectuer des tâches complexes de manipulation de chaînes de caractères de manière efficace. N'hésitez pas à expérimenter avec différents motifs
+Les expressions régulières sont un outil puissant pour le traitement de texte en R. En comprenant comment utiliser les fonctions comme `grep()`, `grepl()`, `sub()`, et `gsub()`, vous pouvez facilement manipuler et analyser des chaînes de caractères. N'hésitez pas à expérimenter avec différentes expressions régulières pour découvrir leur potentiel dans vos projets de données.
 

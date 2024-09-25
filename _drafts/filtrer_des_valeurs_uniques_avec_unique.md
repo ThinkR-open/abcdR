@@ -10,57 +10,60 @@ taxonomy:
         - filtre
 ---
 
-# Filtrer des valeurs uniques avec `unique` en R
+# Filtrer des valeurs uniques avec la fonction `unique()` en R
 
-Dans le langage R, il est souvent nécessaire de travailler avec des données qui contiennent des valeurs répétées. Pour extraire uniquement les valeurs uniques d'un vecteur ou d'une colonne d'un dataframe, la fonction `unique()` est la solution idéale. Cet article vous montrera comment utiliser cette fonction de manière concrète.
+Dans le langage R, il est fréquent de travailler avec des ensembles de données qui contiennent des valeurs répétées. Pour analyser ces données de manière efficace, il est souvent nécessaire d'extraire les valeurs uniques. La fonction `unique()` est un outil simple et puissant pour accomplir cette tâche.
 
-## Qu'est-ce que `unique()` ?
+## Qu'est-ce que la fonction `unique()` ?
 
-La fonction `unique()` en R permet de retourner un vecteur, une matrice ou un dataframe en ne conservant que les valeurs uniques. Cela signifie que toutes les valeurs dupliquées seront supprimées, et seules les valeurs distinctes resteront.
+La fonction `unique()` permet de retourner un vecteur, une matrice ou un cadre de données en ne conservant que les valeurs uniques. Cela signifie que toutes les occurrences d'une valeur répétée seront réduites à une seule occurrence.
 
 ## Exemple concret
 
-Imaginons que nous avons un vecteur de données qui contient des noms de fruits, dont certains sont répétés. Nous souhaitons obtenir une liste de ces fruits sans doublons.
+Imaginons que nous avons un vecteur contenant des noms d'animaux, certains d'entre eux étant répétés. Nous allons utiliser la fonction `unique()` pour extraire les noms d'animaux uniques.
 
-Voici un exemple de code R qui illustre cela :
+### Code R
 
-```R
-# Création d'un vecteur avec des fruits, incluant des doublons
-fruits <- c("Pomme", "Banane", "Orange", "Pomme", "Fraise", "Banane", "Kiwi")
+Voici un exemple de code R qui illustre l'utilisation de `unique()` :
+
+```r
+# Création d'un vecteur avec des valeurs répétées
+animaux <- c("chat", "chien", "oiseau", "chat", "poisson", "chien", "lapin")
 
 # Affichage du vecteur original
 print("Vecteur original :")
-print(fruits)
+print(animaux)
 
-# Utilisation de la fonction unique() pour filtrer les valeurs uniques
-fruits_uniques <- unique(fruits)
+# Filtrage des valeurs uniques
+animaux_uniques <- unique(animaux)
 
-# Affichage des fruits uniques
-print("Fruits uniques :")
-print(fruits_uniques)
+# Affichage des valeurs uniques
+print("Valeurs uniques :")
+print(animaux_uniques)
 ```
 
-### Explication du code
+### Explications du code
 
-1. **Création du vecteur** : Nous avons créé un vecteur `fruits` qui contient plusieurs noms de fruits, certains étant répétés.
-2. **Affichage du vecteur original** : On utilise `print()` pour afficher les valeurs du vecteur initial.
-3. **Filtrage des valeurs uniques** : La fonction `unique(fruits)` est utilisée pour extraire uniquement les noms de fruits uniques. Le résultat est stocké dans le vecteur `fruits_uniques`.
-4. **Affichage des fruits uniques** : Enfin, nous affichons les valeurs uniques obtenues.
+1. **Création du vecteur** : Nous commençons par créer un vecteur `animaux` qui contient plusieurs noms d'animaux, avec des répétitions.
+   
+2. **Affichage du vecteur original** : Nous utilisons `print()` pour afficher le vecteur initial afin de voir les valeurs avant le filtrage.
 
-## Résultat
+3. **Filtrage des valeurs uniques** : Nous appliquons la fonction `unique(animaux)` pour obtenir un nouveau vecteur `animaux_uniques` qui ne contient que les noms d'animaux uniques.
 
-Lorsque vous exécutez ce code, vous obtiendrez la sortie suivante :
+4. **Affichage des valeurs uniques** : Enfin, nous affichons le vecteur des valeurs uniques.
+
+### Résultat attendu
+
+Lorsque vous exécutez ce code, vous devriez obtenir le résultat suivant :
 
 ```
-[1] "Vecteur original :"
-[1] "Pomme"  "Banane" "Orange" "Pomme"  "Fraise" "Banane" "Kiwi"
-[1] "Fruits uniques :"
-[1] "Pomme"  "Banane" "Orange" "Fraise" "Kiwi"
+Vecteur original :
+[1] "chat"    "chien"   "oiseau"  "chat"    "poisson" "chien"   "lapin"  
+Valeurs uniques :
+[1] "chat"    "chien"   "oiseau"  "poisson" "lapin"  
 ```
-
-Comme vous pouvez le voir, le vecteur `fruits_uniques` ne contient que des noms de fruits distincts, sans répétitions.
 
 ## Conclusion
 
-La fonction `unique()` est un outil puissant et simple à utiliser pour filtrer les valeurs uniques dans vos données R. Que vous travailliez avec des vecteurs, des matrices ou des dataframes, cette fonction vous aidera à nettoyer vos données et à obtenir des résultats plus précis. N'hésitez pas à l'intégrer dans votre flux de travail d'analyse de données !
+La fonction `unique()` est un outil essentiel pour le traitement des données en R. Elle permet de simplifier l'analyse en éliminant les doublons et en fournissant une vue claire des valeurs distinctes. Que vous travailliez avec des vecteurs, des matrices ou des cadres de données, `unique()` vous aidera à obtenir les informations dont vous avez besoin de manière efficace. N'hésitez pas à l'utiliser dans vos propres analyses de données !
 

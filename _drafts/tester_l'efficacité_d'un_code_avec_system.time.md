@@ -12,62 +12,47 @@ taxonomy:
 
 # Tester l'efficacité d'un code avec `system.time` en R
 
-Lorsqu'on écrit du code en R, il est souvent important de savoir combien de temps prend un certain morceau de code pour s'exécuter. Cela peut nous aider à identifier les goulets d'étranglement dans notre code et à optimiser nos algorithmes. Pour cela, R propose la fonction `system.time()`, qui permet de mesurer le temps d'exécution d'un code.
+Lorsque nous écrivons du code en R, il est souvent important de s'assurer que notre code s'exécute efficacement, surtout lorsque nous travaillons avec de grandes quantités de données ou des algorithmes complexes. Une des manières les plus simples de mesurer le temps d'exécution d'un morceau de code en R est d'utiliser la fonction `system.time()`.
 
-## Qu'est-ce que `system.time` ?
+## Qu'est-ce que `system.time()` ?
 
-La fonction `system.time()` en R renvoie le temps d'exécution d'une expression. Elle retourne un objet qui contient trois valeurs : le temps CPU utilisé par le processus, le temps réel écoulé et le temps d'attente du système. Voici comment l'utiliser :
+La fonction `system.time()` mesure le temps nécessaire pour exécuter une expression R. Elle retourne un objet de type `proc_time`, qui contient trois valeurs :
 
-### Syntaxe
-
-```r
-system.time(expr)
-```
-
-- `expr` : l'expression dont vous souhaitez mesurer le temps d'exécution.
+- **user** : le temps CPU utilisé par le processus utilisateur.
+- **system** : le temps CPU utilisé par le système.
+- **elapsed** : le temps réel écoulé (temps d'exécution total).
 
 ## Exemple concret
 
-Imaginons que nous voulons mesurer le temps nécessaire pour calculer la somme des carrés des nombres de 1 à 1 000 000. Voici comment nous pourrions faire :
+Prenons un exemple simple où nous allons mesurer le temps nécessaire pour calculer la somme des carrés des nombres de 1 à 1 000 000.
+
+### Code R
 
 ```r
-# Mesurer le temps d'exécution
+# Définir une fonction pour calculer la somme des carrés
+somme_carres <- function(n) {
+  sum((1:n)^2)
+}
+
+# Mesurer le temps d'exécution de la fonction
 temps_execution <- system.time({
-  somme_carrés <- sum((1:1000000)^2)
+  resultat <- somme_carres(1000000)
 })
 
-# Afficher le résultat
+# Afficher le résultat et le temps d'exécution
+print(paste("La somme des carrés de 1 à 1 000 000 est :", resultat))
 print(temps_execution)
-print(somme_carrés)
 ```
 
-### Explication du code
+### Explications
 
-1. **Déclaration de la fonction `system.time()`** :
-   - Nous enveloppons notre code de calcul dans les accolades `{}` pour que `system.time()` puisse mesurer le temps d'exécution de l'ensemble de l'expression.
+1. **Définition de la fonction** : Nous avons défini une fonction `somme_carres` qui prend un nombre `n` et calcule la somme des carrés des nombres de 1 à `n`.
 
-2. **Calcul de la somme des carrés** :
-   - Nous utilisons `1:1000000` pour créer une séquence de nombres de 1 à 1 000 000, puis nous élevons chaque nombre au carré avec `^2`, et enfin nous utilisons la fonction `sum()` pour obtenir la somme de ces carrés.
+2. **Mesure du temps d'exécution** : Nous utilisons `system.time()` pour mesurer le temps que prend l'exécution de la fonction `somme_carres(1000000)`. Le code à l'intérieur des accolades `{}` est celui dont nous voulons mesurer le temps d'exécution.
 
-3. **Affichage des résultats** :
-   - Après l'exécution, nous imprimons le temps d'exécution stocké dans `temps_execution` ainsi que le résultat de notre calcul, `somme_carrés`.
-
-### Interprétation des résultats
-
-Après avoir exécuté le code ci-dessus, vous obtiendrez un affichage qui ressemble à ceci :
-
-```
-   user      system     elapsed 
-  0.123     0.003      0.126 
-```
-
-- **user** : temps CPU utilisé en mode utilisateur.
-- **system** : temps CPU utilisé en mode système.
-- **elapsed** : temps réel écoulé depuis le début jusqu'à la fin de l'exécution de l'expression.
-
-Ces valeurs vous donneront une idée de l'efficacité de votre code. Par exemple, si le temps écoulé est élevé, cela peut indiquer que votre code nécessite des optimisations.
+3. **Affichage des résultats** : Après l'exécution, nous affichons le résultat de la somme ainsi que le temps d'exécution. Le temps d'exécution est un objet qui contient les trois valeurs mentionnées précédemment.
 
 ## Conclusion
 
-Mesurer le temps d'exécution d'un code en R est une tâche simple grâce à `system.time()`. Cela vous permet d'identifier les parties de votre code qui pourraient être améliorées en termes d'efficacité. En utilisant cet outil, vous pouvez optimiser vos algorithmes et rendre vos analyses de données plus rapides et plus efficaces.
+Utiliser `system.time()` est une méthode efficace pour évaluer la performance de votre code en R. Cela vous permet d'identifier les parties de votre code qui pourraient être optimisées pour améliorer l'efficacité. N'hésitez pas à l'utiliser lors de vos prochaines analyses de données pour garantir que votre code fonctionne de manière optimale.
 

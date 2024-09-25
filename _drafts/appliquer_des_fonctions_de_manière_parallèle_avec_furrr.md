@@ -12,15 +12,11 @@ taxonomy:
 
 # Appliquer des fonctions de manière parallèle avec `furrr`
 
-Dans l'analyse de données, il est courant d'avoir besoin d'appliquer des fonctions à de grands jeux de données. Cela peut parfois être lent, surtout si les opérations sont gourmandes en ressources. Heureusement, le package `furrr` de R permet d'appliquer des fonctions de manière parallèle, ce qui peut considérablement améliorer les performances de vos analyses.
+Dans le monde de la programmation en R, il est souvent nécessaire de traiter de grandes quantités de données ou d'effectuer des calculs intensifs. Pour améliorer l'efficacité de ces opérations, on peut utiliser le parallélisme, qui permet d'exécuter plusieurs tâches simultanément. Le package `furrr` est une excellente solution pour appliquer des fonctions de manière parallèle en R, en s'appuyant sur la syntaxe familière de `purrr`.
 
-## Qu'est-ce que `furrr` ?
+## Installation de `furrr`
 
-`furrr` est un package qui intègre le paradigme de programmation `future` dans le cadre de l'application de fonctions, notamment avec la fonction `map()` de `purrr`. Grâce à `furrr`, nous pouvons exécuter des opérations en parallèle sur plusieurs cœurs de processeur, ce qui permet d'accélérer le traitement des données.
-
-## Installation
-
-Pour utiliser `furrr`, vous devez d'abord l'installer (si ce n'est pas déjà fait). Vous pouvez le faire en exécutant :
+Avant de commencer, assurez-vous d'avoir installé le package `furrr`. Vous pouvez l'installer depuis CRAN avec la commande suivante :
 
 ```R
 install.packages("furrr")
@@ -28,48 +24,51 @@ install.packages("furrr")
 
 ## Exemple concret
 
-Prenons un exemple simple où nous allons appliquer une fonction qui calcule le carré d'une série de nombres. Nous allons utiliser `furrr` pour paralléliser cette opération.
+Imaginons que nous souhaitions calculer le carré de chaque nombre dans un vecteur. Si le vecteur est très grand, cela peut prendre du temps. Utilisons `furrr` pour effectuer ce calcul en parallèle.
 
 ### Étape 1 : Charger les bibliothèques nécessaires
 
 ```R
 library(furrr)
-library(dplyr)  # Pour manipuler les données
+library(dplyr)  # Pour la manipulation de données
 ```
 
-### Étape 2 : Configurer le plan d'exécution parallèle
+### Étape 2 : Préparer les données
 
-Avant de commencer à utiliser `furrr`, il est nécessaire de définir un plan d'exécution. Par exemple, nous pouvons utiliser `plan(multisession)` pour exécuter les tâches en parallèle sur les différents cœurs de votre machine.
+Créons un vecteur de nombres de 1 à 1 million.
 
 ```R
-plan(multisession)  # Utiliser plusieurs cœurs
+nombres <- 1:1e6
 ```
 
-### Étape 3 : Créer un vecteur de données
+### Étape 3 : Configurer le plan de parallélisme
 
-Créons un vecteur de nombres sur lequel nous allons appliquer notre fonction.
+Avant d'utiliser `furrr`, nous devons définir un plan de parallélisme. Pour cet exemple, nous allons utiliser `multisession`, qui permet d'exécuter des tâches en parallèle sur plusieurs sessions R.
 
 ```R
-nombres <- 1:1000  # Un vecteur de 1 à 1000
+plan(multisession)
 ```
 
 ### Étape 4 : Appliquer la fonction en parallèle
 
-Nous allons maintenant appliquer la fonction qui calcule le carré de chaque nombre dans le vecteur en utilisant `future_map()`.
+Utilisons la fonction `future_map` de `furrr` pour appliquer la fonction qui calcule le carré de chaque nombre dans notre vecteur.
 
 ```R
-carrés <- future_map(nombres, ~ .x^2)
+resultats <- future_map(nombres, ~ .x^2)
 ```
 
-### Étape 5 : Afficher les résultats
+### Étape 5 : Vérifier les résultats
 
-Enfin, nous pouvons jeter un œil aux résultats obtenus.
+Nous pouvons maintenant vérifier que nos résultats sont corrects en comparant avec la fonction `sapply`.
 
 ```R
-print(head(carrés))  # Affiche les premiers résultats
+# Vérification
+identique(resultats, sapply(nombres, function(x) x^2))  # Devrait retourner TRUE
 ```
 
-## Résumé
+## Conclusion
 
-Dans cet article, nous avons vu comment utiliser le package `furrr` pour appliquer des fonctions en parallèle, ce qui peut rendre vos analyses de données beaucoup plus rapides. En quelques lignes de code, vous pouvez tirer parti de la puissance de plusieurs cœurs de votre machine. Que vous travailliez sur des séries temporelles, des simulations ou des traitements de données, `furrr` est un outil précieux à avoir dans votre boîte à outils R.
+L'utilisation de `furrr` pour appliquer des fonctions de manière parallèle est un moyen efficace d'accélérer vos calculs en R. Dans cet exemple, nous avons vu comment configurer un plan de parallélisme, créer un vecteur de données et appliquer une fonction en parallèle. En exploitant la puissance du parallélisme, vous pouvez traiter des données volumineuses plus rapidement et améliorer la performance de vos analyses.
+
+N'hésitez pas à explorer d'autres fonctions de `furrr` pour des applications plus complexes et adaptées à vos besoins spécifiques !
 

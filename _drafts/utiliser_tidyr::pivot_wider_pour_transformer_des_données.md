@@ -12,63 +12,73 @@ taxonomy:
 
 # Utiliser `tidyr::pivot_wider` pour transformer des données
 
-Dans le cadre de l'analyse de données avec R, il est souvent nécessaire de transformer les données pour les rendre plus faciles à analyser et à visualiser. L'une des fonctions les plus utiles pour cela est `pivot_wider()` du package `tidyr`. Cette fonction permet de convertir des données "longues" en données "larges", facilitant ainsi l'accès aux informations.
+Dans le traitement des données, il est souvent nécessaire de transformer la structure des données pour faciliter l'analyse. L'une des fonctions les plus utiles pour cela dans le package `tidyr` est `pivot_wider()`. Cette fonction permet de convertir des données de format long en format large, ce qui peut être particulièrement utile pour des analyses ou des visualisations.
 
-## Qu'est-ce que des données longues et larges ?
+## Qu'est-ce que le format long et le format large ?
 
-- **Données longues** : Chaque observation est présentée dans une ligne, avec des colonnes pour les variables. Par exemple, les mesures de plusieurs années pour différents groupes pourraient être dans une seule colonne.
-- **Données larges** : Chaque variable est présentée dans une colonne distincte. Cela permet de mieux visualiser certains types de données, comme les résultats d'une enquête.
+- **Format long** : Chaque ligne représente une observation unique, avec des colonnes pour les variables et une colonne pour les valeurs. Par exemple, si nous avons des données sur les ventes de différents produits par mois, chaque ligne pourrait représenter une vente pour un produit donné à un moment donné.
+
+- **Format large** : Chaque ligne représente une entité unique, avec des colonnes pour chaque variable d'intérêt. Dans notre exemple de ventes, chaque produit aurait une colonne pour chaque mois, avec les ventes correspondantes.
 
 ## Exemple concret
 
-Imaginons que nous avons un jeu de données contenant les ventes de produits sur plusieurs mois, comme ceci :
+Imaginons que nous avons un jeu de données sur les ventes de deux produits (A et B) sur trois mois (janvier, février, mars). Voici comment nos données pourraient être structurées en format long :
 
 ```r
 library(tidyr)
 library(dplyr)
 
-# Création d'un dataframe exemple
-ventes <- data.frame(
-  mois = c("Janvier", "Janvier", "Février", "Février"),
-  produit = c("A", "B", "A", "B"),
-  ventes = c(100, 150, 200, 250)
+# Création d'un jeu de données exemple
+ventes_long <- data.frame(
+  produit = c("A", "A", "A", "B", "B", "B"),
+  mois = c("janvier", "février", "mars", "janvier", "février", "mars"),
+  ventes = c(100, 150, 200, 80, 120, 160)
 )
 
-print(ventes)
+print(ventes_long)
 ```
 
-Ce tableau est un exemple de données longues où chaque ligne représente les ventes d'un produit pour un mois donné.
+Ce jeu de données ressemble à ceci :
 
-### Transformation avec `pivot_wider()`
+```
+  produit     mois ventes
+1       A janvier    100
+2       A février    150
+3       A    mars    200
+4       B janvier     80
+5       B février    120
+6       B    mars    160
+```
 
-Nous voulons transformer ce tableau pour avoir chaque produit dans une colonne distincte avec les ventes correspondantes. Pour ce faire, nous utiliserons `pivot_wider()`.
+Nous souhaitons transformer ce jeu de données en format large, où chaque produit a une colonne pour chaque mois.
 
-Voici comment procéder :
+## Utilisation de `pivot_wider()`
+
+Pour effectuer cette transformation, nous allons utiliser la fonction `pivot_wider()` :
 
 ```r
-# Transformation des données
-ventes_largues <- ventes %>%
-  pivot_wider(names_from = produit, values_from = ventes)
+ventes_large <- ventes_long %>%
+  pivot_wider(names_from = mois, values_from = ventes)
 
-print(ventes_largues)
+print(ventes_large)
 ```
 
 ### Explication du code
 
-- **`names_from = produit`** : Cela indique à `pivot_wider()` d'utiliser les valeurs de la colonne `produit` pour créer les noms des nouvelles colonnes.
-- **`values_from = ventes`** : Cela indique que les valeurs à placer dans ces nouvelles colonnes proviennent de la colonne `ventes`.
+- `names_from = mois` : Cette option indique que les noms des nouvelles colonnes (celles correspondant aux mois) doivent être pris de la colonne `mois`.
+- `values_from = ventes` : Cette option indique que les valeurs à remplir dans les nouvelles colonnes proviennent de la colonne `ventes`.
 
-Après avoir exécuté ce code, nous obtiendrons un tableau où chaque produit a sa propre colonne, avec les ventes par mois :
+Après avoir exécuté ce code, notre jeu de données en format large ressemblera à ceci :
 
 ```
-# A tibble: 2 x 3
-  mois    A     B
-  <chr> <dbl> <dbl>
-1 Janvier  100   150
-2 Février   200   250
+# A tibble: 2 x 4
+  produit janvier février  mars
+  <chr>     <dbl>   <dbl> <dbl>
+1 A         100     150   200
+2 B          80     120   160
 ```
 
 ## Conclusion
 
-La fonction `pivot_wider()` de `tidyr` est un outil puissant pour transformer des données longues en données larges. Cela facilite l'analyse et la visualisation des données. En suivant cet exemple, vous pouvez facilement appliquer cette technique à vos propres jeux de données pour les rendre plus exploitables.
+La fonction `pivot_wider()` de `tidyr` est un outil puissant pour transformer des données de format long en format large. Cela facilite l'analyse et la visualisation des données. Dans cet article, nous avons vu un exemple concret de transformation de données de ventes, mais cette méthode peut être appliquée à une variété de jeux de données dans différents contextes. N'hésitez pas à explorer cette fonction pour vos propres analyses !
 

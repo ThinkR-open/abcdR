@@ -12,70 +12,66 @@ taxonomy:
 
 # Utiliser la fonction `apply` pour des calculs sur des matrices en R
 
-La fonction `apply` en R est un outil puissant qui permet d'effectuer des calculs sur les lignes ou les colonnes d'une matrice de manière efficace et concise. Elle facilite la manipulation des données, en évitant les boucles explicites qui peuvent alourdir le code.
+La fonction `apply` en R est un outil puissant qui permet d'effectuer des opérations sur les lignes ou les colonnes d'une matrice. Elle est particulièrement utile lorsque vous souhaitez appliquer une fonction à chaque ligne ou colonne sans avoir à écrire des boucles explicites. Dans cet article, nous allons explorer comment utiliser `apply` pour effectuer des calculs simples sur une matrice.
 
 ## Syntaxe de la fonction `apply`
 
-La syntaxe de base de la fonction `apply` est la suivante :
+La syntaxe de la fonction `apply` est la suivante :
 
 ```R
 apply(X, MARGIN, FUN, ...)
 ```
 
-- `X` : la matrice ou un tableau sur lequel on souhaite appliquer une fonction.
-- `MARGIN` : un entier qui spécifie si l'on veut appliquer la fonction sur les lignes (`1`) ou sur les colonnes (`2`).
-- `FUN` : la fonction à appliquer.
-- `...` : d'autres arguments optionnels à passer à la fonction.
+- `X` : la matrice ou un tableau sur lequel vous souhaitez appliquer la fonction.
+- `MARGIN` : un entier qui indique si vous souhaitez appliquer la fonction sur les lignes (`1`) ou sur les colonnes (`2`).
+- `FUN` : la fonction que vous souhaitez appliquer.
+- `...` : d'autres arguments à passer à la fonction.
 
 ## Exemple concret
 
-Imaginons que nous avons une matrice contenant les notes d'élèves dans différentes matières. Nous souhaitons calculer la moyenne des notes pour chaque élève (ligne) ainsi que pour chaque matière (colonne).
+Imaginons que nous avons une matrice de données représentant les notes d'étudiants dans différentes matières. Nous allons calculer la moyenne des notes pour chaque étudiant (ligne) et pour chaque matière (colonne).
 
 ### Création de la matrice
 
-Commençons par créer une matrice avec des notes :
+Commençons par créer une matrice de notes :
 
 ```R
 # Création d'une matrice de notes
-notes <- matrix(c(15, 12, 14, 
-                   18, 16, 20, 
-                   10, 14, 15), 
-                 nrow = 3, byrow = TRUE)
-
-# Nommage des lignes et colonnes
-rownames(notes) <- c("Élève 1", "Élève 2", "Élève 3")
-colnames(notes) <- c("Maths", "Physique", "Chimie")
+notes <- matrix(c(15, 12, 14, 18, 16, 10, 20, 15, 17), nrow = 3, byrow = TRUE)
+colnames(notes) <- c("Math", "Physique", "Chimie")
+rownames(notes) <- c("Étudiant 1", "Étudiant 2", "Étudiant 3")
 
 # Affichage de la matrice
 print(notes)
 ```
 
-### Calcul des moyennes
+### Calcul de la moyenne par étudiant
 
-Pour calculer la moyenne des notes de chaque élève, nous allons utiliser `apply` en spécifiant `MARGIN = 1` :
-
-```R
-# Calcul de la moyenne des notes par élève
-moyenne_eleves <- apply(notes, 1, mean)
-print(moyenne_eleves)
-```
-
-Pour calculer la moyenne des notes de chaque matière, nous allons utiliser `apply` avec `MARGIN = 2` :
+Pour calculer la moyenne des notes de chaque étudiant, nous allons utiliser `apply` avec `MARGIN = 1` :
 
 ```R
-# Calcul de la moyenne des notes par matière
-moyenne_matieres <- apply(notes, 2, mean)
-print(moyenne_matieres)
+# Calcul de la moyenne par étudiant
+moyennes_etudiants <- apply(notes, 1, mean)
+
+# Affichage des moyennes
+print(moyennes_etudiants)
 ```
 
-## Résumé des résultats
+### Calcul de la moyenne par matière
 
-Après avoir exécuté le code ci-dessus, vous obtiendrez deux vecteurs : 
+De la même manière, pour calculer la moyenne des notes par matière, nous utiliserons `MARGIN = 2` :
 
-- `moyenne_eleves` contenant les moyennes pour chaque élève.
-- `moyenne_matieres` contenant les moyennes pour chaque matière.
+```R
+# Calcul de la moyenne par matière
+moyennes_matieres <- apply(notes, 2, mean)
 
-### Conclusion
+# Affichage des moyennes
+print(moyennes_matieres)
+```
 
-La fonction `apply` est extrêmement utile pour effectuer des calculs sur des matrices en R. Elle permet de simplifier le code et d'améliorer la lisibilité. Avec cet exemple, vous pouvez maintenant utiliser `apply` pour vos propres analyses de données. N'hésitez pas à explorer d'autres fonctions comme `lapply`, `sapply`, et `tapply` pour des cas d'utilisation différents.
+## Résumé
+
+Dans cet article, nous avons vu comment utiliser la fonction `apply` pour effectuer des calculs sur une matrice en R. Nous avons créé une matrice de notes et calculé les moyennes des notes pour chaque étudiant et pour chaque matière. La fonction `apply` simplifie considérablement le code en évitant l'utilisation de boucles explicites, ce qui rend le code plus lisible et plus efficace.
+
+N'hésitez pas à expérimenter avec d'autres fonctions et d'autres types de calculs en utilisant `apply` pour explorer davantage ses capacités !
 

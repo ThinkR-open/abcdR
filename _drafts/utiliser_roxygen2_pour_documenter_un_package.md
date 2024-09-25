@@ -12,81 +12,92 @@ taxonomy:
 
 # Utiliser roxygen2 pour documenter un package R
 
-La documentation est un aspect essentiel du développement d'un package en R. Elle permet aux utilisateurs de comprendre comment utiliser les fonctions et les données fournies. `roxygen2` est un outil populaire qui facilite la génération de documentation en intégrant des commentaires directement dans le code. Dans cet article, nous allons voir comment utiliser `roxygen2` pour documenter un package R de manière simple et efficace.
+La documentation est un aspect essentiel du développement de packages en R. Une bonne documentation aide les utilisateurs à comprendre comment utiliser votre package et ses fonctions. `roxygen2` est un outil populaire qui facilite la création de documentation en utilisant des commentaires dans le code. Dans cet article, nous allons voir comment utiliser `roxygen2` pour documenter un package R de manière simple et efficace.
 
-## Prérequis
+## Installation de roxygen2
 
-Avant de commencer, assurez-vous d'avoir installé le package `roxygen2`. Vous pouvez l'installer depuis CRAN en utilisant la commande suivante :
+Avant de commencer, assurez-vous d'avoir installé le package `roxygen2`. Vous pouvez l'installer depuis CRAN avec la commande suivante :
 
 ```R
 install.packages("roxygen2")
 ```
 
-## Structure de base d'un package
+## Structure d'un package R
 
-Pour illustrer l'utilisation de `roxygen2`, créons un petit package. D'abord, nous allons créer un répertoire pour notre package :
+Un package R doit avoir une structure spécifique. Voici les éléments de base :
+
+- Un dossier principal avec le nom de votre package.
+- Un sous-dossier `R/` pour les fichiers de code R.
+- Un fichier `DESCRIPTION` pour décrire le package.
+- Un fichier `NAMESPACE` pour gérer l'exportation des fonctions.
+
+## Exemple de documentation avec roxygen2
+
+Imaginons que nous avons une fonction simple qui additionne deux nombres. Nous allons créer un package appelé `monPackage` et documenter cette fonction.
+
+### Étape 1 : Créer la fonction
+
+Dans le dossier `R/`, créons un fichier appelé `addition.R` et ajoutons la fonction suivante :
 
 ```R
-usethis::create_package("monPackage")
-```
+# addition.R
 
-Cela va créer une structure de dossier pour notre package. Ensuite, nous allons ajouter une fonction simple à notre package.
-
-## Exemple de fonction
-
-Créons une fonction qui calcule la somme de deux nombres. Créez un fichier `R/somme.R` avec le contenu suivant :
-
-```R
-#' Additionne deux nombres
-#'
-#' Cette fonction prend deux nombres en entrée et renvoie leur somme.
-#'
-#' @param a Un nombre.
-#' @param b Un autre nombre.
-#' @return La somme de a et b.
-#' @examples
-#' somme(2, 3)
-#' somme(5, 7)
-somme <- function(a, b) {
+addition <- function(a, b) {
   return(a + b)
 }
 ```
 
-### Explication des balises
+### Étape 2 : Documenter la fonction avec roxygen2
 
-Dans le code ci-dessus, nous avons utilisé plusieurs balises `roxygen2` :
+Pour documenter la fonction, nous allons ajouter des commentaires `roxygen2` juste au-dessus de la définition de la fonction. Voici comment faire :
 
-- `@param` : décrit chaque paramètre de la fonction.
-- `@return` : indique ce que la fonction renvoie.
-- `@examples` : fournit des exemples d'utilisation de la fonction.
+```R
+#' Additionne deux nombres
+#'
+#' Cette fonction prend deux nombres en entrée et retourne leur somme.
+#'
+#' @param a Un nombre.
+#' @param b Un nombre.
+#' @return La somme de a et b.
+#' @examples
+#' addition(2, 3) # retourne 5
+#' addition(-1, 1) # retourne 0
+#' @export
+addition <- function(a, b) {
+  return(a + b)
+}
+```
 
-## Générer la documentation
+### Explication des tags roxygen2
 
-Une fois que vous avez ajouté vos commentaires `roxygen2`, vous pouvez générer la documentation en utilisant la fonction suivante :
+- `#'` : Indique que le texte suivant est un commentaire de documentation.
+- `@param` : Décrit un paramètre de la fonction.
+- `@return` : Indique ce que la fonction retourne.
+- `@examples` : Fournit des exemples d'utilisation de la fonction.
+- `@export` : Indique que la fonction doit être exportée pour être accessible aux utilisateurs du package.
+
+### Étape 3 : Générer la documentation
+
+Après avoir ajouté la documentation, vous devez générer les fichiers de documentation. Dans le répertoire principal de votre package, exécutez la commande suivante :
 
 ```R
 library(roxygen2)
-roxygen2::roxygenise("monPackage")
+roxygen2::roxygenise()
 ```
 
-Cette commande va créer un fichier `monPackage-manual.rd` dans le dossier `man`, qui contient la documentation de votre fonction.
+Cette commande va créer ou mettre à jour le fichier `NAMESPACE` et générer la documentation en format Rd dans le dossier `man/`.
 
-## Installer et tester le package
+### Étape 4 : Vérifier la documentation
 
-Pour tester votre package, vous devez l'installer. Utilisez la commande suivante :
+Pour vérifier que la documentation a été correctement générée, vous pouvez utiliser la fonction `?` suivie du nom de votre fonction dans la console R :
 
 ```R
-devtools::install("monPackage")
+?addition
 ```
 
-Après l'installation, vous pouvez utiliser votre fonction `somme` dans R :
-
-```R
-library(monPackage)
-somme(2, 3)  # Cela renverra 5
-```
+Cela ouvrira la documentation de la fonction `addition`, où vous pourrez voir la description, les paramètres, le retour et les exemples.
 
 ## Conclusion
 
-`roxygen2` est un outil puissant et simple pour documenter vos packages R. En intégrant la documentation directement dans le code, vous facilitez le maintien et la compréhension de votre package. N'oubliez pas de documenter chaque fonction que vous créez pour offrir une expérience utilisateur optimale. Avec cette approche, vous pouvez rapidement créer une documentation claire et accessible pour vos utilisateurs.
+Utiliser `roxygen2` pour documenter un package R est un moyen efficace et simple de s'assurer que votre code est bien documenté. En ajoutant des commentaires clairs et en utilisant les tags appropriés, vous pouvez créer une documentation utile pour vous et pour les utilisateurs de votre package. N'hésitez pas
 

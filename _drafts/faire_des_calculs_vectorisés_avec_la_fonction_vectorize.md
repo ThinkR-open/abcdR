@@ -12,54 +12,50 @@ taxonomy:
 
 # Faire des calculs vectorisés avec la fonction Vectorize en R
 
-R est un langage de programmation qui excelle dans le traitement de données grâce à ses capacités de calcul vectorisé. Le calcul vectorisé permet de réaliser des opérations sur des vecteurs entiers sans avoir besoin d'écrire des boucles explicites, ce qui rend le code plus simple et souvent plus rapide. Cependant, il arrive que certaines fonctions ne soient pas naturellement vectorisées. Dans ce cas, nous pouvons utiliser la fonction `Vectorize`.
+En R, le traitement vectorisé est une approche puissante qui permet d'effectuer des opérations sur des vecteurs de manière efficace et concise. Cependant, il arrive parfois que nous souhaitions appliquer une fonction qui n'est pas intrinsèquement vectorisée. Dans ce cas, la fonction `Vectorize` peut être très utile. Elle permet de transformer une fonction non vectorisée en une fonction qui peut traiter des vecteurs.
 
-## Qu'est-ce que Vectorize ?
+## Qu'est-ce que la vectorisation ?
 
-La fonction `Vectorize` transforme une fonction qui ne prend qu'un seul argument en une fonction qui peut accepter des vecteurs. Cela signifie que vous pouvez appliquer cette fonction à chaque élément d'un vecteur en un seul appel.
+La vectorisation consiste à appliquer une opération à chaque élément d'un vecteur sans avoir besoin d'utiliser des boucles explicites. Cela rend le code plus lisible et souvent plus rapide. Par exemple, si nous avons un vecteur de nombres et que nous voulons calculer le carré de chaque élément, nous pouvons le faire directement :
 
-## Exemple concret
+```R
+nombres <- c(1, 2, 3, 4)
+carres <- nombres^2
+print(carres)  # Affiche : 1 4 9 16
+```
 
-Prenons un exemple simple pour illustrer l'utilisation de `Vectorize`. Supposons que nous avons une fonction qui calcule le carré d'un nombre :
+## Utilisation de `Vectorize`
 
-```r
-carre <- function(x) {
-  return(x^2)
+Imaginons que nous avons une fonction qui ne peut pas être appliquée directement à un vecteur. Prenons une fonction simple qui calcule la racine carrée d'un nombre, mais qui ne peut traiter qu'un seul nombre à la fois :
+
+```R
+racine_carre <- function(x) {
+  return(sqrt(x))
 }
 ```
 
-Cette fonction fonctionne bien pour un seul nombre. Cependant, si nous souhaitons calculer le carré d'un vecteur de nombres, nous devrions utiliser une boucle. Voici comment nous pourrions le faire sans `Vectorize` :
+Pour utiliser cette fonction sur un vecteur, nous pouvons utiliser `Vectorize` :
 
-```r
-nombres <- c(1, 2, 3, 4, 5)
-resultats <- numeric(length(nombres))
+```R
+# Création d'une fonction vectorisée
+racine_carre_vectorisee <- Vectorize(racine_carre)
 
-for (i in 1:length(nombres)) {
-  resultats[i] <- carre(nombres[i])
-}
+# Application de la fonction vectorisée sur un vecteur
+nombres <- c(1, 4, 9, 16)
+resultats <- racine_carre_vectorisee(nombres)
 
-print(resultats)
+print(resultats)  # Affiche : 1 2 3 4
 ```
 
-Cependant, en utilisant `Vectorize`, nous pouvons simplifier ce processus :
+Dans cet exemple, `Vectorize` prend notre fonction `racine_carre` et crée une nouvelle fonction `racine_carre_vectorisee` qui peut accepter un vecteur en entrée. Lorsque nous appelons cette nouvelle fonction avec un vecteur, elle applique la fonction `racine_carre` à chaque élément du vecteur.
 
-```r
-carre_vectorise <- Vectorize(carre)
+## Avantages de `Vectorize`
 
-nombres <- c(1, 2, 3, 4, 5)
-resultats <- carre_vectorise(nombres)
-
-print(resultats)
-```
-
-## Explication du code
-
-1. **Définition de la fonction `carre`** : Nous définissons une fonction qui calcule le carré d'un nombre.
-2. **Utilisation de `Vectorize`** : Nous appliquons `Vectorize` à notre fonction `carre`, créant ainsi `carre_vectorise`, qui peut maintenant accepter des vecteurs.
-3. **Application sur un vecteur** : Nous créons un vecteur `nombres` contenant les valeurs de 1 à 5 et utilisons notre nouvelle fonction vectorisée pour calculer les carrés de ces nombres.
-4. **Affichage des résultats** : Enfin, nous affichons les résultats.
+1. **Simplicité** : Évitez les boucles explicites et rendez votre code plus lisible.
+2. **Performance** : Bien que `Vectorize` ne soit pas aussi performant que les fonctions déjà vectorisées, il est généralement plus rapide que l'utilisation de boucles `for`.
+3. **Flexibilité** : Vous pouvez facilement adapter des fonctions existantes pour qu'elles fonctionnent avec des vecteurs.
 
 ## Conclusion
 
-La fonction `Vectorize` en R est un outil puissant pour simplifier le calcul sur des vecteurs lorsque vos fonctions ne sont pas déjà vectorisées. Elle vous permet d'écrire un code plus propre et plus efficace, tout en évitant les boucles. N'hésitez pas à l'utiliser lorsque vous travaillez avec des fonctions scalaires et que vous souhaitez appliquer des calculs à des vecteurs.
+La fonction `Vectorize` est un outil précieux en R pour effectuer des calculs vectorisés. Elle vous permet de transformer des fonctions non vectorisées en fonctions qui peuvent traiter des vecteurs, rendant ainsi votre code plus efficace et plus facile à comprendre. N'hésitez pas à l'utiliser pour simplifier vos calculs et améliorer la lisibilité de votre code !
 

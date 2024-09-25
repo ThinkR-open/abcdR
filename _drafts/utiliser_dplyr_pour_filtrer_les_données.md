@@ -12,68 +12,59 @@ taxonomy:
 
 # Utiliser dplyr pour filtrer les données en R
 
-Le package `dplyr` est un outil puissant et populaire dans l'écosystème R pour la manipulation de données. Parmi ses nombreuses fonctions, le filtrage des données est l'une des plus couramment utilisées. Dans cet article, nous allons explorer comment filtrer des données avec `dplyr` à l'aide de la fonction `filter()`.
+Le package `dplyr` est l'un des outils les plus puissants et populaires pour la manipulation de données en R. L'une de ses principales fonctionnalités est la capacité à filtrer des données, ce qui permet de sélectionner des sous-ensembles de données en fonction de conditions spécifiques. Dans cet article, nous allons explorer comment utiliser `dplyr` pour filtrer des données de manière simple et efficace.
 
-## Installation de dplyr
+## Installation et chargement de dplyr
 
-Si vous n'avez pas encore installé le package `dplyr`, vous pouvez le faire en utilisant la commande suivante :
+Avant de commencer, assurez-vous que le package `dplyr` est installé et chargé dans votre environnement R. Vous pouvez l'installer avec la commande suivante :
 
 ```R
 install.packages("dplyr")
 ```
 
-Ensuite, vous devez charger le package dans votre session R :
+Ensuite, chargez le package :
 
 ```R
 library(dplyr)
 ```
 
-## Exemple de filtrage des données
+## Exemple concret : Filtrer un jeu de données
 
-Pour illustrer le filtrage, utilisons un ensemble de données simple. Supposons que nous avons un tableau de données sur des étudiants, contenant leurs noms, âges et notes :
+Pour illustrer l'utilisation de `dplyr`, prenons un exemple avec le jeu de données intégré `mtcars`, qui contient des informations sur différentes voitures. Supposons que nous souhaitons filtrer les voitures qui ont une consommation de carburant (mesurée en miles par gallon, mpg) supérieure à 20.
 
-```R
-# Création d'un tableau de données
-etudiants <- data.frame(
-  nom = c("Alice", "Bob", "Charlie", "David", "Eva"),
-  age = c(20, 22, 21, 23, 20),
-  note = c(85, 78, 90, 88, 76)
-)
-```
+### Étape 1 : Visualiser les données
 
-### Filtrer les étudiants de plus de 21 ans
-
-Si nous voulons filtrer les étudiants qui ont plus de 21 ans, nous pouvons utiliser la fonction `filter()` comme suit :
+D'abord, jetons un œil aux premières lignes du jeu de données `mtcars` :
 
 ```R
-# Filtrer les étudiants de plus de 21 ans
-etudiants_plus_21 <- etudiants %>%
-  filter(age > 21)
-
-# Afficher le résultat
-print(etudiants_plus_21)
+head(mtcars)
 ```
 
-Dans cet exemple, la fonction `filter(age > 21)` sélectionne uniquement les lignes où l'âge est supérieur à 21. Le symbole `%>%` est l'opérateur pipe qui permet de chaîner les opérations de manière lisible. Le résultat affichera les étudiants qui répondent à ce critère.
+### Étape 2 : Filtrer les données
 
-### Filtrer avec plusieurs conditions
-
-Vous pouvez également filtrer avec plusieurs conditions en utilisant les opérateurs logiques `&` (et) et `|` (ou). Par exemple, supposons que nous voulons filtrer les étudiants qui ont plus de 21 ans et dont la note est supérieure à 80 :
+Nous allons utiliser la fonction `filter()` de `dplyr` pour sélectionner les voitures avec un mpg supérieur à 20. Voici comment faire :
 
 ```R
-# Filtrer les étudiants de plus de 21 ans avec une note supérieure à 80
-etudiants_criteria <- etudiants %>%
-  filter(age > 21 & note > 80)
-
-# Afficher le résultat
-print(etudiants_criteria)
+voitures_economiques <- mtcars %>%
+  filter(mpg > 20)
 ```
 
-Dans cet exemple, `filter(age > 21 & note > 80)` sélectionne les lignes où les deux conditions sont vraies.
+Dans cet exemple :
+- `mtcars` est notre jeu de données d'origine.
+- `%>%` est l'opérateur pipe qui permet de passer le résultat de la commande précédente à la suivante.
+- `filter(mpg > 20)` sélectionne uniquement les lignes où la colonne `mpg` est supérieure à 20.
+
+### Étape 3 : Afficher les résultats
+
+Pour voir les voitures qui répondent à notre critère, nous pouvons afficher le nouveau jeu de données :
+
+```R
+print(voitures_economiques)
+```
 
 ## Conclusion
 
-Le filtrage des données avec `dplyr` est une compétence essentielle pour quiconque travaille avec R. Grâce à la fonction `filter()`, vous pouvez facilement extraire des sous-ensembles de vos données en fonction de critères spécifiques. Que ce soit pour analyser des données d'étudiants, des ventes, ou toute autre information, `dplyr` rend le processus simple et intuitif.
+Filtrer des données avec `dplyr` est une tâche simple et intuitive. Grâce à la fonction `filter()`, vous pouvez facilement extraire des sous-ensembles de données basés sur des conditions spécifiques. Dans cet article, nous avons vu comment filtrer les voitures du jeu de données `mtcars` pour ne garder que celles ayant une consommation de carburant supérieure à 20 mpg.
 
-Essayez d'utiliser `filter()` avec vos propres ensembles de données pour voir combien il est facile de manipuler et d'analyser des informations avec R !
+N'hésitez pas à explorer d'autres fonctions de `dplyr` pour enrichir votre analyse de données en R !
 

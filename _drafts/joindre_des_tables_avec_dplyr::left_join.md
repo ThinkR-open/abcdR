@@ -12,43 +12,49 @@ taxonomy:
 
 # Joindre des tables avec dplyr::left_join
 
-Dans le monde de l'analyse de données, il est fréquent de devoir combiner plusieurs tables (ou data frames) pour obtenir une vue d'ensemble des informations. Une des fonctions les plus utilisées pour ce faire dans le langage R est `left_join()` du package `dplyr`. Cet article vous expliquera comment utiliser cette fonction de manière simple et efficace.
+Dans l'analyse de données, il est fréquent de devoir combiner plusieurs tables (ou data frames) pour obtenir des informations plus complètes. L'une des fonctions les plus utilisées pour cela est `left_join()` du package `dplyr`. Cet article vous expliquera comment utiliser cette fonction avec un exemple concret.
 
 ## Qu'est-ce que `left_join` ?
 
-La fonction `left_join()` permet de joindre deux tables en utilisant une clé commune. La principale caractéristique d'un "left join" est qu'il conserve toutes les lignes de la table de gauche (la première table mentionnée) et ajoute les colonnes de la table de droite (la deuxième table mentionnée) lorsque les clés correspondent. Si aucune correspondance n'est trouvée, les colonnes de la table de droite auront des valeurs `NA`.
+La fonction `left_join()` permet de joindre deux tables en conservant toutes les lignes de la première table (la table de gauche) et en ajoutant les colonnes de la deuxième table (la table de droite) lorsque les valeurs correspondent. Si aucune correspondance n'est trouvée, les colonnes de la table de droite seront remplies avec des valeurs manquantes (NA).
 
 ## Exemple concret
 
-Imaginons que nous avons deux tables : une table contenant des informations sur des employés et une autre table contenant des informations sur les départements. Voici un exemple simple en R :
+Imaginons que nous avons deux tables : une table `clients` contenant des informations sur des clients et une table `commandes` contenant des informations sur les commandes passées par ces clients.
 
 ### Création des tables
 
-```r
+Voici comment nous pouvons créer ces deux tables en R :
+
+```R
 # Chargement du package dplyr
 library(dplyr)
 
-# Création de la table des employés
-employes <- data.frame(
-  id_employe = c(1, 2, 3, 4),
-  nom = c("Alice", "Bob", "Charlie", "David"),
-  id_departement = c(1, 2, 1, 3)
+# Création de la table des clients
+clients <- data.frame(
+  id_client = c(1, 2, 3, 4),
+  nom = c("Alice", "Bob", "Charlie", "David")
 )
 
-# Création de la table des départements
-departements <- data.frame(
-  id_departement = c(1, 2, 3),
-  nom_departement = c("Ressources Humaines", "Informatique", "Marketing")
+# Création de la table des commandes
+commandes <- data.frame(
+  id_commande = c(101, 102, 103),
+  id_client = c(1, 2, 1),
+  produit = c("Livre", "Stylo", "Cahier")
 )
+
+# Affichage des tables
+print(clients)
+print(commandes)
 ```
 
 ### Utilisation de `left_join`
 
-Pour joindre ces deux tables sur la colonne `id_departement`, nous allons utiliser `left_join()` :
+Nous allons maintenant utiliser `left_join()` pour combiner ces deux tables en fonction de la colonne `id_client`. Cela nous permettra d'obtenir une table qui contient les informations des clients ainsi que les produits qu'ils ont commandés.
 
-```r
+```R
 # Jointure des tables
-resultat <- left_join(employes, departements, by = "id_departement")
+resultat <- left_join(clients, commandes, by = "id_client")
 
 # Affichage du résultat
 print(resultat)
@@ -56,26 +62,24 @@ print(resultat)
 
 ### Résultat attendu
 
-Le résultat de cette jointure sera une nouvelle table qui contient toutes les informations des employés, ainsi que le nom de leur département respectif :
+Après avoir exécuté le code ci-dessus, le résultat sera le suivant :
 
 ```
-  id_employe     nom id_departement         nom_departement
-1          1   Alice              1 Ressources Humaines
-2          2     Bob              2        Informatique
-3          3 Charlie              1 Ressources Humaines
-4          4   David              3           Marketing
+  id_client     nom id_commande produit
+1        1   Alice         101   Livre
+2        2     Bob         102   Stylo
+3        3 Charlie        <NA>    <NA>
+4        4   David        <NA>    <NA>
 ```
 
-## Explications
+### Explications des résultats
 
-Dans cet exemple :
+Dans le tableau résultant :
 
-- La table `employes` contient quatre employés, chacun ayant un identifiant de département.
-- La table `departements` contient trois départements avec leur identifiant correspondant.
-- Lorsque nous appliquons `left_join(employes, departements, by = "id_departement")`, R combine les deux tables en utilisant `id_departement` comme clé de jointure.
-- Le résultat contient toutes les lignes de la table `employes`, même celles pour lesquelles il n'y a pas de correspondance dans la table `departements`. Dans notre exemple, toutes les correspondances ont été trouvées, et aucune valeur `NA` n'apparaît.
+- Les clients Alice et Bob apparaissent avec leurs commandes respectives.
+- Charlie et David n'ont pas de commandes, donc les colonnes `id_commande` et `produit` sont remplies avec des valeurs manquantes (NA).
 
 ## Conclusion
 
-La fonction `left_join()` de `dplyr` est un outil puissant pour combiner des tables en R. Elle permet de maintenir toutes les informations de la table de gauche tout en ajoutant des informations pertinentes de la table de droite. En comprenant comment et quand utiliser cette fonction, vous serez en mesure d'effectuer des analyses plus complètes et informatives sur vos données.
+La fonction `left_join()` de `dplyr` est un outil puissant pour combiner des tables en R. Elle vous permet de conserver toutes les lignes de la table de gauche tout en ajoutant des informations de la table de droite lorsque cela est possible. Cela facilite l'analyse des données en vous permettant de travailler avec des ensembles de données plus complets. N'hésitez pas à explorer d'autres types de jointures comme `inner_join()`, `right_join()` et `full_join()` pour répondre à différents besoins d'analyse.
 

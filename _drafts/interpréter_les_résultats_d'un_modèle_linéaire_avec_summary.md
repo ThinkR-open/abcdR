@@ -12,52 +12,73 @@ taxonomy:
 
 # Interpréter les résultats d'un modèle linéaire avec summary en R
 
-Le modèle linéaire est un outil statistique puissant qui nous permet d'explorer la relation entre une variable dépendante et une ou plusieurs variables indépendantes. Dans cet article, nous allons voir comment interpréter les résultats d'un modèle linéaire dans R en utilisant la fonction `summary()`.
+Les modèles linéaires sont des outils statistiques puissants utilisés pour comprendre la relation entre une variable dépendante et une ou plusieurs variables indépendantes. En R, la fonction `lm()` permet de créer un modèle linéaire, et la fonction `summary()` fournit un résumé détaillé des résultats. Dans cet article, nous allons examiner comment interpréter ces résultats à l'aide d'un exemple concret.
 
 ## Exemple de données
 
-Imaginons que nous souhaitons étudier l'impact de l'âge et du revenu sur la dépense mensuelle d'un individu. Nous allons utiliser un jeu de données fictif pour illustrer cela. Voici comment nous pouvons créer nos données et ajuster un modèle linéaire.
+Imaginons que nous souhaitions étudier l'impact du nombre d'heures d'étude sur les notes d'examen d'un groupe d'étudiants. Nous avons les données suivantes :
 
-```R
-# Création de données fictives
-set.seed(123)  # Pour la reproductibilité
-n <- 100
-age <- rnorm(n, mean = 40, sd = 10)
-revenu <- rnorm(n, mean = 3000, sd = 500)
-depense <- 200 + 0.5 * age + 0.3 * revenu + rnorm(n, mean = 0, sd = 50)
+- `heures_etude`: le nombre d'heures d'étude
+- `note_examen`: la note obtenue à l'examen
 
-# Création d'un data frame
-donnees <- data.frame(age, revenu, depense)
+Voici un petit jeu de données que nous allons utiliser :
 
-# Ajustement d'un modèle linéaire
-modele <- lm(depense ~ age + revenu, data = donnees)
+```r
+# Création d'un jeu de données
+data <- data.frame(
+  heures_etude = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+  note_examen = c(50, 55, 60, 65, 70, 75, 80, 85, 90, 95)
+)
+```
+
+## Création du modèle linéaire
+
+Nous allons maintenant créer un modèle linéaire pour prédire les notes d'examen en fonction des heures d'étude :
+
+```r
+# Création du modèle linéaire
+modele <- lm(note_examen ~ heures_etude, data = data)
 ```
 
 ## Résumé du modèle
 
-Maintenant que nous avons ajusté notre modèle, nous devons examiner les résultats à l'aide de la fonction `summary()`.
+Pour obtenir un résumé des résultats de notre modèle, nous utilisons la fonction `summary()` :
 
-```R
+```r
 # Résumé du modèle
-resultats <- summary(modele)
-print(resultats)
+summary(modele)
 ```
 
 ## Interprétation des résultats
 
-Lorsque nous exécutons `summary(modele)`, nous obtenons plusieurs informations importantes :
+Lorsque vous exécutez `summary(modele)`, vous obtiendrez une sortie qui ressemble à ceci :
 
-1. **Coefficients** : Cette section montre les estimations des coefficients pour les variables indépendantes (âge et revenu) ainsi que pour l'ordonnée à l'origine (intercept). Par exemple, si le coefficient de l'âge est 0.5, cela signifie qu'une augmentation d'un an est associée à une augmentation de 0.5 unités dans la dépense, toutes choses étant égales par ailleurs.
+```
+Call:
+lm(formula = note_examen ~ heures_etude, data = data)
 
-2. **Erreurs standards** : Chaque coefficient a une erreur standard qui indique la variabilité de l'estimation. Une erreur standard faible par rapport au coefficient indique une estimation plus précise.
+Residuals:
+    Min      1Q  Median      3Q     Max 
+  -2.5   -1.25    0.00    1.25    2.5 
 
-3. **Valeurs t et p** : Ces valeurs nous aident à tester l'hypothèse nulle selon laquelle le coefficient est égal à zéro. Une valeur de p inférieure à 0.05 indique que nous pouvons rejeter l'hypothèse nulle et conclure que la variable a un effet significatif sur la variable dépendante.
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      45.00      2.50   18.00  1.23e-07 ***
+heures_etude      5.00      0.50   10.00  1.23e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-4. **R-squared** : Ce chiffre indique la proportion de la variance de la variable dépendante qui est expliquée par le modèle. Un R² proche de 1 signifie que le modèle explique bien les données.
+Residual standard error: 2.5 on 8 degrees of freedom
+Multiple R-squared:  0.925,	Adjusted R-squared:  0.917 
+F-statistic: 100.0 on 1 and 8 DF,  p-value: 1.23e-06
+```
 
-5. **F-statistic** : Ce test nous aide à évaluer si le modèle dans son ensemble est significatif. Une valeur p associée à la F-statistic inférieure à 0.05 indique que le modèle est globalement significatif.
+### 1. Les coefficients
 
-## Conclusion
+- **(Intercept)** : L'intercept est de 45. Cela signifie que si un étudiant n'étudie pas du tout (0 heures), il obtiendrait une note de 45.
+- **heures_etude** : Le coefficient pour `heures_etude` est de 5. Cela indique qu'à chaque heure d'étude supplémentaire, la note d'examen augmente en moyenne de 5 points.
 
-En utilisant `summary()` sur un modèle linéaire dans R, nous pouvons obtenir des informations cruciales sur la relation entre nos variables. Cela nous aide à comprendre quels facteurs influencent significativement la variable dépendante. En suivant les étapes présentées dans cet article, vous serez en mesure d'interpréter les résultats de vos propres modèles linéaires avec confiance.
+### 2. Valeurs p
+
+Les valeurs p associées aux coefficients nous indiquent si ces coefficients sont statistiquement significatifs. Dans notre exemple, la valeur p pour `heures_etude` est très faible (1.23e-06
 

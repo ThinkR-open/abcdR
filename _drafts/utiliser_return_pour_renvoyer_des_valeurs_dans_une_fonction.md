@@ -12,44 +12,37 @@ taxonomy:
 
 # Utiliser `return` pour renvoyer des valeurs dans une fonction en R
 
-En R, les fonctions sont des blocs de code qui permettent d'exécuter des tâches spécifiques. Pour qu'une fonction soit utile, elle doit souvent renvoyer des valeurs. C'est là qu'intervient l'instruction `return()`. Cette instruction permet de spécifier quel résultat doit être renvoyé par la fonction.
+En R, les fonctions sont des blocs de code qui réalisent des tâches spécifiques. Lorsqu'une fonction est exécutée, elle peut renvoyer une valeur à l'aide de l'instruction `return()`. Cela permet de récupérer le résultat d'une fonction pour l'utiliser ultérieurement dans votre code.
 
-## Syntaxe de base
+## Pourquoi utiliser `return` ?
 
-La syntaxe de la fonction `return()` est simple :
-
-```r
-return(valeur)
-```
-
-Ici, `valeur` représente le résultat que vous souhaitez renvoyer. Si vous omettez l'instruction `return()`, R renverra automatiquement la dernière valeur calculée dans la fonction.
+L'instruction `return()` est utile lorsque vous souhaitez renvoyer une valeur spécifique d'une fonction. Bien que R renvoie automatiquement la dernière valeur calculée si `return()` n'est pas utilisé, il est souvent préférable d'utiliser `return()` pour des raisons de clarté et de lisibilité.
 
 ## Exemple concret
 
-Prenons un exemple simple où nous voulons créer une fonction qui calcule le carré d'un nombre. Voici comment nous pourrions le faire en utilisant `return()` :
+Prenons un exemple simple : une fonction qui calcule le carré d'un nombre. Nous allons créer une fonction appelée `carre` qui prend un nombre en entrée et renvoie son carré.
 
 ```r
-# Définition de la fonction
-carrer <- function(x) {
-  resultat <- x^2        # Calcul du carré
-  return(resultat)      # Renvoi du résultat
+carre <- function(x) {
+  resultat <- x^2  # Calculer le carré de x
+  return(resultat) # Renvoyer le résultat
 }
 
-# Appel de la fonction
-valeur <- 5
-carré_de_valeur <- carrer(valeur)
-print(carré_de_valeur)  # Affiche 25
+# Utilisation de la fonction
+nombre <- 4
+resultat_carre <- carre(nombre)
+print(resultat_carre) # Affiche 16
 ```
 
 ### Explication du code
 
-1. **Définition de la fonction** : Nous définissons une fonction nommée `carrer` qui prend un argument `x`.
-2. **Calcul du carré** : À l'intérieur de la fonction, nous calculons le carré de `x` et le stockons dans la variable `resultat`.
-3. **Utilisation de `return()`** : Nous utilisons `return(resultat)` pour renvoyer la valeur calculée à l'appelant.
-4. **Appel de la fonction** : Nous appelons la fonction avec la valeur `5` et stockons le résultat dans la variable `carré_de_valeur`.
-5. **Affichage du résultat** : Enfin, nous affichons le résultat avec `print()`.
+1. **Définition de la fonction** : Nous définissons une fonction appelée `carre` qui prend un argument `x`.
+2. **Calcul du carré** : À l'intérieur de la fonction, nous calculons le carré de `x` et stockons le résultat dans la variable `resultat`.
+3. **Renvoyer le résultat** : Nous utilisons `return(resultat)` pour renvoyer le carré de `x`.
+4. **Utilisation de la fonction** : Nous appelons la fonction `carre` avec le nombre 4 et stockons le résultat dans la variable `resultat_carre`.
+5. **Affichage du résultat** : Enfin, nous affichons le résultat, qui est 16.
 
 ## Conclusion
 
-L'instruction `return()` est un moyen pratique de renvoyer des valeurs depuis une fonction en R. Elle rend votre code plus clair et explicite, ce qui est particulièrement utile lorsque vous travaillez avec des fonctions plus complexes qui peuvent avoir plusieurs résultats à renvoyer. N'hésitez pas à l'utiliser pour améliorer la lisibilité et la fonctionnalité de votre code R !
+L'utilisation de `return()` dans une fonction en R est une pratique recommandée pour renvoyer des valeurs de manière explicite. Cela améliore la lisibilité de votre code et facilite la compréhension de ce que fait votre fonction. N'hésitez pas à utiliser `return()` dans vos propres fonctions pour des résultats clairs et précis.
 

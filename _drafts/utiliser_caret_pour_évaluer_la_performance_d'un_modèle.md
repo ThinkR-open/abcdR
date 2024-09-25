@@ -12,11 +12,11 @@ taxonomy:
 
 # Utiliser `caret` pour évaluer la performance d'un modèle en R
 
-Le package `caret` (Classification And REgression Training) en R est un outil puissant pour construire, évaluer et comparer des modèles de machine learning. Dans cet article, nous allons explorer comment utiliser `caret` pour évaluer la performance d'un modèle de classification à l'aide d'un exemple concret.
+Le package `caret` (Classification And REgression Training) est un outil puissant en R pour construire et évaluer des modèles prédictifs. Dans cet article, nous allons explorer comment utiliser `caret` pour évaluer la performance d'un modèle de régression linéaire sur un jeu de données simple.
 
 ## Installation et chargement du package
 
-Avant de commencer, assurez-vous d'avoir installé le package `caret`. Vous pouvez l'installer avec la commande suivante :
+Si vous n'avez pas encore installé le package `caret`, vous pouvez le faire en utilisant la commande suivante :
 
 ```R
 install.packages("caret")
@@ -28,61 +28,60 @@ Ensuite, chargez le package :
 library(caret)
 ```
 
-## Exemple : Évaluation d'un modèle de classification
+## Exemple de données
 
-Nous allons utiliser le jeu de données `iris`, qui est un classique pour les exercices de classification. Ce jeu de données contient des mesures de fleurs d'iris et leur espèce.
+Pour cet exemple, nous allons utiliser le jeu de données intégré `mtcars`, qui contient des informations sur différentes voitures. Nous allons prédire la consommation de carburant (`mpg`) en fonction de plusieurs caractéristiques des voitures.
 
-### Étape 1 : Préparation des données
+## Préparation des données
 
-Nous allons diviser le jeu de données en un ensemble d'entraînement et un ensemble de test pour évaluer notre modèle.
+Nous allons d'abord diviser notre jeu de données en un ensemble d'entraînement et un ensemble de test. Cela nous permettra d'évaluer la performance de notre modèle sur des données qu'il n'a pas vues auparavant.
 
 ```R
 set.seed(123)  # Pour la reproductibilité
-data(iris)
-
-# Diviser les données en ensembles d'entraînement et de test
-index <- createDataPartition(iris$Species, p = 0.7, list = FALSE)
-train_data <- iris[index, ]
-test_data <- iris[-index, ]
+index <- createDataPartition(mtcars$mpg, p = 0.8, list = FALSE)
+train_data <- mtcars[index, ]
+test_data <- mtcars[-index, ]
 ```
 
-### Étape 2 : Entraînement d'un modèle
+## Construction du modèle
 
-Nous allons entraîner un modèle de classification en utilisant l'algorithme des arbres de décision (CART).
+Nous allons maintenant construire un modèle de régression linéaire en utilisant l'ensemble d'entraînement.
 
 ```R
-# Entraîner le modèle
-model <- train(Species ~ ., data = train_data, method = "rpart")
+model <- train(mpg ~ ., data = train_data, method = "lm")
 ```
 
-### Étape 3 : Prédictions sur l'ensemble de test
+## Prédictions
 
-Une fois le modèle entraîné, nous pouvons l'utiliser pour faire des prédictions sur l'ensemble de test.
+Une fois le modèle construit, nous pouvons faire des prédictions sur l'ensemble de test.
 
 ```R
-# Faire des prédictions
 predictions <- predict(model, newdata = test_data)
 ```
 
-### Étape 4 : Évaluation de la performance
+## Évaluation de la performance
 
-Pour évaluer la performance de notre modèle, nous allons comparer les prédictions aux vraies espèces dans l'ensemble de test. Nous allons utiliser la matrice de confusion et quelques métriques comme l'exactitude.
+Pour évaluer la performance de notre modèle, nous allons utiliser plusieurs métriques, notamment l'erreur quadratique moyenne (RMSE) et le coefficient de détermination (R²).
 
 ```R
-# Matrice de confusion
-confusionMatrix(predictions, test_data$Species)
+# Calculer RMSE
+rmse <- sqrt(mean((predictions - test_data$mpg)^2))
+
+# Calculer R²
+r_squared <- cor(predictions, test_data$mpg)^2
+
+# Afficher les résultats
+cat("RMSE:", rmse, "\n")
+cat("R²:", r_squared, "\n")
 ```
 
-### Interprétation des résultats
+## Interprétation des résultats
 
-La fonction `confusionMatrix` génère une matrice de confusion qui montre combien de prédictions étaient correctes et incorrectes. Elle fournit également des statistiques comme :
-
-- **Exactitude** : La proportion de prédictions correctes.
-- **Sensibilité** et **spécificité** : Mesures de la performance du modèle pour chaque classe.
+- **RMSE** : Cette métrique nous indique l'erreur moyenne entre les valeurs prédites et les valeurs réelles. Plus la valeur est faible, meilleure est la performance du modèle.
+  
+- **R²** : Ce coefficient indique la proportion de la variance des données qui est expliquée par le modèle. Une valeur proche de 1 indique un bon ajustement.
 
 ## Conclusion
 
-Dans cet article, nous avons vu comment utiliser le package `caret` pour évaluer la performance d'un modèle de classification en R. Nous avons entraîné un modèle sur le jeu de données `iris`, effectué des prédictions et évalué la performance à l'aide d'une matrice de confusion. `caret` simplifie grandement le processus d'évaluation, ce qui en fait un outil de choix pour les praticiens du machine learning. 
-
-N'hésitez pas à explorer d'autres méthodes et à ajuster les paramètres pour améliorer vos modèles !
+Dans cet article, nous avons vu comment utiliser le package `caret` pour construire et évaluer un modèle de régression linéaire en R. En utilisant des métriques comme le RMSE et le R², nous pouvons obtenir une bonne idée de la performance de notre modèle. `caret` offre également de nombreuses autres fonctionnalités pour le prétraitement des données, la sélection de modèles et l'optimisation des hyperparamètres, ce qui en fait un outil essentiel pour les praticiens de la science des données.
 

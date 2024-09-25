@@ -12,73 +12,75 @@ taxonomy:
 
 # Calculer des statistiques basiques avec `summarise` en R
 
-La fonction `summarise` de la bibliothèque `dplyr` est un outil puissant pour calculer des statistiques descriptives à partir d'un jeu de données en R. Elle permet de réduire un ensemble de données en une seule ligne par groupe, facilitant ainsi l'analyse des données.
+Dans le langage R, la fonction `summarise` (ou `summarize`) est un outil puissant pour effectuer des calculs statistiques sur des ensembles de données. Elle fait partie du package `dplyr`, qui est largement utilisé pour la manipulation de données. Cet article vous montrera comment utiliser `summarise` pour calculer des statistiques de base, comme la moyenne, la médiane, et l'écart type.
 
-## Installation et chargement des bibliothèques
+## Installation et chargement du package `dplyr`
 
-Avant de commencer, assurez-vous d'avoir installé et chargé le paquet `dplyr`. Si vous ne l'avez pas encore fait, voici comment procéder :
+Avant de commencer, assurez-vous d'avoir installé le package `dplyr`. Vous pouvez l'installer avec la commande suivante :
 
 ```R
 install.packages("dplyr")
+```
+
+Ensuite, chargez le package :
+
+```R
 library(dplyr)
 ```
 
 ## Exemple de données
 
-Pour illustrer l'utilisation de `summarise`, utilisons un jeu de données fictif sur les ventes d'un magasin :
+Pour illustrer l'utilisation de `summarise`, nous allons créer un petit jeu de données représentant les notes d'élèves dans une classe :
 
 ```R
-# Création d'un jeu de données fictif
-ventes <- data.frame(
-  produit = c("A", "A", "B", "B", "C", "C"),
-  prix = c(10, 15, 20, 25, 30, 35),
-  quantite = c(1, 2, 1, 3, 2, 1)
+# Création d'un data frame
+data <- data.frame(
+  nom = c("Alice", "Bob", "Charlie", "David", "Eva"),
+  note = c(85, 92, 78, 90, 88)
 )
 ```
 
-Ce jeu de données comprend trois colonnes : `produit`, `prix` et `quantite`. Chaque ligne représente une vente d'un produit particulier.
+## Utilisation de `summarise`
 
-## Calculer des statistiques avec `summarise`
-
-Supposons que nous souhaitons calculer le chiffre d'affaires total pour chaque produit. Le chiffre d'affaires peut être calculé en multipliant le `prix` par la `quantite`. Nous allons utiliser `summarise` pour obtenir ces informations :
+Nous allons maintenant utiliser `summarise` pour calculer quelques statistiques de base sur les notes des élèves. Voici comment faire :
 
 ```R
-resultats <- ventes %>%
-  group_by(produit) %>%  # Regroupe les données par produit
+# Calcul des statistiques de base
+statistiques <- data %>%
   summarise(
-    chiffre_affaires = sum(prix * quantite)  # Calcule le chiffre d'affaires
+    moyenne = mean(note),
+    mediane = median(note),
+    ecart_type = sd(note)
   )
+
+print(statistiques)
 ```
 
 ### Explication du code
 
-1. **group_by(produit)** : Cette fonction regroupe les données par la colonne `produit`, ce qui signifie que toutes les lignes ayant le même produit seront considérées ensemble.
-   
-2. **summarise(...)** : À l'intérieur de cette fonction, nous définissons les statistiques que nous voulons calculer. Ici, nous créons une nouvelle colonne `chiffre_affaires` qui contient la somme du produit des colonnes `prix` et `quantite`.
+1. **Création du data frame** : Nous avons créé un data frame nommé `data` avec deux colonnes : `nom` et `note`.
 
-3. **sum(prix * quantite)** : Nous multiplions le prix par la quantité pour chaque vente et ensuite nous faisons la somme pour obtenir le chiffre d'affaires total par produit.
+2. **Utilisation de `summarise`** : 
+   - Nous utilisons l'opérateur `%>%` (pipe) pour passer le data frame `data` à la fonction `summarise`.
+   - À l'intérieur de `summarise`, nous calculons trois statistiques :
+     - `moyenne` : la moyenne des notes avec `mean(note)`.
+     - `mediane` : la médiane des notes avec `median(note)`.
+     - `ecart_type` : l'écart type des notes avec `sd(note)`.
 
-### Résultat
+3. **Affichage des résultats** : Enfin, nous affichons le data frame `statistiques` qui contient nos résultats.
 
-Après avoir exécuté le code ci-dessus, la variable `resultats` contiendra le chiffre d'affaires total pour chaque produit :
+## Résultat attendu
 
-```R
-# Affichage des résultats
-print(resultats)
-```
-
-Cela affichera une table comme suit :
+Lorsque vous exécutez le code ci-dessus, vous obtiendrez un résultat similaire à ceci :
 
 ```
-# A tibble: 3 × 2
-  produit chiffre_affaires
-  <chr>              <dbl>
-1 A                     75
-2 B                     115
-3 C                     215
+  moyenne mediane ecart_type
+1      86.6      88   5.066202
 ```
+
+Cela signifie que la moyenne des notes est de 86.6, la médiane est de 88, et l'écart type est d'environ 5.07.
 
 ## Conclusion
 
-La fonction `summarise` est essentielle pour effectuer rapidement des analyses statistiques de base sur vos ensembles de données. Grâce à son utilisation conjointe avec `group_by`, vous pouvez facilement obtenir des résumés de vos données en quelques lignes de code. N'hésitez pas à explorer davantage les nombreuses autres fonctions statistiques que `dplyr` propose pour enrichir votre analyse de données en R.
+La fonction `summarise` de `dplyr` est un excellent moyen de calculer rapidement des statistiques de base sur vos données. Que ce soit pour des analyses simples ou pour des explorations plus complexes, `summarise` vous permet d'obtenir des résumés clairs et concis de vos ensembles de données. N'hésitez pas à l'utiliser dans vos propres projets pour simplifier vos analyses statistiques !
 

@@ -12,51 +12,57 @@ taxonomy:
 
 # Utiliser purrr::map pour appliquer des fonctions à des listes en R
 
-Le package `purrr` fait partie de la suite `tidyverse` et offre des outils puissants pour la manipulation des listes et des vecteurs. L'une des fonctions les plus couramment utilisées dans `purrr` est `map()`, qui permet d'appliquer une fonction à chaque élément d'une liste. Dans cet article, nous allons explorer comment utiliser `purrr::map` de manière concrète avec un exemple simple.
+Le package `purrr` fait partie de la suite `tidyverse` et est conçu pour faciliter la programmation fonctionnelle en R. Une des fonctions les plus utiles de `purrr` est `map()`, qui permet d'appliquer une fonction à chaque élément d'une liste ou d'un vecteur. Cela rend le code plus lisible et souvent plus efficace que les boucles traditionnelles.
 
-## Installation de purrr
+## Pourquoi utiliser `map()` ?
 
-Si vous n'avez pas encore installé le package `purrr`, vous pouvez le faire en utilisant la commande suivante :
+Lorsque vous travaillez avec des listes en R, il est courant de vouloir appliquer une fonction à chaque élément de la liste. Traditionnellement, cela se fait avec une boucle `for`, mais cela peut rendre le code plus long et moins clair. `map()` simplifie ce processus en vous permettant d'écrire du code plus concis et expressif.
+
+## Exemple concret
+
+Imaginons que nous avons une liste de nombres et que nous souhaitons calculer le carré de chaque nombre. Voici comment nous pourrions le faire avec `map()`.
+
+### Étape 1 : Installer et charger le package `purrr`
+
+Si vous n'avez pas encore installé le package `purrr`, vous pouvez le faire avec la commande suivante :
 
 ```R
 install.packages("purrr")
 ```
 
-Assurez-vous également que `dplyr` et `tidyverse` sont installés, puisque `purrr` fait partie de cette suite.
-
-## Un exemple concret
-
-Imaginons que nous avons une liste de nombres et que nous souhaitons calculer le carré de chaque nombre. Voici comment nous pouvons le faire avec `purrr::map()`.
-
-### Étape 1 : Créer une liste de nombres
-
-Commençons par créer une simple liste de nombres :
+Ensuite, chargez le package :
 
 ```R
 library(purrr)
+```
 
+### Étape 2 : Créer une liste de nombres
+
+Créons une liste simple de nombres :
+
+```R
 nombres <- list(1, 2, 3, 4, 5)
 ```
 
-### Étape 2 : Appliquer une fonction avec map()
+### Étape 3 : Appliquer la fonction avec `map()`
 
-Nous allons maintenant utiliser `map()` pour appliquer la fonction qui calcule le carré à chaque élément de notre liste.
+Nous allons maintenant utiliser `map()` pour appliquer une fonction qui calcule le carré de chaque nombre dans notre liste :
 
 ```R
-carres <- map(nombres, ~ .x^2)
+carres <- map(nombres, function(x) x^2)
 ```
 
-### Étape 3 : Afficher les résultats
+### Étape 4 : Afficher les résultats
 
-Pour afficher les résultats, nous pouvons simplement imprimer la variable `carres` :
+Pour voir les résultats, nous pouvons imprimer la liste des carrés :
 
 ```R
 print(carres)
 ```
 
-### Résultat
+### Résultat attendu
 
-Si nous exécutons le code ci-dessus, nous obtiendrons :
+Lorsque vous exécutez le code ci-dessus, vous devriez obtenir la sortie suivante :
 
 ```
 [[1]]
@@ -75,13 +81,7 @@ Si nous exécutons le code ci-dessus, nous obtiendrons :
 [1] 25
 ```
 
-## Explication du code
-
-- **list(1, 2, 3, 4, 5)** : Nous créons une liste contenant les nombres de 1 à 5.
-- **map(nombres, ~ .x^2)** : Nous appliquons la fonction qui élève chaque élément au carré. La syntaxe `~ .x^2` est une formule qui indique que pour chaque élément `.x` dans `nombres`, nous voulons calculer `.x` au carré.
-- **print(carres)** : Nous affichons le résultat, qui est une liste contenant les carrés des nombres d'origine.
-
 ## Conclusion
 
-`purrr::map` est un outil très utile pour appliquer des fonctions à des éléments d'une liste de manière efficace et concise. Cet exemple simple montre comment nous pouvons facilement calculer le carré de chaque nombre dans une liste. Avec `purrr`, vous pouvez également utiliser d'autres variantes comme `map_dbl()`, `map_chr()`, etc., selon le type de retour souhaité. Cela vous permet de manipuler des données de manière élégante et efficace en R.
+L'utilisation de `purrr::map()` vous permet d'appliquer facilement des fonctions à des listes en R, rendant votre code plus propre et plus lisible. Dans cet article, nous avons vu un exemple simple de calcul des carrés de nombres, mais `map()` peut être utilisé pour des opérations beaucoup plus complexes. N'hésitez pas à explorer d'autres fonctions de `purrr` pour enrichir vos compétences en programmation R !
 

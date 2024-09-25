@@ -10,81 +10,67 @@ taxonomy:
         - non linéaire
 ---
 
-# Ajuster des modèles non linéaires avec `nls` en R
+# Ajuster des modèles non linéaires avec nls en R
 
-L'ajustement de modèles non linéaires est une tâche courante en statistiques, et R propose une fonction très utile pour cela : `nls` (non-linear least squares). Cette fonction permet d'ajuster des modèles de régression non linéaires à des données, ce qui est particulièrement utile lorsque la relation entre les variables n'est pas simplement linéaire.
+L'ajustement de modèles non linéaires est une tâche courante en analyse de données, surtout lorsque les relations entre les variables ne peuvent pas être décrites par une simple droite. En R, la fonction `nls()` (pour "non-linear least squares") permet d'ajuster des modèles non linéaires à des données.
 
-## Qu'est-ce que le modèle non linéaire ?
+## Qu'est-ce que `nls()` ?
 
-Un modèle non linéaire est un modèle où la relation entre la variable dépendante (y) et les variables indépendantes (x) ne peut pas être exprimée sous forme d'une équation linéaire. Par exemple, une relation exponentielle ou logarithmique peut nécessiter un ajustement non linéaire.
+La fonction `nls()` est utilisée pour ajuster des modèles non linéaires en minimisant la somme des carrés des résidus. Cela signifie qu'elle cherche à trouver les paramètres du modèle qui rendent les prédictions aussi proches que possible des valeurs observées.
 
 ## Exemple concret
 
-Prenons un exemple simple : nous allons modéliser la croissance d'une population en utilisant un modèle logistique. La fonction logistique est souvent utilisée pour représenter la croissance d'une population qui se stabilise à une certaine capacité de support.
+Imaginons que nous avons des données sur la croissance d'une plante en fonction du temps. Nous soupçonnons que la croissance suit un modèle exponentiel, que nous pouvons exprimer par l'équation suivante :
 
-### Le modèle logistique
-
-La formule du modèle logistique est :
-
-\[ y = \frac{K}{1 + e^{-r(t - t_0)}} \]
+\[ y = a \cdot e^{(b \cdot x)} \]
 
 où :
-- \( y \) est la taille de la population,
-- \( K \) est la capacité de support,
-- \( r \) est le taux de croissance,
-- \( t \) est le temps,
-- \( t_0 \) est le temps au milieu de la croissance.
+- \( y \) est la taille de la plante,
+- \( x \) est le temps,
+- \( a \) et \( b \) sont des paramètres à estimer.
 
-### Préparation des données
+### Étape 1 : Créer des données simulées
 
-Pour cet exemple, nous allons créer un jeu de données synthétique.
+Commençons par créer un jeu de données simulées :
 
 ```r
-# Création de données synthétiques
-set.seed(123)
-t <- 1:100
-K <- 1000
-r <- 0.1
-t0 <- 50
-y <- K / (1 + exp(-r * (t - t0))) + rnorm(length(t), sd = 10)  # Ajouter un bruit aléatoire
-
-# Visualiser les données
-plot(t, y, main = "Données de croissance de la population", xlab = "Temps", ylab = "Population")
+set.seed(123)  # Pour la reproductibilité
+x <- 1:10
+a <- 2
+b <- 0.3
+y <- a * exp(b * x) + rnorm(10, sd = 0.5)  # Ajout de bruit
+data <- data.frame(x, y)
 ```
 
-### Ajustement du modèle
+### Étape 2 : Ajuster le modèle non linéaire
 
-Utilisons maintenant la fonction `nls` pour ajuster notre modèle logistique aux données.
+Nous allons maintenant utiliser `nls()` pour ajuster notre modèle exponentiel aux données :
 
 ```r
-# Ajustement du modèle non linéaire
-modele <- nls(y ~ K / (1 + exp(-r * (t - t0))), 
-              data = data.frame(t, y), 
-              start = list(K = 1000, r = 0.1, t0 = 50))
+# Ajustement du modèle
+model <- nls(y ~ a * exp(b * x), data = data, start = list(a = 1, b = 0.1))
 
 # Résumé du modèle
-summary(modele)
+summary(model)
 ```
 
-### Interprétation des résultats
+### Étape 3 : Interpréter les résultats
 
-Après avoir ajusté le modèle, nous pouvons utiliser `summary(modele)` pour afficher les coefficients estimés et d'autres statistiques. Les coefficients estimés pour \( K \), \( r \), et \( t_0 \) nous indiqueront comment notre modèle s'ajuste aux données observées.
+Après avoir exécuté le code ci-dessus, nous obtenons un résumé du modèle ajusté, qui inclut les estimations des paramètres \( a \) et \( b \), ainsi que des informations sur la qualité de l'ajustement. Les valeurs estimées nous donneront une idée de la croissance de la plante en fonction du temps.
 
-### Prédiction et visualisation
+### Étape 4 : Prédictions
 
-Pour voir comment notre modèle s'ajuste aux données, nous pouvons tracer les valeurs prédites sur le même graphique.
+Nous pouvons également utiliser le modèle pour faire des prédictions :
 
 ```r
 # Prédictions
-predictions <- predict(modele)
+data$predicted <- predict(model)
 
-# Visualiser les ajustements
-plot(t, y, main = "Ajustement du modèle non linéaire", xlab = "Temps", ylab = "Population")
-lines(t, predictions, col = "red", lwd = 2)
-legend("topleft", legend = "Ajustement du modèle", col = "red", lwd = 2)
+# Affichage des résultats
+print(data)
 ```
 
 ## Conclusion
 
-L'ajustement de modèles non linéaires avec `nls` en R est un outil puissant qui permet de modéliser des relations complexes entre les variables.
+L'ajustement de modèles non linéaires avec `nls()` en R est un outil puissant pour analyser des relations complexes dans les données. Dans cet article, nous avons vu comment créer des données simulées, ajuster un modèle exponentiel et interpréter les résultats. Avec un peu de pratique, vous serez en mesure d'appliquer ces techniques à vos propres ensembles de données.
 

@@ -12,30 +12,31 @@ taxonomy:
 
 # Optimiser le code avec microbenchmark en R
 
-Lorsqu'on écrit du code en R, il est souvent nécessaire de s'assurer que nos fonctions et algorithmes sont optimisés pour exécuter les tâches le plus rapidement possible. Une des manières les plus efficaces de mesurer le temps d'exécution de différentes approches est d'utiliser le package `microbenchmark`. Ce package permet d'effectuer des mesures de performance précises et de comparer plusieurs implémentations d'une fonction.
+L'optimisation du code est une étape cruciale pour améliorer la performance de nos programmes en R. Une des manières les plus efficaces de mesurer et d'optimiser le temps d'exécution de différentes fonctions est d'utiliser le package `microbenchmark`. Ce package permet de réaliser des mesures précises du temps d'exécution de petits morceaux de code, ce qui est particulièrement utile lorsque l'on souhaite comparer l'efficacité de plusieurs approches.
 
 ## Installation du package
 
-Avant de pouvoir utiliser `microbenchmark`, vous devez l'installer. Vous pouvez le faire en utilisant la commande suivante :
+Avant de commencer, assurez-vous d'avoir installé le package `microbenchmark`. Vous pouvez l'installer en utilisant la commande suivante :
 
 ```R
 install.packages("microbenchmark")
 ```
 
-## Exemple de code
+## Exemple concret
 
-Prenons un exemple simple où nous comparons deux méthodes pour calculer la somme des carrés des nombres d'un vecteur. La première méthode utilise une boucle `for`, tandis que la deuxième utilise la fonction `sum()` avec `sapply()`.
+Imaginons que nous souhaitons comparer deux méthodes pour calculer la somme des carrés des nombres d'un vecteur. Nous allons utiliser une approche avec une boucle `for` et une autre avec la fonction `sum` et `^` pour élever au carré.
+
+Voici comment nous pourrions procéder :
 
 ```R
 # Charger le package
 library(microbenchmark)
 
-# Définir la taille du vecteur
-n <- 1e6
-vec <- 1:n
+# Définir un vecteur d'exemple
+n <- 1:1000
 
-# Méthode 1 : Utiliser une boucle for
-sum_squares_for <- function(x) {
+# Méthode 1 : Utilisation d'une boucle for
+sum_of_squares_for <- function(x) {
   total <- 0
   for (i in x) {
     total <- total + i^2
@@ -43,35 +44,31 @@ sum_squares_for <- function(x) {
   return(total)
 }
 
-# Méthode 2 : Utiliser sapply et sum
-sum_squares_sapply <- function(x) {
-  return(sum(sapply(x, function(i) i^2)))
+# Méthode 2 : Utilisation de sum et de l'opérateur ^ 
+sum_of_squares_vectorized <- function(x) {
+  return(sum(x^2))
 }
 
 # Comparer les performances des deux méthodes
 benchmark_results <- microbenchmark(
-  for_loop = sum_squares_for(vec),
-  sapply = sum_squares_sapply(vec),
-  times = 10 # Nombre de répétitions
+  for_loop = sum_of_squares_for(n),
+  vectorized = sum_of_squares_vectorized(n),
+  times = 1000
 )
 
 # Afficher les résultats
 print(benchmark_results)
 ```
 
-## Explication du code
+## Explications
 
-1. **Création d'un vecteur** : Nous définissons un vecteur `vec` qui contient les nombres de 1 à 1 million.
+1. **Définition des fonctions** : Nous avons défini deux fonctions, `sum_of_squares_for` qui utilise une boucle `for` pour calculer la somme des carrés, et `sum_of_squares_vectorized` qui utilise une approche vectorisée avec `sum` et `^`.
 
-2. **Deux méthodes de calcul** : 
-   - La première méthode, `sum_squares_for`, utilise une boucle `for` pour calculer la somme des carrés.
-   - La seconde méthode, `sum_squares_sapply`, utilise `sapply` pour appliquer la fonction de carré à chaque élément et ensuite utilise `sum` pour obtenir le total.
+2. **Utilisation de microbenchmark** : Nous avons utilisé la fonction `microbenchmark` pour exécuter les deux fonctions 1000 fois chacune. Cela nous permet d'obtenir une estimation précise du temps d'exécution pour chaque méthode.
 
-3. **Mesurer les performances** : Nous utilisons `microbenchmark()` pour mesurer le temps d'exécution des deux méthodes. Nous spécifions également `times = 10` pour exécuter chaque méthode 10 fois afin d'obtenir des résultats plus fiables.
-
-4. **Affichage des résultats** : Enfin, nous affichons les résultats du benchmark, ce qui nous permet de voir quelle méthode est la plus rapide.
+3. **Affichage des résultats** : Enfin, nous affichons les résultats du benchmark. Cela nous permettra de voir quelle méthode est la plus rapide.
 
 ## Conclusion
 
-L'optimisation du code est essentielle pour améliorer la performance, surtout lorsque vous travaillez avec de grandes quantités de données. Le package `microbenchmark` offre une manière simple et efficace de comparer les performances de différentes fonctions en R. En utilisant cet outil, vous pouvez prendre des décisions éclairées sur la meilleure façon d'implémenter vos algorithmes et ainsi améliorer l'efficacité de votre code.
+L'utilisation de `microbenchmark` est un excellent moyen d'optimiser votre code en R. En comparant différentes approches, vous pouvez choisir celle qui est la plus efficace pour vos besoins. Dans notre exemple, vous constaterez probablement que la méthode vectorisée est beaucoup plus rapide que la boucle `for`, ce qui est souvent le cas en R, où les opérations vectorisées sont optimisées pour la performance. N'hésitez pas à explorer d'autres fonctions et méthodes pour améliorer encore plus vos scripts R !
 

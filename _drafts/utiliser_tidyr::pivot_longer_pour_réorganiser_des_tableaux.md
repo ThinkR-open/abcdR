@@ -12,78 +12,73 @@ taxonomy:
 
 # Utiliser `tidyr::pivot_longer` pour réorganiser des tableaux
 
-La manipulation de données est une étape cruciale dans l'analyse de données. L'une des tâches fréquentes consiste à réorganiser un tableau de données pour qu'il soit plus facile à utiliser dans des analyses ultérieures. La fonction `pivot_longer` du package `tidyr` de R est un outil puissant qui permet de transformer des données larges en données longues.
+Dans le cadre de l'analyse de données, il est souvent nécessaire de réorganiser les tableaux pour faciliter l'analyse. L'une des fonctions les plus utiles pour cela dans le package `tidyr` est `pivot_longer()`. Cette fonction permet de transformer un tableau large en un tableau long, ce qui est souvent plus adapté pour certaines analyses et visualisations.
 
-## Qu'est-ce que `pivot_longer` ?
+## Qu'est-ce qu'un tableau large et un tableau long ?
 
-`pivot_longer` prend des colonnes spécifiques d'un tableau et les transforme en une seule colonne, tout en utilisant d'autres colonnes comme identifiants. Cela est particulièrement utile lorsque vous avez des colonnes qui représentent des mesures différentes mais qui concernent la même variable.
+- **Tableau large** : Les données sont organisées avec des colonnes pour chaque variable. Par exemple, vous pourriez avoir une colonne pour chaque année de vente.
+- **Tableau long** : Les données sont organisées avec une colonne pour les variables et une autre pour les valeurs. Cela permet de mieux gérer les données dans des analyses statistiques et des visualisations.
 
 ## Exemple concret
 
-Imaginons que nous avons un tableau de données qui contient les résultats d'examens d'élèves dans différentes matières. Voici comment les données pourraient être structurées :
+Imaginons que nous avons un tableau de ventes de fruits sur plusieurs mois, organisé comme suit :
 
 ```r
-# Données d'exemple
-data <- data.frame(
-  Eleve = c("Alice", "Bob", "Charlie"),
-  Math = c(15, 12, 18),
-  Physique = c(14, 10, 17),
-  Chimie = c(16, 11, 19)
+library(tibble)
+
+# Création d'un tableau large
+ventes_fruits <- tibble(
+  mois = c("Janvier", "Février", "Mars"),
+  pommes = c(30, 45, 25),
+  oranges = c(20, 30, 35)
 )
 
-print(data)
+print(ventes_fruits)
 ```
 
-Ce tableau affiche les notes d'élèves en trois matières : Math, Physique et Chimie. Nous souhaiterions le réorganiser pour avoir une colonne pour les matières et une autre pour les notes. Cela nous permettra de mieux visualiser les données et d'effectuer des analyses.
+Ce tableau contient des colonnes pour les mois et les ventes de pommes et d'oranges. Cependant, pour certaines analyses, nous préférerions avoir un tableau long.
 
-## Utilisation de `pivot_longer`
+### Transformation avec `pivot_longer`
 
-Pour transformer ce tableau, nous allons utiliser la fonction `pivot_longer` :
+Pour transformer ce tableau large en un tableau long, nous allons utiliser `pivot_longer()`. Voici comment procéder :
 
 ```r
 library(tidyr)
 
-data_long <- data %>%
+# Transformation du tableau large en tableau long
+ventes_long <- ventes_fruits %>%
   pivot_longer(
-    cols = c(Math, Physique, Chimie),  # Colonnes à transformer
-    names_to = "Matiere",                # Nouveau nom de la colonne pour les matières
-    values_to = "Note"                   # Nouveau nom de la colonne pour les notes
+    cols = c(pommes, oranges),  # Colonnes à transformer
+    names_to = "fruit",          # Nom de la nouvelle colonne pour les fruits
+    values_to = "quantite"       # Nom de la nouvelle colonne pour les quantités
   )
 
-print(data_long)
+print(ventes_long)
 ```
 
 ### Explications du code
 
-- **`library(tidyr)`** : Nous chargeons le package `tidyr` qui contient la fonction `pivot_longer`.
-- **`data %>%`** : Nous utilisons le pipe (`%>%`) pour passer notre tableau de données à la fonction suivante.
-- **`pivot_longer(...)`** : C'est ici que la transformation a lieu.
-  - **`cols = c(Math, Physique, Chimie)`** : Nous spécifions les colonnes que nous voulons transformer en une seule colonne.
-  - **`names_to = "Matiere"`** : Nous définissons le nom de la nouvelle colonne qui contiendra les noms des matières.
-  - **`values_to = "Note"`** : Nous définissons le nom de la nouvelle colonne qui contiendra les notes.
+1. **`cols = c(pommes, oranges)`** : Nous spécifions les colonnes que nous voulons transformer en lignes. Dans ce cas, ce sont les colonnes `pommes` et `oranges`.
+2. **`names_to = "fruit"`** : Nous indiquons que les noms des fruits (pommes et oranges) seront stockés dans une nouvelle colonne appelée `fruit`.
+3. **`values_to = "quantite"`** : Les valeurs correspondantes (les quantités vendues) seront stockées dans une nouvelle colonne appelée `quantite`.
 
-## Résultat final
+### Résultat
 
-Après avoir exécuté le code ci-dessus, nous obtenons le tableau suivant :
+Après avoir exécuté le code ci-dessus, le tableau `ventes_long` ressemblera à ceci :
 
 ```
-# A tibble: 9 × 3
-  Eleve   Matiere   Note
-  <chr>   <chr>   <dbl>
-1 Alice   Math      15
-2 Alice   Physique  14
-3 Alice   Chimie    16
-4 Bob     Math      12
-5 Bob     Physique  10
-6 Bob     Chimie    11
-7 Charlie Math      18
-8 Charlie Physique  17
-9 Charlie Chimie    19
+# A tibble: 6 × 3
+  mois    fruit   quantite
+  <chr>   <chr>      <dbl>
+1 Janvier pommes        30
+2 Janvier oranges       20
+3 Février pommes        45
+4 Février oranges       30
+5 Mars    pommes        25
+6 Mars    oranges       35
 ```
-
-Nous avons maintenant un tableau long où chaque ligne représente une note d'un élève dans une matière spécifique. Ce format est souvent préféré pour les analyses statistiques et les visualisations.
 
 ## Conclusion
 
-La fonction `pivot_longer` de `tidyr` est un
+La fonction `pivot_longer()` de `tidyr` est un outil puissant pour réorganiser vos données. En transformant un tableau large en un tableau long, vous facilitez l'analyse et la visualisation de vos données. N'hésitez pas à l'utiliser dans vos projets d'analyse de données pour obtenir des résultats plus clairs et plus exploitables.
 

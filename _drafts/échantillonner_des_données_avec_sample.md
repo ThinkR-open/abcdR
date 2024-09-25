@@ -10,57 +10,65 @@ taxonomy:
         - échantillonnage
 ---
 
-# Échantillonner des données avec la fonction sample en R
+# Échantillonner des données avec `sample` en R
 
-L'échantillonnage est une technique fondamentale en statistique qui permet de sélectionner un sous-ensemble d'individus d'une population pour effectuer des analyses. En R, la fonction `sample()` est couramment utilisée pour réaliser cet échantillonnage. Dans cet article, nous allons explorer comment utiliser cette fonction, avec un exemple concret.
+L'échantillonnage est une technique essentielle en statistique, permettant de sélectionner un sous-ensemble d'individus ou d'éléments à partir d'une population plus large. En R, la fonction `sample()` est un outil puissant pour réaliser cet échantillonnage. Cet article vous expliquera comment utiliser cette fonction avec un exemple concret.
 
-## La fonction sample()
+## La fonction `sample()`
 
-La fonction `sample()` en R permet de tirer des échantillons aléatoires à partir d'un vecteur. Sa syntaxe générale est la suivante :
+La fonction `sample()` en R permet de tirer au sort des éléments d'un vecteur. Sa syntaxe de base est la suivante :
 
 ```R
 sample(x, size, replace = FALSE, prob = NULL)
 ```
 
-- **x** : un vecteur des valeurs à échantillonner.
-- **size** : le nombre d'échantillons à tirer.
-- **replace** : si `TRUE`, permet de tirer avec remise (c'est-à-dire qu'un élément peut être sélectionné plusieurs fois).
-- **prob** : un vecteur de probabilités associées à chaque élément de `x`.
+- `x` : un vecteur d'éléments à échantillonner.
+- `size` : le nombre d'éléments à échantillonner.
+- `replace` : un booléen indiquant si l'échantillonnage doit se faire avec remise (`TRUE`) ou sans remise (`FALSE`).
+- `prob` : un vecteur de probabilités associées à chaque élément de `x`.
 
 ## Exemple concret
 
 Imaginons que nous avons un vecteur représentant les âges de 10 personnes dans un groupe :
 
 ```R
-# Vecteur d'âges
-ages <- c(23, 45, 34, 29, 41, 38, 27, 52, 33, 25)
+ages <- c(25, 30, 22, 35, 40, 28, 33, 27, 31, 29)
 ```
 
-Nous souhaitons échantillonner 3 âges de ce vecteur. Voici comment nous pouvons le faire :
+Nous souhaitons échantillonner 3 âges de ce groupe. Voici comment procéder :
 
 ```R
-# Échantillonnage de 3 âges sans remise
-set.seed(123)  # Pour rendre les résultats reproductibles
-sampled_ages <- sample(ages, size = 3, replace = FALSE)
-print(sampled_ages)
+# Définir le vecteur d'âges
+ages <- c(25, 30, 22, 35, 40, 28, 33, 27, 31, 29)
+
+# Échantillonner 3 âges sans remise
+echantillon <- sample(ages, size = 3, replace = FALSE)
+
+# Afficher l'échantillon
+print(echantillon)
 ```
 
 ### Explications du code
 
-1. **set.seed(123)** : Cette ligne fixe la "graine" du générateur de nombres aléatoires. Cela garantit que chaque fois que vous exécutez le code, vous obtiendrez les mêmes résultats, ce qui est utile pour la reproductibilité.
-2. **sample(ages, size = 3, replace = FALSE)** : Cette fonction tire 3 âges au hasard du vecteur `ages` sans remise. Cela signifie qu'une fois qu'un âge est sélectionné, il ne peut pas être sélectionné à nouveau.
+1. **Définition du vecteur** : Nous créons un vecteur `ages` contenant les âges de 10 personnes.
+2. **Échantillonnage** : Nous utilisons `sample()` pour tirer au sort 3 âges. L'argument `replace = FALSE` signifie que chaque âge ne peut être sélectionné qu'une seule fois.
+3. **Affichage** : Enfin, nous affichons l'échantillon obtenu.
 
-### Résultat
+## Échantillonnage avec remise
 
-Lorsque vous exécutez ce code, vous obtiendrez un échantillon de 3 âges, par exemple :
+Si nous souhaitons permettre la sélection d'un même âge plusieurs fois, nous pouvons modifier l'argument `replace` :
 
+```R
+# Échantillonner 3 âges avec remise
+echantillon_avec_remise <- sample(ages, size = 3, replace = TRUE)
+
+# Afficher l'échantillon avec remise
+print(echantillon_avec_remise)
 ```
-[1] 41 27 25
-```
 
-Chaque fois que vous changez la valeur dans `set.seed()`, vous obtiendrez un autre échantillon aléatoire.
+Dans cet exemple, il est possible que le même âge apparaisse plusieurs fois dans l'échantillon.
 
 ## Conclusion
 
-La fonction `sample()` en R est un outil puissant pour réaliser des échantillons aléatoires de données. Que vous souhaitiez échantillonner sans remise ou avec remise, cette fonction vous offre la flexibilité nécessaire pour vos analyses. N'hésitez pas à l'utiliser dans vos projets de données pour explorer différentes sous-populations de manière aléatoire.
+La fonction `sample()` est un outil simple mais puissant pour réaliser des échantillons aléatoires en R. Que ce soit avec ou sans remise, elle vous permet de sélectionner des éléments d'un vecteur de manière efficace. N'hésitez pas à expérimenter avec différents vecteurs et paramètres pour mieux comprendre l'échantillonnage en R !
 

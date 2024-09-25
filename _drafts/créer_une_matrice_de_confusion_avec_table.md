@@ -12,57 +12,74 @@ taxonomy:
 
 # Créer une matrice de confusion avec `table` en R
 
-Une matrice de confusion est un outil essentiel pour évaluer la performance d'un modèle de classification. Elle permet de comparer les prédictions d'un modèle avec les valeurs réelles. Dans cet article, nous allons voir comment créer une matrice de confusion en utilisant la fonction `table()` en R.
+Une matrice de confusion est un outil essentiel en apprentissage automatique pour évaluer la performance d'un modèle de classification. Elle permet de visualiser les performances d'un modèle en comparant les prédictions faites par le modèle avec les vraies étiquettes des données. Dans cet article, nous allons voir comment créer une matrice de confusion en utilisant la fonction `table` en R.
 
-## Étape 1 : Installation et chargement des packages nécessaires
+## Exemple concret
 
-Bien que la fonction `table()` soit incluse dans le package de base de R, il est souvent utile d'utiliser des packages supplémentaires pour l'analyse des données. Cependant, pour la création d'une matrice de confusion simple, nous n'avons pas besoin de packages supplémentaires. Assurons-nous simplement que nous avons R installé sur notre machine.
+Imaginons que nous avons un modèle de classification qui prédit si un email est un spam ou non. Nous allons simuler des prédictions et des vraies étiquettes pour illustrer la création d'une matrice de confusion.
 
-## Étape 2 : Préparation des données
+### Étape 1 : Créer des données simulées
 
-Pour illustrer comment créer une matrice de confusion, nous allons simuler un petit ensemble de données. Supposons que nous avons un modèle de classification qui prédit si un email est un spam (`1`) ou non (`0`). Voici nos valeurs réelles et nos prédictions :
+Commençons par créer un vecteur de vraies étiquettes et un vecteur de prédictions :
 
-```R
-# Valeurs réelles
-valeurs_reelles <- c(0, 1, 1, 0, 1, 0, 0, 1, 0, 1)
+```r
+# Vraies étiquettes (1 = spam, 0 = non spam)
+vraies_etiquettes <- c(1, 0, 1, 1, 0, 0, 1, 0, 1, 0)
 
 # Prédictions du modèle
-predictions <- c(0, 0, 1, 0, 1, 1, 0, 1, 0, 1)
+predictions <- c(1, 0, 0, 1, 0, 1, 1, 0, 1, 0)
 ```
 
-## Étape 3 : Création de la matrice de confusion
+### Étape 2 : Créer la matrice de confusion
 
-Nous allons maintenant utiliser la fonction `table()` pour créer notre matrice de confusion. La fonction `table()` prend deux vecteurs en entrée : les valeurs réelles et les valeurs prédites.
+Nous allons maintenant utiliser la fonction `table` pour créer la matrice de confusion :
 
-```R
-# Création de la matrice de confusion
-matrice_confusion <- table(valeurs_reelles, predictions)
+```r
+# Créer la matrice de confusion
+matrice_confusion <- table(vraies_etiquettes, predictions)
 
-# Affichage de la matrice
+# Afficher la matrice de confusion
 print(matrice_confusion)
 ```
 
-## Étape 4 : Interprétation de la matrice de confusion
+### Étape 3 : Interpréter la matrice de confusion
 
-La sortie de `print(matrice_confusion)` nous donnera une matrice qui ressemble à ceci :
+La matrice de confusion affichée ressemblera à ceci :
 
 ```
-           predictions
-valeurs_reelles  0  1
-                0  4  1
-                1  1  4
+               predictions
+vraies_etiquettes  0  1
+                 0  3  1
+                 1  2  4
 ```
 
-### Interprétation :
+Dans cette matrice :
 
-- **Vrai Négatif (VN)** : 4 (valeurs réelles `0` et prédites `0`)
-- **Faux Positif (FP)** : 1 (valeurs réelles `0` et prédites `1`)
-- **Faux Négatif (FN)** : 1 (valeurs réelles `1` et prédites `0`)
-- **Vrai Positif (VP)** : 4 (valeurs réelles `1` et prédites `1`)
+- La première ligne représente les vrais négatifs (3) et les faux positifs (1).
+- La deuxième ligne représente les faux négatifs (2) et les vrais positifs (4).
 
-À partir de cette matrice, vous pouvez calculer des métriques de performance comme l'exactitude, la précision, le rappel, et le score F1.
+### Étape 4 : Calculer les métriques de performance
+
+À partir de la matrice de confusion, nous pouvons calculer plusieurs métriques de performance, telles que la précision, le rappel et le score F1.
+
+```r
+# Calculer les métriques
+vrais_positifs <- matrice_confusion[2, 2]
+vrais_negatifs <- matrice_confusion[1, 1]
+faux_positifs <- matrice_confusion[1, 2]
+faux_negatifs <- matrice_confusion[2, 1]
+
+precision <- vrais_positifs / (vrais_positifs + faux_positifs)
+rappel <- vrais_positifs / (vrais_positifs + faux_negatifs)
+f1_score <- 2 * (precision * rappel) / (precision + rappel)
+
+# Afficher les résultats
+cat("Précision :", precision, "\n")
+cat("Rappel :", rappel, "\n")
+cat("Score F1 :", f1_score, "\n")
+```
 
 ## Conclusion
 
-Créer une matrice de confusion en R est simple grâce à la fonction `table()`. Cela vous permet d'évaluer facilement la performance de vos modèles de classification. N'hésitez pas à adapter cet exemple à vos propres données pour analyser vos modèles !
+Créer une matrice de confusion en R est un processus simple grâce à la fonction `table`. Elle permet d'évaluer la performance d'un modèle de classification de manière claire et concise. En utilisant cet outil, vous pouvez facilement calculer des métriques de performance essentielles pour améliorer vos modèles. N'hésitez pas à appliquer cette méthode à vos propres données pour mieux comprendre les performances de vos modèles de classification.
 

@@ -12,80 +12,77 @@ taxonomy:
 
 # Renommer des colonnes avec dplyr::rename
 
-Lorsque vous travaillez avec des jeux de données en R, il est fréquent de vouloir renommer des colonnes pour qu'elles soient plus explicites ou adaptées à votre analyse. La bibliothèque `dplyr` offre une fonction pratique pour cela : `rename()`. Cet article vous expliquera comment utiliser cette fonction avec des exemples concrets.
+Dans le cadre de l'analyse de données en R, il est souvent nécessaire de renommer les colonnes d'un dataframe pour améliorer la lisibilité ou pour se conformer à des conventions de nommage. La fonction `rename()` du package `dplyr` est un outil puissant et simple pour effectuer cette tâche.
 
 ## Installation et chargement de dplyr
 
-Avant de commencer, assurez-vous que le package `dplyr` est installé et chargé dans votre environnement R. Vous pouvez l'installer avec la commande suivante :
+Avant de commencer, assurez-vous que le package `dplyr` est installé et chargé dans votre environnement R. Vous pouvez l'installer avec la commande suivante si ce n'est pas déjà fait :
 
 ```R
 install.packages("dplyr")
 ```
 
-Puis, chargez-le :
+Ensuite, chargez le package :
 
 ```R
 library(dplyr)
 ```
 
-## Utilisation de dplyr::rename
+## Exemple concret
 
-La fonction `rename()` permet de modifier les noms des colonnes d'un data frame. La syntaxe de base est la suivante :
+Imaginons que nous avons un dataframe contenant des informations sur des employés, avec des colonnes nommées "Nom", "Age", et "Salaire". Nous souhaitons renommer ces colonnes pour qu'elles soient plus explicites : "Nom" devient "Nom_Employe", "Age" devient "Age_Employe", et "Salaire" devient "Salaire_Annuel".
 
-```R
-rename(data, nouveau_nom = ancien_nom)
-```
+Voici comment procéder :
 
-- `data` : votre data frame.
-- `nouveau_nom` : le nom que vous souhaitez donner à la colonne.
-- `ancien_nom` : le nom actuel de la colonne que vous souhaitez renommer.
+### Création du dataframe
 
-### Exemple concret
-
-Imaginons que nous avons un data frame `df` qui contient des informations sur des étudiants, avec les colonnes `nom`, `age`, et `note`. Voici à quoi il ressemble :
+Tout d'abord, créons un exemple de dataframe :
 
 ```R
-df <- data.frame(
-  nom = c("Alice", "Bob", "Charlie"),
-  age = c(21, 22, 23),
-  note = c(85, 90, 88)
+# Création d'un dataframe exemple
+employes <- data.frame(
+  Nom = c("Alice", "Bob", "Charlie"),
+  Age = c(30, 25, 35),
+  Salaire = c(50000, 55000, 60000)
 )
 
-print(df)
+# Affichage du dataframe original
+print(employes)
 ```
 
-Cela produira la sortie suivante :
+### Renommage des colonnes
 
-```
-      nom age note
-1   Alice  21  85
-2     Bob  22  90
-3 Charlie  23  88
-```
-
-Supposons que nous souhaitons renommer la colonne `note` en `score`. Nous utiliserons la fonction `rename()` de la manière suivante :
+Pour renommer les colonnes, nous utilisons la fonction `rename()` de `dplyr`. La syntaxe générale est la suivante :
 
 ```R
-df_renomme <- df %>%
-  rename(score = note)
-
-print(df_renomme)
+nouveau_dataframe <- ancien_dataframe %>%
+  rename(nouveau_nom1 = ancien_nom1,
+         nouveau_nom2 = ancien_nom2,
+         ...)
 ```
 
-La sortie sera :
+Dans notre cas, cela donnerait :
 
+```R
+# Renommage des colonnes
+employes_renommes <- employes %>%
+  rename(Nom_Employe = Nom,
+         Age_Employe = Age,
+         Salaire_Annuel = Salaire)
+
+# Affichage du dataframe avec les colonnes renommées
+print(employes_renommes)
 ```
-      nom age score
-1   Alice  21    85
-2     Bob  22    90
-3 Charlie  23    88
-```
 
-### Explications
+### Résultat
 
-Dans cet exemple, nous avons utilisé l'opérateur pipe `%>%` pour passer le data frame `df` à la fonction `rename()`. Nous avons spécifié que nous voulons que la colonne `note` soit renommée en `score`. Le résultat est un nouveau data frame `df_renomme`, qui contient la colonne avec le nouveau nom.
+Après avoir exécuté le code ci-dessus, le dataframe `employes_renommes` aura les colonnes suivantes :
+
+- Nom_Employe
+- Age_Employe
+- Salaire_Annuel
 
 ## Conclusion
 
-Renommer des colonnes avec `dplyr::rename()` est une tâche simple et efficace qui peut rendre vos jeux de données plus lisibles et faciles à analyser. Grâce à cet article, vous devriez maintenant être en mesure d'utiliser cette fonction pour adapter vos data frames à vos besoins d'analyse. N'hésitez pas à explorer d'autres fonctions de `dplyr` pour manipuler vos données encore plus facilement !
+Renommer des colonnes avec `dplyr::rename` est une tâche simple et efficace qui améliore la clarté de vos données. En utilisant cette fonction, vous pouvez facilement adapter les noms de colonnes à vos besoins d'analyse. N'hésitez pas à explorer d'autres fonctionnalités de `dplyr` pour manipuler vos données de manière encore plus efficace !
 

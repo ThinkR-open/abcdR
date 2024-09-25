@@ -10,68 +10,49 @@ taxonomy:
         - ggplot2
 ---
 
-# Personnaliser les axes avec `scale_x_continuous` et `scale_y_continuous` en R
+# Personnaliser les axes avec scale_x_continuous et scale_y_continuous en R
 
-Dans la visualisation de données avec R, il est souvent important de personnaliser les axes pour améliorer la lisibilité et la présentation de nos graphiques. Les fonctions `scale_x_continuous` et `scale_y_continuous` de la bibliothèque `ggplot2` permettent de modifier les axes des graphiques continus de manière simple et efficace.
+Dans le cadre de la visualisation de données avec le package `ggplot2` en R, il est souvent nécessaire de personnaliser les axes pour améliorer la lisibilité et l'interprétation des graphiques. Les fonctions `scale_x_continuous()` et `scale_y_continuous()` permettent de modifier les échelles des axes x et y respectivement. Cet article vous montrera comment utiliser ces fonctions avec un exemple concret.
 
-## Installation et chargement de ggplot2
+## Exemple de code
 
-Assurez-vous d'avoir installé le package `ggplot2` si ce n'est pas déjà fait. Voici comment l'installer et le charger :
+Imaginons que nous avons un jeu de données simple représentant les ventes mensuelles d'un produit. Nous allons créer un graphique à barres pour visualiser ces ventes et personnaliser les axes.
 
 ```R
-install.packages("ggplot2")
+# Charger les bibliothèques nécessaires
 library(ggplot2)
-```
 
-## Exemple concret
+# Créer un jeu de données
+data <- data.frame(
+  mois = factor(c("Jan", "Fév", "Mar", "Avr", "Mai", "Juin"),
+                levels = c("Jan", "Fév", "Mar", "Avr", "Mai", "Juin")),
+  ventes = c(150, 200, 250, 300, 350, 400)
+)
 
-Prenons un exemple où nous avons un jeu de données sur les ventes d'un produit au fil des mois. Nous allons créer un graphique de type ligne et personnaliser les axes.
-
-### Création des données
-
-Commençons par créer un jeu de données simple :
-
-```R
-# Création d'un jeu de données
-mois <- c("Jan", "Fév", "Mar", "Avr", "Mai", "Juin")
-ventes <- c(150, 200, 250, 300, 350, 400)
-data <- data.frame(mois, ventes)
-```
-
-### Création du graphique
-
-Nous allons maintenant créer un graphique avec `ggplot2` :
-
-```R
-# Création du graphique de base
+# Créer un graphique à barres
 ggplot(data, aes(x = mois, y = ventes)) +
-  geom_line() +
-  geom_point()
+  geom_bar(stat = "identity", fill = "steelblue") +
+  scale_x_continuous(breaks = 1:6, labels = c("Jan", "Fév", "Mar", "Avr", "Mai", "Juin")) +
+  scale_y_continuous(limits = c(0, 450), breaks = seq(0, 450, by = 50)) +
+  labs(title = "Ventes Mensuelles", x = "Mois", y = "Ventes") +
+  theme_minimal()
 ```
 
-### Personnalisation des axes
+## Explications
 
-Utilisons `scale_x_continuous` et `scale_y_continuous` pour personnaliser les axes. Supposons que nous voulions changer les étiquettes de l'axe des ventes pour les afficher en milliers et les axes pour avoir des limites spécifiques :
+1. **Chargement des bibliothèques** : Nous commençons par charger le package `ggplot2`, qui est essentiel pour créer des graphiques en R.
 
-```R
-# Graphique avec personnalisation des axes
-ggplot(data, aes(x = mois, y = ventes)) +
-  geom_line() +
-  geom_point() +
-  scale_x_continuous(breaks = seq(1, 6, 1), labels = mois) +  # Étiquettes personnalisées sur l'axe X
-  scale_y_continuous(breaks = seq(0, 400, 50), labels = paste0(seq(0, 400, 50)/1000, "k")) +  # Étiquettes en milliers sur l'axe Y
-  labs(title = "Ventes mensuelles", x = "Mois", y = "Ventes (en milliers)")
-```
+2. **Création du jeu de données** : Nous définissons un `data.frame` contenant les mois et les ventes correspondantes. Nous utilisons `factor()` pour s'assurer que les mois sont dans le bon ordre.
 
-### Explication du code
+3. **Création du graphique** : Avec `ggplot()`, nous spécifions le jeu de données et les variables à utiliser pour les axes x et y. La fonction `geom_bar(stat = "identity")` est utilisée pour créer un graphique à barres.
 
-1. **`scale_x_continuous`** : Cette fonction nous permet de définir les "breaks" (intervalles) sur l'axe X. Ici, nous spécifions que nous voulons des étiquettes pour chaque mois. Les étiquettes sont fournies par le vecteur `mois`.
+4. **Personnalisation de l'axe x** : La fonction `scale_x_continuous()` permet de définir les valeurs des breaks (les points où les marques de graduation apparaissent) et les labels (les étiquettes correspondantes). Dans cet exemple, nous avons défini des breaks de 1 à 6 et avons attribué des étiquettes pour chaque mois.
 
-2. **`scale_y_continuous`** : De même, cette fonction modifie l'axe Y. Nous définissons des "breaks" allant de 0 à 400 par pas de 50. Ensuite, nous formatons les étiquettes pour qu'elles apparaissent en milliers (par exemple, "150k" au lieu de "150").
+5. **Personnalisation de l'axe y** : La fonction `scale_y_continuous()` permet de fixer les limites de l'axe y (de 0 à 450) et de définir les breaks à intervalles de 50. Cela permet de rendre le graphique plus lisible.
 
-3. **`labs`** : Cette fonction permet d'ajouter un titre et des étiquettes aux axes.
+6. **Ajout de titres et de thèmes** : Nous utilisons `labs()` pour ajouter un titre au graphique et des étiquettes aux axes. Enfin, `theme_minimal()` est appliqué pour donner un aspect épuré au graphique.
 
 ## Conclusion
 
-La personnalisation des axes est essentielle pour rendre vos graphiques plus informatifs et agréables à lire. Avec `scale_x_continuous` et `scale_y_continuous`, vous pouvez facilement ajuster les étiquettes et les limites de vos axes dans R. N'hésitez pas à expérimenter avec d'autres paramètres pour adapter vos visualisations à
+Personnaliser les axes avec `scale_x_continuous()` et `scale_y_continuous()` est une étape essentielle pour améliorer la clarté de vos visualisations en R. En ajustant les breaks, les labels et les limites, vous pouvez rendre vos graphiques plus informatifs et esthétiques. N'hésitez pas à
 
