@@ -74,5 +74,5 @@ remove.packages("ggplot2")
 
 ## Conclusion
 
-Installer et gérer des packages en R est une compétence essentielle pour tirer le meilleur parti de ce langage. Avec `install.packages()`, `library()`, `update.packages()`, et `remove.packages()`, vous avez les outils nécessaires pour gérer efficacement vos packages R. N'hésitez pas à explorer les nombreux packages disponibles pour enrichir vos analyses et vos visualisations de données.
+Installer et gérer des packages en R est une compétence essentielle pour tirer le meilleur parti de ce langage. Avec `install.packages()`, `library()`, `update.packages()`, et `remove.packages()`, vous avez les outils nécessaires pour gérer efficacement vos packages R.
 

@@ -46,7 +46,7 @@ diviser <- function(x, y) {
 
 # Test de la fonction avec différents cas
 print(diviser(10, 2))  # Devrait afficher 5
-print(diviser(10, 0))  # Devrait afficher un message d'erreur et NA
+print(diviser(10, "0"))  # Devrait afficher un message d'erreur et NA
 ```
 
 ### Explication du code

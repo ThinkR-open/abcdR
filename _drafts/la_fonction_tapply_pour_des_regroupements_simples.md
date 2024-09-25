@@ -62,7 +62,7 @@ Lorsque vous exécutez le code ci-dessus, vous obtiendrez un résultat similaire
 
 ```
   A   B   C 
-1000  850  800 
+600  800  800 
 ```
 
 Cela signifie que le chiffre d'affaires total pour le magasin A est de 1000, pour le magasin B de 850 et pour le magasin C de 800.
