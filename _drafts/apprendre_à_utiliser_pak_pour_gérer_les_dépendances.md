@@ -49,7 +49,7 @@ Cette commande va installer `ggplot2` et toutes ses dépendances nécessaires.
 Pour mettre à jour un package déjà installé, vous pouvez utiliser la même fonction. Par exemple, pour mettre à jour `ggplot2`, vous pouvez exécuter :
 
 ```R
-pak::pkg_update("ggplot2")
+pak::pak_update("ggplot2")
 ```
 
 ### Installer plusieurs packages
@@ -82,7 +82,7 @@ library(pak)
 pak::pkg_install(c("ggplot2", "dplyr"))
 
 # Mettre à jour ggplot2
-pak::pkg_update("ggplot2")
+pak::pak_update("ggplot2")
 
 # Vérifier les dépendances de ggplot2
 deps <- pak::pkg_deps("ggplot2")
