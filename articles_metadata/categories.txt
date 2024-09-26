@@ -78,8 +78,6 @@ modélisation
 statistiques
 modélisation
 modélisation
-documentation
-documentation
 templates
 style
 interactivité
@@ -100,3 +98,6 @@ documentation
 tests
 environnement
 dépendances
+facteurs
+listes
+dates

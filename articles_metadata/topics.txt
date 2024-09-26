@@ -78,8 +78,6 @@ Utiliser des modèles mixtes avec lme4
 Calculer des intervalles de confiance avec confint
 Sélection de variables avec stepAIC
 Ajuster des modèles non linéaires avec nls
-Comment utiliser R Markdown pour documenter du code
-Automatiser des rapports avec R Markdown
 Utiliser des templates dans R Markdown
 Personnaliser le style de R Markdown avec CSS
 Créer des notebooks interactifs avec RStudio
@@ -100,3 +98,6 @@ Utiliser roxygen2 pour documenter un package
 Utiliser testthat pour tester un package R
 Créer un environnement virtuel avec renv
 Apprendre à utiliser pak pour gérer les dépendances
+Le package forcats pour manipuler des facteurs
+Le package purrr pour manipuler des vecteurs et des listes
+Le package lubridate pour manipuler des dates
