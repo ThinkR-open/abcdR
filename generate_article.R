@@ -53,7 +53,7 @@ generate_article <- function(topic, category, tag1, tag2, api_key = Sys.getenv("
       model = "gpt-4o-mini",
       messages = list(
         list(role = "system", content = "You are a helpful assistant that writes articles in R."),
-        list(role = "user", content = paste0("Écris un court article en R sur le sujet suivant : ", topic, ". L'article doit être concret, facile à comprendre, avec un exemple de code R et des explications simples. Pas d'images, uniquement du texte."))
+        list(role = "user", content = paste0("Écris un court article en R sur le sujet suivant : ", topic, ". L'article doit être concret, facile à comprendre, avec un exemple de code R et des explications simples. Pas d'images, uniquement du texte. Des noms de paramètres tous en minuscules. Pas d'utilisation de la fonction print pour afficher les objets"))
       ),
       max_tokens = max_tokens,
       temperature = temperature

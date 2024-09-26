@@ -78,8 +78,6 @@ lme4, modèles mixtes
 confint, intervalles
 stepAIC, sélection
 nls, non linéaire
-R Markdown, documentation
-R Markdown, rapports
 templates, R Markdown
 R Markdown, CSS
 notebooks, interactif
@@ -100,3 +98,6 @@ roxygen2, documentation
 testthat, tests
 renv, environnement
 pak, dépendances
+forcats, factors
+listes, programmation fonctionnelle
+dates, temps
