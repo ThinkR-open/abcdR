@@ -80,7 +80,6 @@ stepAIC, sélection
 nls, non linéaire
 templates, R Markdown
 R Markdown, CSS
-notebooks, interactif
 regex, chaînes
 stringr, chaînes
 glue, chaînes
@@ -93,10 +92,8 @@ RSQLite, SQL
 DBI, SQL
 dplyr, SQL
 install.packages, packages
-devtools, package
 roxygen2, documentation
 testthat, tests
-renv, environnement
 pak, dépendances
 forcats, factors
 listes, programmation fonctionnelle

@@ -80,7 +80,6 @@ Sélection de variables avec stepAIC
 Ajuster des modèles non linéaires avec nls
 Utiliser des templates dans R Markdown
 Personnaliser le style de R Markdown avec CSS
-Créer des notebooks interactifs avec RStudio
 Travailler avec des expressions régulières en R
 Apprendre à utiliser stringr pour manipuler des chaînes de caractères
 Utiliser glue pour formater des chaînes de caractères
@@ -93,10 +92,8 @@ Travailler avec des bases de données SQL avec RSQLite
 Utiliser DBI pour se connecter à des bases de données
 Envoyer des requêtes SQL depuis R avec dplyr
 Installer et gérer des packages avec install.packages
-Créer des packages R avec devtools
 Utiliser roxygen2 pour documenter un package
 Utiliser testthat pour tester un package R
-Créer un environnement virtuel avec renv
 Apprendre à utiliser pak pour gérer les dépendances
 Le package forcats pour manipuler des facteurs
 Le package purrr pour manipuler des vecteurs et des listes

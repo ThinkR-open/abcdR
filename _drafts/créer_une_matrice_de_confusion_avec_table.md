@@ -49,14 +49,14 @@ La matrice de confusion affichée ressemblera à ceci :
 ```
                predictions
 vraies_etiquettes  0  1
-                 0  3  1
-                 1  2  4
+                 0  4  1
+                 1  1  4
 ```
 
 Dans cette matrice :
 
-- La première ligne représente les vrais négatifs (3) et les faux positifs (1).
-- La deuxième ligne représente les faux négatifs (2) et les vrais positifs (4).
+- La première ligne représente les vrais négatifs (4) et les faux positifs (1).
+- La deuxième ligne représente les faux négatifs (1) et les vrais positifs (4).
 
 ### Étape 4 : Calculer les métriques de performance
 

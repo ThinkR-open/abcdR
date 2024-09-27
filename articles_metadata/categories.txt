@@ -80,7 +80,6 @@ modélisation
 modélisation
 templates
 style
-interactivité
 chaînes de caractères
 chaînes de caractères
 chaînes de caractères
@@ -93,10 +92,8 @@ bases de données
 bases de données
 bases de données
 packages
-packages
 documentation
 tests
-environnement
 dépendances
 facteurs
 listes
