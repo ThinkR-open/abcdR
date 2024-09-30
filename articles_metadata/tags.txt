@@ -90,7 +90,6 @@ system.time, efficacité
 Rprof, profiling
 RSQLite, SQL
 DBI, SQL
-dplyr, SQL
 install.packages, packages
 roxygen2, documentation
 testthat, tests

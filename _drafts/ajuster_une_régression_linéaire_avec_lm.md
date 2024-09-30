@@ -23,14 +23,14 @@ lm(formule, data)
 ```
 
 - `formule` : une formule qui décrit la relation entre les variables. Par exemple, `y ~ x1 + x2` indique que `y` est la variable dépendante et `x1` et `x2` sont les variables indépendantes.
-- `data` : le cadre de données contenant les variables.
+- `data` : le data frame contenant les variables.
 
 ## Exemple concret
 
 Supposons que nous avons un ensemble de données sur les ventes d'une entreprise en fonction de la publicité et du prix. Voici un exemple de données :
 
 ```R
-# Création d'un cadre de données
+# Création d'un data frame
 data <- data.frame(
   ventes = c(200, 300, 400, 500, 600),
   publicite = c(50, 60, 70, 80, 90),

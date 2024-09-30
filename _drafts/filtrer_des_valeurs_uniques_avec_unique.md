@@ -16,7 +16,7 @@ Dans le langage R, il est fréquent de travailler avec des ensembles de données
 
 ## Qu'est-ce que la fonction `unique()` ?
 
-La fonction `unique()` permet de retourner un vecteur, une matrice ou un cadre de données en ne conservant que les valeurs uniques. Cela signifie que toutes les occurrences d'une valeur répétée seront réduites à une seule occurrence.
+La fonction `unique()` permet de retourner un vecteur, une matrice ou un data frame en ne conservant que les valeurs uniques. Cela signifie que toutes les occurrences d'une valeur répétée seront réduites à une seule occurrence.
 
 ## Exemple concret
 
@@ -65,5 +65,5 @@ Valeurs uniques :
 
 ## Conclusion
 
-La fonction `unique()` est un outil essentiel pour le traitement des données en R. Elle permet de simplifier l'analyse en éliminant les doublons et en fournissant une vue claire des valeurs distinctes. Que vous travailliez avec des vecteurs, des matrices ou des cadres de données, `unique()` vous aidera à obtenir les informations dont vous avez besoin de manière efficace. N'hésitez pas à l'utiliser dans vos propres analyses de données !
+La fonction `unique()` est un outil essentiel pour le traitement des données en R. Elle permet de simplifier l'analyse en éliminant les doublons et en fournissant une vue claire des valeurs distinctes. Que vous travailliez avec des vecteurs, des matrices ou des data frame, `unique()` vous aidera à obtenir les informations dont vous avez besoin de manière efficace. N'hésitez pas à l'utiliser dans vos propres analyses de données !
 

@@ -67,18 +67,6 @@ print(resultat)
 
 3. **Affichage du résultat** : Le data frame résultant contient toutes les colonnes de `df1` et `df2`, mais seulement pour les lignes où `id_departement` correspond dans les deux data frames.
 
-### Résultat
-
-Le data frame `resultat` ressemblera à ceci :
-
-```
-  id_departement     nom id
-1             101   Alice  1
-2             101 Charlie  3
-3             102     Bob  2
-4             103   David  4
-```
-
 ## Conclusion
 
 La fonction `merge()` est un outil essentiel pour combiner des data frames en R. En utilisant des colonnes communes, vous pouvez facilement créer un ensemble de données plus riche et plus informatif. N'hésitez pas à explorer les options supplémentaires de `merge()` pour personnaliser vos jointures selon vos besoins.

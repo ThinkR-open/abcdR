@@ -90,7 +90,6 @@ performance
 profilage
 bases de données
 bases de données
-bases de données
 packages
 documentation
 tests
