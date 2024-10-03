@@ -57,7 +57,6 @@ JSON, lecture
 readr, lecture
 Excel, écriture
 texte, lecture
-gzfile, compression
 file.path, chemin
 list.files, répertoire
 rename, fichier

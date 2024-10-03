@@ -57,7 +57,6 @@ Lire des fichiers JSON avec jsonlite
 Utiliser readr pour lire des fichiers rapidement
 Créer et écrire des fichiers Excel avec writexl
 Lire des fichiers texte avec readLines
-Gérer les fichiers compressés avec gzfile et bzfile
 Utiliser file.path pour manipuler les chemins de fichiers
 Lister des fichiers dans un répertoire avec list.files
 Déplacer des fichiers avec file.rename
