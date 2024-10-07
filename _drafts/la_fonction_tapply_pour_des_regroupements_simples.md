@@ -62,10 +62,10 @@ Lorsque vous exécutez le code ci-dessus, vous obtiendrez un résultat similaire
 
 ```
 Magasin A Magasin B 
-      550      900 
+      600      800 
 ```
 
-Cela signifie que le total des ventes pour le "Magasin A" est de 550 et pour le "Magasin B" est de 900.
+Cela signifie que le total des ventes pour le "Magasin A" est de 600 et pour le "Magasin B" est de 800.
 
 ## Conclusion
 

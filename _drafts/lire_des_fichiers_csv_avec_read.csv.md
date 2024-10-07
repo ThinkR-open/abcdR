@@ -42,7 +42,7 @@ data <- read.csv("chemin/vers/fichier.csv", header = TRUE, sep = ",")
 Imaginons que nous avons un fichier CSV nommé `donnees.csv` contenant les informations suivantes :
 
 ```
-Nom,Âge,Ville
+Nom,Age,Ville
 Alice,30,Paris
 Bob,25,Lyon
 Charlie,35,Marseille
@@ -66,7 +66,7 @@ print(donnees)
 Après avoir exécuté ce code, vous devriez voir une sortie ressemblant à ceci :
 
 ```
-      Nom Âge     Ville
+      Nom Age     Ville
 1   Alice  30     Paris
 2     Bob  25      Lyon
 3 Charlie  35 Marseille

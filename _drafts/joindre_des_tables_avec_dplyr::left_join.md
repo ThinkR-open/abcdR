@@ -66,10 +66,11 @@ Après avoir exécuté le code ci-dessus, le résultat sera le suivant :
 
 ```
   id_client     nom id_commande produit
-1        1   Alice         101   Livre
-2        2     Bob         102   Stylo
-3        3 Charlie        <NA>    <NA>
-4        4   David        <NA>    <NA>
+1         1   Alice         101   Livre
+2         1   Alice         103  Cahier
+3         2     Bob         102   Stylo
+4         3 Charlie          NA    <NA>
+5         4   David          NA    <NA>
 ```
 
 ### Explications des résultats
