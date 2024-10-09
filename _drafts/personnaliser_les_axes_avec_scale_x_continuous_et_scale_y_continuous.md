@@ -32,7 +32,6 @@ data <- data.frame(
 # Créer un graphique à barres
 ggplot(data, aes(x = mois, y = ventes)) +
   geom_bar(stat = "identity", fill = "steelblue") +
-  scale_x_continuous(breaks = 1:6, labels = c("Jan", "Fév", "Mar", "Avr", "Mai", "Juin")) +
   scale_y_continuous(limits = c(0, 450), breaks = seq(0, 450, by = 50)) +
   labs(title = "Ventes Mensuelles", x = "Mois", y = "Ventes") +
   theme_minimal()
@@ -46,13 +45,11 @@ ggplot(data, aes(x = mois, y = ventes)) +
 
 3. **Création du graphique** : Avec `ggplot()`, nous spécifions le jeu de données et les variables à utiliser pour les axes x et y. La fonction `geom_bar(stat = "identity")` est utilisée pour créer un graphique à barres.
 
-4. **Personnalisation de l'axe x** : La fonction `scale_x_continuous()` permet de définir les valeurs des breaks (les points où les marques de graduation apparaissent) et les labels (les étiquettes correspondantes). Dans cet exemple, nous avons défini des breaks de 1 à 6 et avons attribué des étiquettes pour chaque mois.
+4. **Personnalisation de l'axe y** : La fonction `scale_y_continuous()` permet de fixer les limites de l'axe y (de 0 à 450) et de définir les breaks à intervalles de 50. Cela permet de rendre le graphique plus lisible.
 
-5. **Personnalisation de l'axe y** : La fonction `scale_y_continuous()` permet de fixer les limites de l'axe y (de 0 à 450) et de définir les breaks à intervalles de 50. Cela permet de rendre le graphique plus lisible.
-
-6. **Ajout de titres et de thèmes** : Nous utilisons `labs()` pour ajouter un titre au graphique et des étiquettes aux axes. Enfin, `theme_minimal()` est appliqué pour donner un aspect épuré au graphique.
+5. **Ajout de titres et de thèmes** : Nous utilisons `labs()` pour ajouter un titre au graphique et des étiquettes aux axes. Enfin, `theme_minimal()` est appliqué pour donner un aspect épuré au graphique.
 
 ## Conclusion
 
-Personnaliser les axes avec `scale_x_continuous()` et `scale_y_continuous()` est une étape essentielle pour améliorer la clarté de vos visualisations en R. En ajustant les breaks, les labels et les limites, vous pouvez rendre vos graphiques plus informatifs et esthétiques. N'hésitez pas à
+Personnaliser les axes avec `scale_x_continuous()` ou `scale_y_continuous()` est une étape essentielle pour améliorer la clarté de vos visualisations en R. En ajustant les breaks, les labels et les limites, vous pouvez rendre vos graphiques plus informatifs et esthétiques. 
 

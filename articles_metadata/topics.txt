@@ -86,7 +86,6 @@ Faire des calculs vectorisés avec la fonction Vectorize
 Utiliser la fonction apply pour des calculs sur des matrices
 Générer des nombres aléatoires avec runif et rnorm
 Tester l'efficacité d'un code avec system.time
-Profiling de code avec Rprof
 Travailler avec des bases de données SQL avec RSQLite
 Utiliser DBI pour se connecter à des bases de données
 Installer et gérer des packages avec install.packages

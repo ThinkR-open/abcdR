@@ -86,7 +86,6 @@ Vectorize, calculs
 apply, matrices
 runif, aléatoire
 system.time, efficacité
-Rprof, profiling
 RSQLite, SQL
 DBI, SQL
 install.packages, packages

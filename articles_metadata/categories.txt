@@ -86,7 +86,6 @@ calculs vectorisés
 matrices
 génération de données
 performance
-profilage
 bases de données
 bases de données
 packages
