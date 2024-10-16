@@ -72,7 +72,6 @@ validation
 modélisation
 classification
 corrélation
-évaluation
 modélisation
 statistiques
 modélisation
@@ -81,12 +80,10 @@ templates
 style
 chaînes de caractères
 chaînes de caractères
-chaînes de caractères
 calculs vectorisés
 matrices
 génération de données
 performance
-bases de données
 bases de données
 packages
 documentation

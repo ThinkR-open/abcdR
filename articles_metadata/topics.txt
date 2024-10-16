@@ -72,21 +72,18 @@ Validation croisée d'un modèle avec caret
 Utiliser randomForest pour des modèles d'arbres
 Ajuster des modèles de classification avec glmnet
 Travailler avec des matrices de corrélation avec cor
-Tracer une courbe ROC avec pROC
 Utiliser des modèles mixtes avec lme4
 Calculer des intervalles de confiance avec confint
 Sélection de variables avec stepAIC
 Ajuster des modèles non linéaires avec nls
 Utiliser des templates dans R Markdown
 Personnaliser le style de R Markdown avec CSS
-Travailler avec des expressions régulières en R
 Apprendre à utiliser stringr pour manipuler des chaînes de caractères
 Utiliser glue pour formater des chaînes de caractères
 Faire des calculs vectorisés avec la fonction Vectorize
 Utiliser la fonction apply pour des calculs sur des matrices
 Générer des nombres aléatoires avec runif et rnorm
 Tester l'efficacité d'un code avec system.time
-Travailler avec des bases de données SQL avec RSQLite
 Utiliser DBI pour se connecter à des bases de données
 Installer et gérer des packages avec install.packages
 Utiliser roxygen2 pour documenter un package

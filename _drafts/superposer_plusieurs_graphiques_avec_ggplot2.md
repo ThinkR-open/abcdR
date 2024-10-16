@@ -52,7 +52,7 @@ Nous allons maintenant utiliser `ggplot2` pour créer un graphique qui superpose
 ```R
 # Création du graphique
 ggplot(data, aes(x = mois, y = ventes, color = produit)) +
-  geom_line(size = 1) +  # Ajout des lignes pour chaque produit
+  geom_line(linewidth = 1) +  # Ajout des lignes pour chaque produit
   geom_point(size = 2) +  # Ajout des points pour chaque observation
   labs(title = "Ventes des Produits A et B au cours de l'année",
        x = "Mois",
@@ -64,7 +64,7 @@ ggplot(data, aes(x = mois, y = ventes, color = produit)) +
 
 1. **`ggplot(data, aes(x = mois, y = ventes, color = produit))`** : Nous initialisons le graphique avec notre jeu de données. Nous spécifions que l'axe des x sera le mois, l'axe des y sera les ventes, et nous utiliserons la couleur pour distinguer les produits.
 
-2. **`geom_line(size = 1)`** : Cette fonction ajoute des lignes au graphique pour chaque produit. Le paramètre `size` permet de définir l'épaisseur des lignes.
+2. **`geom_line(linewidth = 1)`** : Cette fonction ajoute des lignes au graphique pour chaque produit. Le paramètre `linewidth` permet de définir l'épaisseur des lignes.
 
 3. **`geom_point(size = 2)`** : Cette fonction ajoute des points sur le graphique pour chaque observation. Cela permet de visualiser les données individuelles.
 
