@@ -67,7 +67,6 @@ Créer une matrice de confusion avec table
 Faire des prédictions avec predict
 Ajuster un modèle de régression logistique avec glm
 Calculer les résidus d'un modèle avec resid
-Utiliser caret pour évaluer la performance d'un modèle
 Validation croisée d'un modèle avec caret
 Utiliser randomForest pour des modèles d'arbres
 Ajuster des modèles de classification avec glmnet
@@ -76,7 +75,6 @@ Utiliser des modèles mixtes avec lme4
 Calculer des intervalles de confiance avec confint
 Sélection de variables avec stepAIC
 Ajuster des modèles non linéaires avec nls
-Utiliser des templates dans R Markdown
 Personnaliser le style de R Markdown avec CSS
 Apprendre à utiliser stringr pour manipuler des chaînes de caractères
 Utiliser glue pour formater des chaînes de caractères
@@ -84,7 +82,6 @@ Faire des calculs vectorisés avec la fonction Vectorize
 Utiliser la fonction apply pour des calculs sur des matrices
 Générer des nombres aléatoires avec runif et rnorm
 Tester l'efficacité d'un code avec system.time
-Utiliser DBI pour se connecter à des bases de données
 Installer et gérer des packages avec install.packages
 Utiliser roxygen2 pour documenter un package
 Utiliser testthat pour tester un package R

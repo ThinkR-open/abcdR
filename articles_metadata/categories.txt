@@ -67,7 +67,6 @@ statistiques
 prédiction
 modélisation
 modélisation
-évaluation
 validation
 modélisation
 classification
@@ -76,7 +75,6 @@ modélisation
 statistiques
 modélisation
 modélisation
-templates
 style
 chaînes de caractères
 chaînes de caractères
@@ -84,7 +82,6 @@ calculs vectorisés
 matrices
 génération de données
 performance
-bases de données
 packages
 documentation
 tests

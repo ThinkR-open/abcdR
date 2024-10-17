@@ -67,7 +67,6 @@ matrice, confusion
 predict, prédiction
 glm, logistique
 resid, résidus
-caret, performance
 validation, caret
 randomForest, arbres
 glmnet, classification
@@ -76,7 +75,6 @@ lme4, modèles mixtes
 confint, intervalles
 stepAIC, sélection
 nls, non linéaire
-templates, R Markdown
 R Markdown, CSS
 stringr, chaînes
 glue, chaînes
@@ -84,7 +82,6 @@ Vectorize, calculs
 apply, matrices
 runif, aléatoire
 system.time, efficacité
-DBI, SQL
 install.packages, packages
 roxygen2, documentation
 testthat, tests
